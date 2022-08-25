@@ -1,0 +1,6 @@
+# virtual env set up locally
+venv/
+# PyCharm file (from idea)
+.idea/
+#Locally created db
+db.sqlite3
