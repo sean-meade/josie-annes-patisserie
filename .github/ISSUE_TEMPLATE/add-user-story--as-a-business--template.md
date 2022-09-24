@@ -7,6 +7,6 @@ assignees: ''
 
 ---
 
-As a **business**
+As a **Business**
 I can **capability**
 So that **ReceivedBenefit**

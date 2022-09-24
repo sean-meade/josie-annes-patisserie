@@ -7,6 +7,6 @@ assignees: ''
 
 ---
 
-As a **group**
+As a **Group**
 I can **capability**
 So that **ReceivedBenefit**
