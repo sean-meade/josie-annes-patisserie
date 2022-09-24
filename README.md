@@ -10,80 +10,43 @@ There are lots of features I'd like to add, but I am under a time crunch so feat
 All the features wanted for the site and a sub list stating what is involved if more than one thing.
 
 1. Order cake
-
     a. Admin – confirm order
-
     b. User – order
 2. Noticeboard
-
     a. User – Add notice
-
     b. Admin – Approve notice
-
 3. Book table
-
     a. Book table
-
     b. Set days tables aren’t available
-
 4. CRUD shop items
-
     a. Create
-
     b. Read
-
     c. Update
-
     d. Delete
-
 5. Navigation
-
     a. Navbar
-
     b. Footer
-
 6. View user details
-
     a. Personal
-
     b. Past orders
-
     c. Table booking status
-
     d. Cake order Status
-
 7. Edit user details
-
     a. Personal
-
 8. Rate a product
-
 9. Leave a review
-
 10. Check out and pay for items
-
 11. Shopping cart
-
     a. Visitor/User - Add items
-
     b. Visitor/User - Remove items
-
 12. Authentication
-
     a. Registration
-
     b. Sign in
-
     c. Sign out
-
 13. Sign up for newsletter
-
 14. View items
-
     a. Detailed view
-
     b. List of items
-
     c. Filter items
 
 ### Feature Ranking
