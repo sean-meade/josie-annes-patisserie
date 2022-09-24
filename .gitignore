@@ -2,5 +2,7 @@
 venv/
 # PyCharm file (from idea)
 .idea/
-#Locally created db
+# Locally created db
 db.sqlite3
+# Project Pycache
+josie_annes_patisserie/__pycache__/
