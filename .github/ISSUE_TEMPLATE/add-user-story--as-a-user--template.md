@@ -7,6 +7,6 @@ assignees: ''
 
 ---
 
-As a **user**
+As a **User**
 I can **capability**
 So that **ReceivedBenefit**

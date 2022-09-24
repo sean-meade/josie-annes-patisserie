@@ -7,6 +7,6 @@ assignees: ''
 
 ---
 
-As a **visitor**
+As a **Visitor**
 I can **capability**
 So that **ReceivedBenefit**
