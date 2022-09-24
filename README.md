@@ -14,6 +14,7 @@ All the features wanted for the site and a sub list stating what is involved if 
     a. Admin – confirm order
 
     b. User – order
+
 2. Noticeboard
 
     a. User – Add notice
@@ -88,22 +89,22 @@ All the features wanted for the site and a sub list stating what is involved if 
 
 ### Feature Ranking
 
-| Feature No. | Feature                     | Importance | Feasibility  |
-|-------------|-----------------------------|------------|--------------|
-| 1           | Order cake                  | 3          | 2            |
-| 2           | Noticeboard                 | 3          | 2            |
-| 3           | Book table                  | 2          | 3            |
-| 4           | CRUD shop items             | 5          | 5            |
-| 5           | Navigation                  | 5          | 5            |
-| 6           | View user details           | 4          | 5            |
-| 7           | Edit user details           | 3          | 5            |
-| 8           | Rate a product              | 3          | 4            |
-| 9           | Leave a review              | 2          | 3            |
-| 10          | Check out and pay for items | 5          | 5            |
-| 11          | Shopping cart               | 5          | 5            |
-| 12          | Authentication              | 5          | 5            |
-| 13          | Sign up for newsletter      | 5          | 5            |
-| 14          | View items                  | 5          | 5            |
+| Feature No. | Feature                     | Importance | Feasibility |
+|-------------|-----------------------------|------------|-------------|
+| 1           | Order cake                  | 3          | 2           |
+| 2           | Noticeboard                 | 3          | 2           |
+| 3           | Book table                  | 2          | 3           |
+| 4           | CRUD shop items             | 5          | 5           |
+| 5           | Navigation                  | 5          | 5           |
+| 6           | View user details           | 4          | 5           |
+| 7           | Edit user details           | 3          | 5           |
+| 8           | Rate a product              | 3          | 4           |
+| 9           | Leave a review              | 2          | 3           |
+| 10          | Check out and pay for items | 5          | 5           |
+| 11          | Shopping cart               | 5          | 5           |
+| 12          | Authentication              | 5          | 5           |
+| 13          | Sign up for newsletter      | 5          | 5           |
+| 14          | View items                  | 5          | 5           |
 
 
 ![Image highlighting feature rankings](media/readme-images/feature-rankings.png)
@@ -111,11 +112,11 @@ All the features wanted for the site and a sub list stating what is involved if 
 #### Final ranking
 | Feature No. | Feature                      |
 |-------------|------------------------------|
+| 12          | Authentication               |
 | 4           | CRUD shop items              |
 | 5           | Navigation                   |
 | 10          | Check out and pay for items  |
 | 11          | Shopping cart                |
-| 12          | Authentication               |
 | 13          | Sign up for newsletter       |
 | 14          | View items                   |
 | 6           | View user details            |
@@ -157,9 +158,98 @@ All the features wanted for the site and a sub list stating what is involved if 
 ### Admin User Stories
 - As admin I want to be able to CRUD items for shop
 - As admin I want to be able to approve notices
-- As admin I want to be able to approve booking of a table
+- As admin, I want to be able to approve booking of a table
 - As an admin I want to be able to confirm the order of a cake
 - As an admin I want to be able to set the days that tables are available
+
+## Data Models
+
+### Item Model
+
+| Key         | Name         | Type            | Extra Info                                |
+|-------------|--------------|-----------------|-------------------------------------------|
+| Primary Key | title        | CharField       | Max length 200 and Unique                 |
+|             | description  | TextField       |                                           |
+|             | ingredients  | ListField()     |                                           |
+|             | date_created | DateTime        | auto_now_add=True                         |
+|             | date_update  | DateTime        | auto_now=True                             |
+|             | price        | DecimalField    |                                           |
+|             | image        | CloudinaryImage |                                           |
+|             | category     | ListField()     | https://gist.github.com/jonashaag/1200165 |
+|             | hidden       | BooleanField    | default False                             |
+|             | shop_type    | IntegerField    | Collection by default (default=0)         |
+|             | slug         | SlugField       | Max length 200                            |
+
+### User Model
+
+| Key | Name | Type | Extra Info |
+|-----|------|------|------------|
+|     |      |      |            |
+|     |      |      |            |
+
+### Order Item Model
+
+| Key | Name | Type | Extra Info |
+|-----|------|------|------------|
+|     |      |      |            |
+|     |      |      |            |
+
+### Order Model
+
+| Key | Name | Type | Extra Info |
+|-----|------|------|------------|
+|     |      |      |            |
+|     |      |      |            |
+
+### Order History Model
+
+| Key | Name | Type | Extra Info |
+|-----|------|------|------------|
+|     |      |      |            |
+|     |      |      |            |
+
+### Notice Model
+
+| Key | Name | Type | Extra Info |
+|-----|------|------|------------|
+|     |      |      |            |
+|     |      |      |            |
+
+### Table booking Model
+
+| Key | Name | Type | Extra Info |
+|-----|------|------|------------|
+|     |      |      |            |
+|     |      |      |            |
+
+### Disable booking days Models
+
+| Key | Name | Type | Extra Info |
+|-----|------|------|------------|
+|     |      |      |            |
+|     |      |      |            |
+
+### Cake Order Model
+
+| Key | Name | Type | Extra Info |
+|-----|------|------|------------|
+|     |      |      |            |
+|     |      |      |            |
+
+### Review Model
+
+| Key | Name | Type | Extra Info |
+|-----|------|------|------------|
+|     |      |      |            |
+|     |      |      |            |
+
+### Newsletter Signup Model
+
+| Key | Name | Type | Extra Info |
+|-----|------|------|------------|
+|     |      |      |            |
+|     |      |      |            |
+
 
 ## Things I used to help
 
