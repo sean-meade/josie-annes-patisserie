@@ -1,0 +1,1 @@
+web: gunicorn josie-annes-patisserie.wsgi
