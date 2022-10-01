@@ -252,8 +252,17 @@ All the features wanted for the site and a sub list stating what is involved if 
 |     |      |      |            |
 |     |      |      |            |
 
+## Design choices
 
 ## Things I used to help
 
 - [ShareX](https://getsharex.com/): Screenshots
 - [TableConvert](https://tableconvert.com/markdown-generator): README table generation
+- [Bootstrap 4.6](https://getbootstrap.com/docs/4.6/getting-started/introduction/): Styling
+- [Google Fonts](https://fonts.google.com/specimen/Sacramento): Sacramento font
+- [CUFON Fonts](https://www.cufonfonts.com/font/glacial-indifference): Glacial Indifference Font
+- [flaticon](https://www.flaticon.com/): Icons
+- [LUNAPIC](https://www12.lunapic.com/editor/): Image editing
+- []()
+- []()
+- []()

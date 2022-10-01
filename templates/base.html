@@ -17,6 +17,7 @@
     {% block corecss %}
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/style.css">
     {% endblock %}
 
     {% block extra_css %}
@@ -37,7 +38,52 @@
   </head>
   <body>
 
-    <header class="container-fluid navbar-fixed-top"></header>
+    <header>
+      <nav class="navbar navbar-light bg-light p-0">
+        <div class="container">
+          <div class="row w-100 mx-auto">
+            <div class="col-md-3">
+
+            </div>
+            <div class="col-md-6 mx-auto">
+              <a class="navbar-brand text-justify mx-auto" href="#">
+                <img src="../static/images/logo.png" alt="">
+              </a>
+            </div>
+            <div class="col-md-3 my-auto">
+              <div class="row mx-auto">
+                <div class="col-md-auto">
+                  <a class="" href="#">
+                    <img src="../static/icon/user.png" alt="">
+                  </a>
+                </div>
+                <div class="col-md-auto">
+                  <a class="" href="#">
+                    <img src="../static/icon/shopping-cart.png" alt="">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <nav>
+        <ul class="nav justify-content-center">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Active</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Disabled</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
     {% if messages %}
     <div class="message-container"></div>
