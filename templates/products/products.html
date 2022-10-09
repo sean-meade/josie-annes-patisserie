@@ -41,6 +41,7 @@
                                 </div>
                                 <div class="card-body p-1">
                                     <p class="mb-0">{{ product.description | slice:'0:150' | safe }} ...</p>
+                                    <p class="lead mb-0 float-right">${{ product.price }}</p>
                                 </div>
                                 <div class="card-footer bg-white pt-0 border-0">
                                     <div class="row">
@@ -50,7 +51,7 @@
                                             {% else %}
                                                 <small class="text-muted d-inline">No Rating</small>
                                             {% endif %}
-                                            <p class="lead mb-0 float-right d-inline">${{ product.price }}</p>
+                                            <button type="button" class="btn float-right d-inline">Add</button>
                                         </div>
                                     </div>
                                 </div>
