@@ -12,9 +12,9 @@
 {% endblock %}
 
 {% block content %}
-<div class="container align-items-center justify-content-center p-0 m-0">
-    <div class="row" id="hero-image">
-        <div class="col">
+<div class="container-fluid align-items-center justify-content-center p-0 m-0">
+    <div class="row p-0 m-0" id="hero-image">
+        <div class="col p-0 m-0">
             <h1 class="text-center">
                 Sit In &amp; Take Out,
             </h1>
@@ -35,61 +35,58 @@
             </div>
         </div>
     </div>
-    <div class="row">
-                    {% for product in products %}
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                            <div class="card border-0 embed-responsive-16by9">
-                                {% if product.image %}
-                                <a href="">
-                                    <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}">
-                                </a>
-                                {% else %}
-                                <a href="">
-                                    <img class="card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                                </a>
-                                {% endif %}
-                                <div class="card-body p-1">
-                                    <p class="mb-0 lead font-weight-bold">{{ product.name }}</p>
-                                </div>
-                                <div class="card-body p-1">
-                                    <p class="mb-0">{{ product.description | slice:'0:150' | safe }} ...</p>
-                                    <p class="lead mb-0 float-right">€{{ product.price }}</p>
-                                </div>
-                                <div class="card-footer bg-white pt-0 border-0">
-                                    <div class="row">
-                                        <div class="col ">
-                                            {% if product.rating %}
-                                                <small class="text-muted d-inline"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
-                                            {% else %}
-                                                <small class="text-muted d-inline">No Rating</small>
-                                            {% endif %}
-                                            <button type="button" class="btn float-right d-inline">Add</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {% if forloop.counter|divisibleby:1 %}
-                            <div class="col-12 d-sm-none mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}
-                        {% if forloop.counter|divisibleby:2 %}
-                            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}
-                        {% if forloop.counter|divisibleby:3 %}
-                            <div class="col-12 d-none d-lg-block d-xl-none mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}
-                        {% if forloop.counter|divisibleby:4 %}
-                            <div class="col-12 d-none d-xl-block mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
+    <div class="row p-0 m-0">
+        {% for product in products %}
+        {% if product.hidden == False %}
+        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            <div class="card border-0 embed-responsive-16by9">
+                {% if product.image %}
+                <a href="">
+                    <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}">
+                </a>
+                {% else %}
+                <a href="">
+                    <img class="card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                </a>
+                {% endif %}
+                <div class="card-body p-1">
+                    <p class="mb-0 lead font-weight-bold">{{ product.name }}</p>
                 </div>
+                <div class="card-body p-1">
+                    <p class="mb-0">{{ product.description | slice:'0:150' | safe }} ...</p>
+                    <p class="lead mb-0 float-right">€{{ product.price }}</p>
+                </div>
+                <div class="card-footer bg-white pt-0 border-0">
+                    <div class="row">
+                        <div class="col ">
+                            {% if product.rating %}
+                            <small class="text-muted d-inline"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                            {% else %}
+                            <small class="text-muted d-inline">No Rating</small>
+                            {% endif %}
+                            <button type="button" class="btn float-right d-inline">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% if forloop.counter|divisibleby:1 %}
+        <div class="col-12 d-sm-none mb-5">
+            <hr>
+        </div>
+        {% endif %}
+        {% if forloop.counter|divisibleby:2 %}
+        <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+            <hr>
+        </div>
+        {% endif %}
+        {% if forloop.counter|divisibleby:3 %}
+        <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+            <hr>
+        </div>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}

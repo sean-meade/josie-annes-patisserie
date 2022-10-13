@@ -3,4 +3,5 @@ from . import views
 
 urlpatterns = [
     path('', views.all_products, name='products'),
+    path('<sku>/', views.find_product, name='product_detail'),
 ]

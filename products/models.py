@@ -2,6 +2,18 @@ from django.db import models
 from cloudinary.models import CloudinaryField
 
 
+class Allergens(models.Model):
+
+    gluten = models.BooleanField(default=False)
+    egg = models.BooleanField(default=False)
+    nut = models.BooleanField(default=False)
+    soy = models.BooleanField(default=False)
+    milk = models.BooleanField(default=False)
+    celery = models.BooleanField(default=False)
+    mustard = models.BooleanField(default=False)
+    sesame_seed = models.BooleanField(default=False)
+
+
 class Product(models.Model):
 
     sku = models.CharField(max_length=254, null=True, blank=True)
@@ -15,15 +27,7 @@ class Product(models.Model):
     collection = models.BooleanField(default=False)
     hidden = models.BooleanField(default=False)
     ingredients = models.TextField()
-    gluten = models.BooleanField(default=False)
-    egg = models.BooleanField(default=False)
-    nut = models.BooleanField(default=False)
-    soy = models.BooleanField(default=False)
-    milk = models.BooleanField(default=False)
-    celery = models.BooleanField(default=False)
-    mustard = models.BooleanField(default=False)
-    sesame_seed = models.BooleanField(default=False)
-    fish = models.BooleanField(default=False)
+    allergens = models.ForeignKey(Allergens, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name

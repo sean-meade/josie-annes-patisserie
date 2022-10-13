@@ -6,3 +6,5 @@ venv/
 db.sqlite3
 # Project Pycache
 josie_annes_patisserie/__pycache__/
+# Word docs related to the site
+docs/
