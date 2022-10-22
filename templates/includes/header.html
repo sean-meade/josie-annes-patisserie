@@ -5,7 +5,7 @@
 
             </div>
             <div class="col-md-6 col-sm-10">
-                <a class="navbar-brand text-justify mx-auto" href="#">
+                <a class="navbar-brand text-justify mx-auto" href="{% url 'home' %}">
                     <img src="https://res.cloudinary.com/drgmt7bbz/image/upload/v1664667952/logo_xvejgo.png" alt="">
                 </a>
             </div>
@@ -35,7 +35,7 @@
                     </li>
                     <li class="list-inline-item align-top">
                         <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
-                           href="">
+                           href="{% url 'bag' %}">
                             <div class="text-center">
                                 <img src="https://res.cloudinary.com/drgmt7bbz/image/upload/v1664668068/shopping-cart_nvv1zc.png"
                                      alt="">
@@ -52,10 +52,20 @@
                 </ul>
             </div>
         </div>
+        <div id="delivery-banner" class="row text-center">
+            <div class="col bg-black text-white">
+                <h4 class="logo-font my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</h4>
+            </div>
+        </div>
     </div>
 </nav>
 <nav class="header-non-mobile">
-    <ul class="nav justify-content-center">
+    <ul class="nav justify-content-center"><li class="nav-item">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'home' %}"
+               aria-haspopup="true" aria-expanded="false">
+                Home
+            </a>
+        </li>
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#"
                id="all-products-link" data-toggle="dropdown" aria-haspopup="true"
@@ -66,9 +76,6 @@
                 <a href="{% url 'products' %}?category=collection,both" class="dropdown-item">Collection</a>
                 <a href="{% url 'products' %}?category=delivery,both" class="dropdown-item">Delivery</a>
             </div>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Second</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">Third</a>

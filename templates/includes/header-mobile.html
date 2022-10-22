@@ -1,14 +1,20 @@
 <nav id="header-mobile" class="navbar navbar-light bg-light p-0">
     <div class="container">
-        <div class="row w-100 mx-auto">
-            <div class="col-md-3 col-sm-1">
-                <nav class="navbar navbar-expand-lg navbar-light w-100">
+        <div class="row">
+            <div class="col-2 d-flex align-items-center">
+                <nav class="navbar navbar-expand-lg navbar-light">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
                             aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="main-nav">
                         <ul class="navbar-nav w-auto mx-auto">
+                            <li>
+                                <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'home' %}"
+                                   aria-haspopup="true" aria-expanded="false">
+                                    Home
+                                </a>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#"
                                    id="all-products-link" data-toggle="dropdown" aria-haspopup="true"
@@ -17,20 +23,10 @@
                                 </a>
                                 <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
                                     <a href="{% url 'products' %}?category=collection,both" class="dropdown-item">Collection</a>
-                                    <a href="{% url 'products' %}?category=delivery,both" class="dropdown-item">Delivery</a>
+                                    <a href="{% url 'products' %}?category=delivery,both"
+                                       class="dropdown-item">Delivery</a>
                                 </div>
                             </li>
-
-                            <li class="nav-item dropdown">
-                                <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#"
-                                   id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Second
-                                </a>
-                                <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                                    <a href="" class="dropdown-item">Item</a>
-                                </div>
-                            </li>
-
                             <li class="nav-item dropdown">
                                 <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#"
                                    id="homeware-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -54,7 +50,7 @@
                             <hr>
 
                             <li class="nav-item dropdown">
-                                <a class="logo-font font-weight-bold nav-link text-black" href="#" id="specials-link"
+                                <a class="logo-font font-weight-bold nav-link text-black" href="#"
                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Account
                                 </a>
@@ -73,15 +69,15 @@
                             </li>
 
                             <li class="nav-item dropdown">
-                                <a class="logo-font font-weight-bold nav-link text-black" href="#"
+                                <a class="logo-font font-weight-bold nav-link text-black" href="{% url 'bag' %}"
                                    aria-haspopup="true" aria-expanded="false">
                                     <p class="my-0"> Cart
-                                    {% if grand_total %}
-                                    €{{ grand_total|floatformat:2 }}
-                                    {% else %}
-                                    €0.00
-                                    {% endif %}
-                                </p>
+                                        {% if grand_total %}
+                                        €{{ grand_total|floatformat:2 }}
+                                        {% else %}
+                                        €0.00
+                                        {% endif %}
+                                    </p>
                                 </a>
                                 <div class="dropdown-menu border-0" aria-labelledby="specials-link">
                                     <a href="" class="dropdown-item">Item</a>
@@ -91,8 +87,18 @@
                     </div>
                 </nav>
             </div>
-            <div class="col-md-6 col-sm-10">
-                <a class="navbar-brand text-justify mx-auto" href="#">
+            <div class="col-10">
+                <a class="navbar-brand text-justify mx-auto" href="{% url 'home' %}">
                     <img src="https://res.cloudinary.com/drgmt7bbz/image/upload/v1664667952/logo_xvejgo.png" alt="">
                 </a>
             </div>
+        </div>
+        <div class="row text-center">
+            <div class="col bg-black">
+                <h4 class="logo-font my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</h4>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
