@@ -8,3 +8,5 @@ db.sqlite3
 josie_annes_patisserie/__pycache__/
 # Word docs related to the site
 docs/
+# issues folder
+.github/
