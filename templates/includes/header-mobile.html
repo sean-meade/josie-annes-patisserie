@@ -13,10 +13,11 @@
                                 <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#"
                                    id="all-products-link" data-toggle="dropdown" aria-haspopup="true"
                                    aria-expanded="false">
-                                    First
+                                    Shop
                                 </a>
                                 <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                                    <a href="" class="dropdown-item">Item</a>
+                                    <a href="{% url 'products' %}?category=collection,both" class="dropdown-item">Collection</a>
+                                    <a href="{% url 'products' %}?category=delivery,both" class="dropdown-item">Delivery</a>
                                 </div>
                             </li>
 

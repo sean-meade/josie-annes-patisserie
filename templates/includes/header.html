@@ -56,8 +56,16 @@
 </nav>
 <nav class="header-non-mobile">
     <ul class="nav justify-content-center">
-        <li class="nav-item">
-            <a class="nav-link" href="#">First</a>
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#"
+               id="all-products-link" data-toggle="dropdown" aria-haspopup="true"
+               aria-expanded="false">
+                Shop
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+                <a href="{% url 'products' %}?category=collection,both" class="dropdown-item">Collection</a>
+                <a href="{% url 'products' %}?category=delivery,both" class="dropdown-item">Delivery</a>
+            </div>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">Second</a>
