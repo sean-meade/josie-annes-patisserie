@@ -7,8 +7,6 @@ from products.models import Product, Category
 def all_products(request):
     """ A view to show all products, including sorting search filtering """
 
-
-
     products = Product.objects.all()
     query = None
     categories = None

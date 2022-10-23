@@ -2,7 +2,7 @@
 
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     {% block meta %}
     <!-- Required meta tags -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -16,8 +16,9 @@
 
     {% block corecss %}
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     {% endblock %}
 
     {% block extra_css %}
@@ -27,8 +28,11 @@
     {% block corejs %}
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"
+            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+            crossorigin="anonymous"></script>
     {% endblock %}
 
     {% block extra_js %}
@@ -36,62 +40,82 @@
     {% endblock %}
 
     <title>Josie Annes' Patisserie {% block extra_title %}{% endblock %}</title>
-  </head>
-  <body>
+</head>
+<body>
 
-    <header>
-      {% include 'includes/header.html' %}
-      {% include 'includes/header-mobile.html' %}
-    </header>
+<header>
+    {% include 'includes/header.html' %}
+    {% include 'includes/header-mobile.html' %}
+</header>
 
-    {% if messages %}
-    <div class="message-container"></div>
+{% if messages %}
+<div class="message-container">
+    {% for message in messages %}
+    {% with message.level as level %}
+    {% if level == 40 %}
+    {% include 'includes/toasts/toast_error.html' %}
+    {% elif level == 30 %}
+    {% include 'includes/toasts/toast_warning.html' %}
+    {% elif level == 25 %}
+    {% include 'includes/toasts/toast_success.html' %}
+    {% else %}
+    {% include 'includes/toasts/toast_info.html' %}
     {% endif %}
+    {% endwith %}
+    {% endfor %}
+</div>
+{% endif %}
 
-    {% block page_header %}
-    {% endblock %}
+{% block page_header %}
+{% endblock %}
 
-    {% block content %}
-    {% endblock %}
+{% block content %}
+{% endblock %}
 
-    <footer class="page-footer font-small blue">
-      <div class="container">
+<footer class="page-footer font-small blue">
+    <div class="container">
         <div class="row justify-content-center">
-          <ul class="nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Shop</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-        </ul>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+            </ul>
         </div>
         <div class="row justify-content-center">
-          <p><img src="https://res.cloudinary.com/drgmt7bbz/image/upload/v1664669100/mail_icon_ixoqjy.png" height="20" width="30" alt="Josie Annes Patisserie Email"> elaine@josieannespatisserie.com</p>
+            <p><img src="https://res.cloudinary.com/drgmt7bbz/image/upload/v1664669100/mail_icon_ixoqjy.png" height="20"
+                    width="30" alt="Josie Annes Patisserie Email"> elaine@josieannespatisserie.com</p>
         </div>
         <div class="row justify-content-center">
-          <div class="col-3">
-            <p><img src="https://res.cloudinary.com/drgmt7bbz/image/upload/v1664669602/ig_logo_a3fmqk.png" alt="@josieannespatisserie"> josieannespatisserie</p>
-          </div>
-          <div class="col-3">
-            <p><img src="https://res.cloudinary.com/drgmt7bbz/image/upload/v1664669552/fb_logo_spxxut.png" alt="@josieannespatisserie"> josieannespatisserie</p>
-          </div>
+            <div class="col-3">
+                <p><img src="https://res.cloudinary.com/drgmt7bbz/image/upload/v1664669602/ig_logo_a3fmqk.png"
+                        alt="@josieannespatisserie"> josieannespatisserie</p>
+            </div>
+            <div class="col-3">
+                <p><img src="https://res.cloudinary.com/drgmt7bbz/image/upload/v1664669552/fb_logo_spxxut.png"
+                        alt="@josieannespatisserie"> josieannespatisserie</p>
+            </div>
         </div>
-      </div>
+    </div>
 
-      <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
         <a href="/"> JosieAnnesPatisserie.com</a>
-      </div>
+    </div>
 
-    </footer>
+</footer>
 
-    {% block postloadjs %}
-    {% endblock %}
-  </body>
+{% block postloadjs %}
+    <script type="text/javascript">
+        $('.toast').toast('show');
+    </script>
+{% endblock %}
+</body>
 </html>
