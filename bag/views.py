@@ -1,7 +1,11 @@
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
 
 # Create your views here.
+from django.urls import reverse
+
+
 def view_bag(request):
     """ A view to return the bag contents """
 
@@ -20,5 +24,35 @@ def add_to_bag(request, item_id):
         bag[item_id] = quantity
 
     request.session['bag'] = bag
-    
+
     return redirect(redirect_url)
+
+
+def adjust_bag(request, item_id):
+    """ A view to add a product to the bag """
+
+    quantity = int(request.POST.get('quantity'))
+    bag = request.session.get('bag', {})
+
+    if quantity > 0:
+        bag[item_id] = quantity
+    else:
+        bag.pop(item_id)
+
+    request.session['bag'] = bag
+
+    return redirect(reverse('bag'))
+
+def remove_bag_item(request, item_id):
+    """ A view to remove a product from the bag """
+
+    try:
+        bag = request.session.get('bag', {})
+
+        bag.pop(item_id)
+
+        request.session['bag'] = bag
+
+        return HttpResponse(status=200)
+    except Exception as e:
+        return HttpResponse(status=200)
