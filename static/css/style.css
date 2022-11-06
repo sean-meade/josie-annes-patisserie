@@ -39,7 +39,7 @@ body {
 }
 
 @media (max-width: 960px) {
-  .header-non-mobile {
+  #header-non-mobile {
       display: none !important;
   }
 
