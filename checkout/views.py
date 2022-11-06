@@ -11,8 +11,8 @@ import stripe
 
 
 def checkout(request):
-    stripe_public_key = os.environ.get('STRIPE_PUBLIC_KEY', '')
-    stripe_secret_key = os.environ.get('STRIPE_SECRET_KEY', '')
+    stripe_public_key = settings.STRIPE_PUBLIC_KEY
+    stripe_secret_key = settings.STRIPE_SECRET_KEY
 
     bag = request.session.get('bag', {})
     if not bag:
