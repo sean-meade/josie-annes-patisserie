@@ -48,7 +48,7 @@ class StripeWH_Handler:
                     email__iexact=billing_details.email,
                     phone_number__iexact=shipping_details.phone,
                     country__iexact=shipping_details.address.country,
-                    postcode__iexact=shipping_details.address.postal_code,
+                    eircode__iexact=shipping_details.address.eircode_code,
                     town_or_city__iexact=shipping_details.address.city,
                     street_address1__iexact=shipping_details.address.line1,
                     street_address2__iexact=shipping_details.address.line2,
@@ -74,7 +74,7 @@ class StripeWH_Handler:
                     email=billing_details.email,
                     phone_number=shipping_details.phone,
                     country=shipping_details.address.country,
-                    postcode=shipping_details.address.postal_code,
+                    eircode=shipping_details.address.eircode_code,
                     town_or_city=shipping_details.address.city,
                     street_address1=shipping_details.address.line1,
                     street_address2=shipping_details.address.line2,
@@ -91,15 +91,6 @@ class StripeWH_Handler:
                             quantity=item_data,
                         )
                         order_line_item.save()
-                    else:
-                        for size, quantity in item_data['items_by_size'].items():
-                            order_line_item = OrderLineItem(
-                                order=order,
-                                product=product,
-                                quantity=quantity,
-                                product_size=size,
-                            )
-                            order_line_item.save()
             except Exception as e:
                 if order:
                     order.delete()
