@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'django.forms',
     'home',
     'products',
     'bag',
@@ -95,6 +96,8 @@ TEMPLATES = [
         },
     },
 ]
+
+FORM_RENDERER = 'django.forms.renderers.TemplatesSetting'
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 

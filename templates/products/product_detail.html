@@ -39,8 +39,8 @@
                     {% endif %}
                     {% if request.user.is_superuser %}
                         <small class="ml-3">
-                            <a href="{% url 'edit_product' product.id %}">Edit</a> |
-                            <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                            <a href="{% url 'edit_product' product.sku %}">Edit</a> |
+                            <a class="text-danger" href="{% url 'delete_product' product.sku %}">Delete</a>
                         </small>
                     {% endif %}
                     <p class="lead mb-0 text-left">€{{ product.price }}</p>
