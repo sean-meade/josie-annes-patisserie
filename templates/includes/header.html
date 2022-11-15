@@ -1,5 +1,5 @@
-<nav class="navbar" id="header-non-mobile">
-    <div class="container-fluid">
+<nav class="navbar p-0" id="header-non-mobile">
+    <div class="container-fluid p-0">
         <div class="row w-100 mx-auto">
             <div class="col-md-3">
 
@@ -9,8 +9,8 @@
                     <img src="https://res.cloudinary.com/drgmt7bbz/image/upload/v1664667952/logo_xvejgo.png" alt="Logo for Josie Annes Patisserie">
                 </a>
             </div>
-            <div class="col-md-3 my-auto">
-                <ul class="list-inline list-unstyled">
+            <div class="col-md-3 my-auto p-0">
+                <ul class="list-inline list-unstyled m-0">
                     <li class="list-inline-item dropdown">
                         <a class="nav-link" href="#" id="user-options" data-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false">
@@ -53,12 +53,12 @@
             </div>
         </div>
         <div class="row w-100">
-            <div class="col bg-black black-white text-center">
-                <h4 class="logo-font my-1">Free delivery on orders over €{{ free_delivery_threshold }}!</h4>
+            <div class="col text-center bg-dark">
+                <h4 class="my-1 text-white">Free delivery on orders over €{{ free_delivery_threshold }}!</h4>
             </div>
         </div>
-        <div class="row w-100">
-            <ul class="nav mx-auto">
+        <div class="row w-100 delivery-bg">
+            <ul class="nav mx-auto delivery-bg">
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'home' %}"
                        aria-haspopup="true" aria-expanded="false">
