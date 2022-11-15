@@ -1,23 +1,23 @@
-<nav class="navbar navbar-light bg-light p-0" id="header-non-mobile">
+<nav class="navbar" id="header-non-mobile">
     <div class="container-fluid">
         <div class="row w-100 mx-auto">
-            <div class="col-md-3 col-sm-1">
+            <div class="col-md-3">
 
             </div>
-            <div class="col-md-6 col-sm-10">
-                <a class="navbar-brand text-justify mx-auto" href="{% url 'home' %}">
-                    <img src="https://res.cloudinary.com/drgmt7bbz/image/upload/v1664667952/logo_xvejgo.png" alt="">
+            <div class="col-md-6 text-center">
+                <a class="navbar-brand" href="{% url 'home' %}">
+                    <img src="https://res.cloudinary.com/drgmt7bbz/image/upload/v1664667952/logo_xvejgo.png" alt="Logo for Josie Annes Patisserie">
                 </a>
             </div>
-            <div class="col-md-3 col-sm-1 my-auto">
-                <ul class="list-inline list-unstyled text-center text-lg-right my-0">
-                    <li class="list-inline-item align-top dropdown">
-                        <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
+            <div class="col-md-3 my-auto">
+                <ul class="list-inline list-unstyled">
+                    <li class="list-inline-item dropdown">
+                        <a class="nav-link" href="#" id="user-options" data-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
                                 <img src="https://res.cloudinary.com/drgmt7bbz/image/upload/v1664718875/user_qyee1c.png"
-                                     alt="">
-                                <p class="my-0">Account</p>
+                                     alt="Account Image">
+                                <p class="my-0 text-dark">Account</p>
                             </div>
                         </a>
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
@@ -33,8 +33,8 @@
                             {% endif %}
                         </div>
                     </li>
-                    <li class="list-inline-item align-top">
-                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
+                    <li class="list-inline-item">
+                        <a class="{% if grand_total %}text-dark font-weight-bold{% else %}text-dark{% endif %} nav-link"
                            href="{% url 'bag' %}">
                             <div class="text-center">
                                 <img src="https://res.cloudinary.com/drgmt7bbz/image/upload/v1664668068/shopping-cart_nvv1zc.png"
@@ -60,13 +60,13 @@
         <div class="row w-100">
             <ul class="nav mx-auto">
                 <li class="nav-item">
-                    <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'home' %}"
+                    <a class="nav-link" href="{% url 'home' %}"
                        aria-haspopup="true" aria-expanded="false">
                         Home
                     </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#"
+                    <a class="nav-link" href="#"
                        id="all-products-link" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false">
                         Shop

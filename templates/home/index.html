@@ -12,16 +12,13 @@
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid align-items-center justify-content-center p-0 m-0">
-    <div class="row p-0 m-0" id="hero-image">
-        <div class="col p-0 m-0">
-            <h1 class="text-center">
-                Sit In &amp; Take Out,
+<div class="container-fluid justify-content-center p-0">
+    <div class="row mx-0" id="hero-image">
+        <div class="mx-auto my-auto w-50">
+            <h1 class="text-center main-title-font">
+                Sit In &amp; Take Out, We Have Something For Everyone
             </h1>
-            <h1 class="text-center">
-                We Have Something For Everyone
-            </h1>
-            <div class="text-center">
+            <div class="text-center mt-5">
                 <h4>
                     <a href=""
                        class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">
@@ -35,39 +32,27 @@
             </div>
         </div>
     </div>
-    <div class="row p-0 m-0">
+    <div class="row">
         {% for product in products %}
         {% if product.hidden == False %}
         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-            <div class="card border-0 embed-responsive-16by9">
-                {% if product.image %}
-                <a href="">
+            <div class="card" style="width: 18rem;">
+              {% if product.image %}
                     <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}">
-                </a>
                 {% else %}
-                <a href="">
                     <img class="card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                </a>
                 {% endif %}
-                <div class="card-body p-1">
-                    <p class="mb-0 lead font-weight-bold">{{ product.name }}</p>
-                </div>
-                <div class="card-body p-1">
-                    <p class="mb-0">{{ product.description | slice:'0:150' | safe }} ...</p>
-                    <p class="lead mb-0 float-right">€{{ product.price }}</p>
-                </div>
-                <div class="card-footer bg-white pt-0 border-0">
-                    <div class="row">
-                        <div class="col ">
-                            {% if product.rating %}
-                            <small class="text-muted d-inline"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
-                            {% else %}
-                            <small class="text-muted d-inline">No Rating</small>
-                            {% endif %}
-                            <button type="button" class="btn float-right d-inline">Add</button>
-                        </div>
-                    </div>
-                </div>
+              <div class="card-body">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">{{ product.description | slice:'0:150' | safe }} ...</p>
+                  {% if product.rating %}
+                    <small class="text-muted d-inline"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                    {% else %}
+                    <small class="text-muted d-inline">No Rating</small>
+                    {% endif %}
+                  <p class="card-text">€{{ product.price }}</p>
+                  <a href="{% url 'product_detail' product.sku %}" class="btn btn-primary">View</a>
+              </div>
             </div>
         </div>
         {% if forloop.counter|divisibleby:1 %}
