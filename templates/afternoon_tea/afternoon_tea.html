@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+    <div class="container h-100">
+        <div class="row h-100">
+            <div cla ss="col-12 col-lg-6">
+                <p class="text-muted">Please fill out the form below to book afternoon tea</p>
+                <form action="{% url 'afternoon_tea' %}" method="POST" id="afternoon-tea-form">
+                    {% csrf_token %}
+                    <fieldset class="rounded px-3 mb-5">
+                        <legend class="fieldset-label small text-black px-2 w-auto">Details</legend>
+                        {{ afternoon_tea_form.full_name | as_crispy_field }}
+                        {{ afternoon_tea_form.email | as_crispy_field }}
+                        {{ afternoon_tea_form.phone_number | as_crispy_field }}
+                        {{ afternoon_tea_form.date | as_crispy_field }}
+                        {{ afternoon_tea_form.time | as_crispy_field }}
+                        {{ afternoon_tea_form.notes | as_crispy_field }}
+                        {{ afternoon_tea_form.no_of_people | as_crispy_field }}
+                    </fieldset>
+                    <button id="submit-button" class="btn btn-black rounded-0">
+                        <span class="font-weight-bold">Request Booking</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
