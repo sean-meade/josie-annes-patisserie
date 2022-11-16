@@ -23,4 +23,3 @@ class AfternoonTeaAdmin(SummernoteModelAdmin):
 
     def approve_booking(self, request, queryset):
         queryset.update(under_review=False)
-
