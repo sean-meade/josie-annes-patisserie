@@ -29,6 +29,7 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path('profile/', include('profiles.urls')),
     path('afternoon_tea/', include('afternoon_tea.urls')),
+    path('cake_order/', include('cake_order.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = 'josie_annes_patisserie.views.handler404'

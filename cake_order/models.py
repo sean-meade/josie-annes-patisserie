@@ -9,15 +9,9 @@ three_weeks_from_now = datetime.date.today() + datetime.timedelta(days=21)
 
 DATE_CHOICES = []
 
-TIME_CHOICES = (
-        ('12:00', '12:00'),
-        ('13:00', '13:00'),
-        ('14:00', '14:00'),
-        ('15:00', '15:00'),
-    )
 
+class Cake(models.Model):
 
-class AfternoonTea(models.Model):
     cake_order_number = models.CharField(max_length=32, null=False, editable=False)
     full_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
@@ -38,9 +32,9 @@ class AfternoonTea(models.Model):
         Override the original save method to set the order number
         if it hasn't been set already.
         """
-        if not self.booking_number:
-            self.booking_number = self._generate_cake_order_number()
+        if not self.cake_order_number:
+            self.cake_order_number = self._generate_cake_order_number()
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return self.booking_number
+        return self.cake_order_number
