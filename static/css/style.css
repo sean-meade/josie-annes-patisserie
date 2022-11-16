@@ -34,9 +34,10 @@ body {
 
 .main-title-font {
     font-family: 'Sacramento', cursive;
-    color: #3cdbc0;
+    color: #863b67;
     font-weight: bolder;
 }
+/* Color of logo #3cdbc0*/
 
 .delivery-bg {
     background-color: #863b67;
