@@ -1,7 +1,3 @@
-:root {
-  --navbgcolor: #EFF1F3;
-}
-
 @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
 
 /* logo header font-family: 'Sacramento', cursive;*/
@@ -11,6 +7,12 @@
 @font-face {
     font-family: 'GlacialIndifference';
     src: url('../fonts/GlacialIndifference-Regular.woff') format('woff');
+}
+
+:root {
+  --navbgcolor: #863b67;
+  /*--navbgcolor: #EFF1F3;*/
+  /*--navbgcolor: #39595f;*/
 }
 
 * {
@@ -32,7 +34,8 @@ nav {
 }
 
 .delivery-banner {
-    color: var(--navbgcolor);
+    color: #ffffff;
+    background-color: var(--navbgcolor);
 }
 
 /* hero image */
@@ -46,7 +49,7 @@ nav {
 
 .main-title-font {
     font-family: 'Sacramento', cursive;
-    color: #000;
+    color: var(--navbgcolor);
     font-weight: bolder;
 }
 
@@ -59,7 +62,7 @@ nav {
 /* Color of logo #3cdbc0*/
 
 .primary-bg {
-    background-color: #863b67;
+    background-color: #2e525d;
 }
 
 .nav-item>a, footer {
