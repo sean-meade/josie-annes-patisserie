@@ -7,13 +7,12 @@
         </div>
     </div>
     <div class="container">
-        <div class="row">
-            <div cla ss="col-12 col-lg-6">
-                <p class="text-muted">Please fill out the form below to book afternoon tea</p>
-                <form action="{% url 'afternoon_tea' %}" method="POST" id="afternoon-tea-form">
+        <div class="row my-4">
+                <form class="mx-auto text-center" action="{% url 'afternoon_tea' %}" method="POST" id="afternoon-tea-form">
+                    <h1><u>Book Afternoon Tea</u></h1>
+                    <p class="text-muted">Please fill out the form below to book afternoon tea</p>
                     {% csrf_token %}
-                    <fieldset class="rounded px-3 mb-5">
-                        <legend class="fieldset-label small text-black px-2 w-auto">Details</legend>
+                    <fieldset class="rounded px-3 mb-2">
                         {{ afternoon_tea_form.full_name | as_crispy_field }}
                         {{ afternoon_tea_form.email | as_crispy_field }}
                         {{ afternoon_tea_form.phone_number | as_crispy_field }}
@@ -22,11 +21,10 @@
                         {{ afternoon_tea_form.notes | as_crispy_field }}
                         {{ afternoon_tea_form.no_of_people | as_crispy_field }}
                     </fieldset>
-                    <button id="submit-button" class="btn btn-black rounded-0">
+                    <button id="submit-button" class="btn btn-black rounded-1 border border-dark mr-3 float-right">
                         <span class="font-weight-bold">Request Booking</span>
                     </button>
                 </form>
-            </div>
         </div>
     </div>
 {% endblock %}
