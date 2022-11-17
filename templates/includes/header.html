@@ -67,15 +67,15 @@
                         Shop
                     </a>
                     <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                        <a href="{% url 'products' %}?category=collection,both" class="dropdown-item">Collection</a>
-                        <a href="{% url 'products' %}?category=delivery,both" class="dropdown-item">Delivery</a>
+                        <a href="{% url 'products' %}?category=collection" class="dropdown-item">Collection</a>
+                        <a href="{% url 'products' %}?category=delivery" class="dropdown-item">Delivery</a>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Third</a>
+                    <a class="nav-link" href="{% url 'afternoon_tea' %}">Afternoon Tea</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Fourth</a>
+                    <a class="nav-link" href="{% url 'cake' %}">Cake</a>
                 </li>
             </ul>
         </div>

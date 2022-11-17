@@ -16,7 +16,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col text-center mt-3">
-            <h2 class="logo-font">Products -
+            <h2 class="logo-font">Products - {{ products.0.category }}
             </h2>
             <hr class="w-50 my-0 mx-auto">
         </div>
@@ -40,8 +40,8 @@
         <div class="col">
             Sort By:
             <div>
-                <a href="{% url 'products' %}?sort=price&direction=asc">Price</a>
-                <a href="{% url 'products' %}?sort=rating&direction=desc">Rating</a>
+                <a href="{% url 'products' %}?catergory={{ products.0.category|lower }}&sort=price&direction=desc">Price</a>
+                <a href="{% url 'products' %}?catergory={{ products.0.category|lower }}&sort=rating&direction=desc">Rating</a>
             </div>
         </div>
 
