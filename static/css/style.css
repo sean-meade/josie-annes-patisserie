@@ -39,8 +39,12 @@ body {
 }
 /* Color of logo #3cdbc0*/
 
-.delivery-bg {
+.primary-bg {
     background-color: #863b67;
+}
+
+.nav-item>a, footer {
+    color: #3cdbc0 !important;
 }
 
 .card-img-top {
@@ -207,6 +211,12 @@ body {
     height: 100px;
     overflow-x: hidden;
     overflow-y: auto;
+}
+
+/* Footer */
+
+.footer-nav {
+    font-size: 0.9rem;
 }
 
 /* pad the top a bit when navbar is collapsed on mobile */

@@ -26,6 +26,7 @@
                         {{ cake_form.full_name | as_crispy_field }}
                         {{ cake_form.email | as_crispy_field }}
                         {{ cake_form.phone_number | as_crispy_field }}
+                        <!--  https://simpleisbetterthancomplex.com/tutorial/2019/01/03/how-to-use-date-picker-with-django.html#introduction -->
                         <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
                           {{ cake_form.date }}
                           <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
