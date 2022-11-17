@@ -1,3 +1,7 @@
+:root {
+  --navbgcolor: #EFF1F3;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
 
 /* logo header font-family: 'Sacramento', cursive;*/
@@ -23,6 +27,14 @@ body {
     display: none !important;
 }
 
+nav {
+    background-color: var(--navbgcolor);
+}
+
+.delivery-banner {
+    color: var(--navbgcolor);
+}
+
 /* hero image */
 
 #hero-image {
@@ -34,9 +46,16 @@ body {
 
 .main-title-font {
     font-family: 'Sacramento', cursive;
-    color: #863b67;
+    color: #000;
     font-weight: bolder;
 }
+
+#cta-text {
+    border-radius: 1rem;
+    background-color: #fff;
+    opacity: .7;
+}
+
 /* Color of logo #3cdbc0*/
 
 .primary-bg {
@@ -53,14 +72,18 @@ body {
     object-fit: cover;
 }
 
-@media (max-width: 960px) {
-  #header-non-mobile {
-      display: none !important;
-  }
+@media (max-width: 650px) {
+    #header-non-mobile {
+        display: none !important;
+    }
 
     #header-mobile {
         display: block !important;
     }
+}
+
+@media (max-width: 320px) {
+
 }
 
 /* Product Form */
@@ -243,9 +266,9 @@ body {
         font-size: 1rem;
     }
 
-    #delivery-banner h4 {
-        font-size: .9rem;
-    }
+    /*#delivery-banner h4 {*/
+    /*    font-size: .9rem;*/
+    /*}*/
 
     .btn.btn-outline-black.rounded-0,
     .btn.btn-black.rounded-0 {

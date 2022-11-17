@@ -1,8 +1,8 @@
 <nav id="header-mobile" class="navbar p-0">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-2 pt-4 align-items-center">
-                <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid w-100 p-0">
+        <div class="row w-100">
+            <div class="col-2 m-0 pt-1">
+                <nav class="navbar navbar-expand-md navbar-light">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
                             aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -87,15 +87,15 @@
                     </div>
                 </nav>
             </div>
-            <div class="col-10">
-                <a class="navbar-brand text-justify mx-auto" href="{% url 'home' %}">
+            <div class="col-10 m-0 px-0">
+                <a class="navbar-brand text-justify mx-auto float-right" href="{% url 'home' %}">
                     <img src="https://res.cloudinary.com/drgmt7bbz/image/upload/v1668677570/logo-mobile_sxbusu.png" alt="">
                 </a>
             </div>
         </div>
-        <div class="row w-100">
-            <div class="col text-center bg-dark">
-                <h4 class="logo-font my-1 text-white">Free delivery on orders over €{{ free_delivery_threshold }}!</h4>
+        <div class="row bg-dark w-100 m-0">
+            <div class="col text-center">
+                <h4 class="my-2 text-white">Free delivery on orders over €{{ free_delivery_threshold }}!</h4>
             </div>
         </div>
     </div>
