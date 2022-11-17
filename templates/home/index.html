@@ -32,27 +32,38 @@
             </div>
         </div>
     </div>
+    <div class="row mx-0 justify-content-center px-0 py-3">
+        <p class="h1"><u>Our Favourites</u></p>
+    </div>
     <div class="row w-100 d-flex justify-content-around mx-0 my-3">
         {% for product in products %}
         {% if product.hidden == False %}
-        <div class="col-sm-4 col-md-4 col-lg-4 col-xl-3">
+        <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
             <div class="card">
-              {% if product.image %}
-                    <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}">
+                {% if product.image %}
+                <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}">
                 {% else %}
-                    <img class="card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                <img class="card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                 {% endif %}
-              <div class="card-body">
-                <h5 class="card-title">{{ product.name }}</h5>
-                <p class="card-text">{{ product.description | slice:'0:150' | safe }} ...</p>
-                  {% if product.rating %}
-                    <small class="text-muted d-inline"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
-                    {% else %}
-                    <small class="text-muted d-inline">No Rating</small>
-                    {% endif %}
-                  <p class="card-text">€{{ product.price }}</p>
-                  <a href="{% url 'product_detail' product.sku %}" class="btn btn-primary">View</a>
-              </div>
+                <div class="card-body card-body-height">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <div class="product-card-descript">
+                        <p class="card-text ">{{ product.description | slice:'0:150' | safe }} ...</p>
+                    </div>
+                    {% if product.rating %}
+                    <div class="row">
+                        <div class="col">
+                            <small class="text-muted d-inline"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                            {% else %}
+                            <small class="text-muted d-inline">No Rating</small>
+                            {% endif %}
+                            <p class="card-text">€{{ product.price }}</p>
+                        </div>
+                        <div class="col">
+                            <a href="{% url 'product_detail' product.sku %}" class="btn btn-primary float-right mr-2">View</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         {% endif %}

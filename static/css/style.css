@@ -75,6 +75,14 @@ nav {
     object-fit: cover;
 }
 
+.product-card-descript {
+    height: 160px;
+}
+
+.card-body-height {
+    height: 290px;
+}
+
 @media (max-width: 650px) {
     #header-non-mobile {
         display: none !important;
