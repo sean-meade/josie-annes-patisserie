@@ -393,13 +393,58 @@ All the features wanted for the site and a sub list stating what is involved if 
 
 ## Web Marketing
 
+### Facebook Business Page
+
+Link to created page: https://www.facebook.com/profile.php?id=100087897433792 
+
 ![Navbar](media/readme-images/fb_marketing/fb1.png)
 ![Navbar](media/readme-images/fb_marketing/fb2.png)
 ![Navbar](media/readme-images/fb_marketing/fb3.png)
 
-### Facebook Business Page
+## Errors
 
-## Things I used to help
+### Reverting all migrations
+
+I tried to revert all migrations near the beginning and ran into this error:
+
+![Reverting all migrations](media/readme-images/errors/revert_migrations.png)
+
+I was able to solve it with [Instructions found on Stack Overlflow](https://stackoverflow.com/questions/50346326/programmingerror-relation-django-session-does-not-exist) and running migrations again when I had made changes.
+
+### Internal Server Error 500
+
+I wasn’t getting an error when running locally, and it built fine on Heroku. There were no errors in the console on the
+on Heroku. All I was getting as “Internal Server Error 500” (see image below). So I created a new branch from the last 
+commit and hosted that instead. That actually worked when built in Heroku so from that I knew it was something in the 
+last commit that was causing the error. After comparing the code to the tutorial I realized I wasn’t missing anything. 
+So after thinking further I thought it might be something that my local environment had that my Heroku one didn’t. 
+Turns out I hadn’t added stripe to requirements.txt
+
+![Internal Server Error 500](media/readme-images/errors/internal_server_error_500.png)
+
+### Custom Widget Template does not exist
+
+After checking the paths were all correct I went searching online for a solution. I found 
+[this solution](https://stackoverflow.com/questions/45844032/django-templatedoesnotexist-in-case-of-a-custom-widget)
+on Stack Overflow by user3763125.
+
+![Custom Widget Template does not exist](media/readme-images/errors/internal_server_error_500.png)
+
+### Page Not Found
+
+This was an interesting one. I realized the path I want the app to take wasn't in the list of urls
+in the below image. This led me to guess moving my url up in the list would help it be found first and 
+it worked.
+
+![Page Not Found](media/readme-images/errors/url-ranking.png)
+
+## Testing
+
+### Validation testing
+
+Validation testing was done with PyCharms built in formatters for Python, HTML, CSS, and JavaScript.
+
+## Technology Used
 
 - [ShareX](https://getsharex.com/): Screenshots
 - [TableConvert](https://tableconvert.com/markdown-generator): README table generation
