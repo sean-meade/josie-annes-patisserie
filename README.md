@@ -166,23 +166,34 @@ All the features wanted for the site and a sub list stating what is involved if 
 
 ## Data Models
 
-### Item Model
+### Product Model
 
-| Key         | Name         | Type         | Extra Info                                |
-|-------------|--------------|--------------|-------------------------------------------|
-| Primary Key | title        | CharField    | Max length 200 and Unique                 |
-|             | description  | TextField    |                                           |
-|             | ingredients  | ListField()  |                                           |
-|             | date_created | DateTime     | auto_now_add=True                         |
-|             | date_update  | DateTime     | auto_now=True                             |
-|             | price        | DecimalField |                                           |
-|             | image        | ImageField   |                                           |
-|             | category     | ListField()  | https://gist.github.com/jonashaag/1200165 |
-|             | hidden       | BooleanField | default False                             |
-|             | shop_type    | IntegerField | Collection by default (default=0)         |
-|             | slug         | SlugField    | Max length 200                            |
+| Key         | Name        | Type         | Extra Info      |
+|-------------|-------------|--------------|-----------------|
+| ForeignKey  | category    | Category     |                 |
+|             | sku         | CharField    |                 |
+|             | name        | CharField    |                 |
+|             | description | TextField    |                 |
+|             | price       | DecimalField |                 |
+|             | rating      | DecimalField |                 |
+|             | image_url   | URLField     |                 |
+|             | image       | ImageField   |                 |
+|             | hidden      | BooleanField |                 |
+|             | ingredients | TextField    |                 |
+|             | allergens   | Allergens    | ManyToManyField |
 
+### Allergen Model
 
+| Key | Name    | Type       | Extra Info |
+|-----|---------|------------|------------|
+|     | allergy | CharField  | choices    |
+
+### Category Model
+
+| Key | Name          | Type       | Extra Info |
+|-----|---------------|------------|------------|
+|     | name          | CharField  |            |
+|     | friendly_name | CharField  |            |
 
 ### Order Item Model
 
@@ -241,12 +252,18 @@ All the features wanted for the site and a sub list stating what is involved if 
 |     | notes             | TextField    |            |
 |     | under_review      | BooleanField |            |
 
-### Cake Order Model
+### User Profile Model
 
-| Key | Name | Type | Extra Info |
-|-----|------|------|------------|
-|     |      |      |            |
-|     |      |      |            |
+| Key | Name                    | Type         | Extra Info     |
+|-----|-------------------------|--------------|----------------|
+|     | user                    | User         | OneToOneField  |
+|     | default_phone_number    | CharField    |                |
+|     | default_street_address1 | CharField    |                |
+|     | default_street_address2 | CharField    |                |
+|     | default_town_or_city    | CharField    |                |
+|     | default_county          | CharField    |                |
+|     | default_eircode         | CharField    |                |
+|     | default_country         | CountryField |                |
 
 ## Design choices
 
