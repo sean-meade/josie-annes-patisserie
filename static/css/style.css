@@ -59,7 +59,7 @@ nav {
     background-color: #2e525d;
 }
 
-.nav-item>a, footer {
+.nav-item>a, footer, .footer-text>a {
     color: #3cdbc0 !important;
 }
 
