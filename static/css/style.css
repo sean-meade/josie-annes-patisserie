@@ -9,12 +9,6 @@
     src: url('../fonts/GlacialIndifference-Regular.woff') format('woff');
 }
 
-:root {
-  --navbgcolor: #863b67;
-  /*--navbgcolor: #EFF1F3;*/
-  /*--navbgcolor: #39595f;*/
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -30,12 +24,12 @@ body {
 }
 
 nav {
-    background-color: var(--navbgcolor);
+    background-color: #863b67;
 }
 
 .delivery-banner {
     color: #ffffff;
-    background-color: var(--navbgcolor);
+    background-color: #863b67;
 }
 
 /* hero image */
@@ -49,7 +43,7 @@ nav {
 
 .main-title-font {
     font-family: 'Sacramento', cursive;
-    color: var(--navbgcolor);
+    color: #863b67;
     font-weight: bolder;
 }
 
