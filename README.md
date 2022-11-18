@@ -182,26 +182,64 @@ All the features wanted for the site and a sub list stating what is involved if 
 |             | shop_type    | IntegerField | Collection by default (default=0)         |
 |             | slug         | SlugField    | Max length 200                            |
 
+
+
 ### Order Item Model
 
-| Key | Name | Type | Extra Info |
-|-----|------|------|------------|
-|     |      |      |            |
-|     |      |      |            |
+| Key        | Name           | Type         | Extra Info |
+|------------|----------------|--------------|------------|
+| ForeignKey | order          | Order        |            |
+| ForeignKey | product        | Product      |            |
+|            | quantity       | IntegerField |            |
+|            | lineitem_total | DecimalField |            |
 
 ### Order Model
 
-| Key | Name | Type | Extra Info |
-|-----|------|------|------------|
-|     |      |      |            |
-|     |      |      |            |
+| Key         | Name            | Type          | Extra Info |
+|-------------|-----------------|---------------|------------|
+|             | order_number    | CharField     |            |
+| Foreign Key | user_profile    | UserProfile   |            |
+|             | full_name       | CharField     |            |
+|             | email           | EmailField    |            |
+|             | phone_number    | CharField     |            |
+|             | country         | CountryField  |            |
+|             | eircode         | CharField     |            |
+|             | town_or_city    | CharField     |            |
+|             | street_address1 | CharField     |            |
+|             | street_address2 | CharField     |            |
+|             | county          | CharField     |            |
+|             | date            | DateTimeField |            |
+|             | delivery_cost   | DecimalField  |            |
+|             | order_total     | DecimalField  |            |
+|             | grand_total     | DecimalField  |            |
+|             | original_bag    | TextField     |            |
+|             | stripe_pid      | CharField     |            |
 
 ### Afternoon Tea booking Model
 
-| Key | Name | Type | Extra Info |
-|-----|------|------|------------|
-|     |      |      |            |
-|     |      |      |            |
+| Key | Name           | Type                 | Extra Info        |
+|-----|----------------|----------------------|-------------------|
+|     | booking_number | CharField            |                   |
+|     | full_name      | CharField            |                   |
+|     | email          | EmailField           |                   |
+|     | phone_number   | CharField            |                   |
+|     | date           | DateField            |                   |
+|     | time           | CharField            |                   |
+|     | notes          | TextField            |                   |
+|     | under_review   | BooleanField         |                   |
+|     | no_of_people   | PositiveIntegerField | limit to 6 people |
+
+### Cake Order Model
+
+| Key | Name              | Type         | Extra Info |
+|-----|-------------------|--------------|------------|
+|     | cake_order_number | CharField    |            |
+|     | full_name         | CharField    |            |
+|     | email             | EmailField   |            |
+|     | phone_number      | CharField    |            |
+|     | date              | DateField    |            |
+|     | notes             | TextField    |            |
+|     | under_review      | BooleanField |            |
 
 ### Cake Order Model
 
