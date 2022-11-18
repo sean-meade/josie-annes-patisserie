@@ -553,11 +553,63 @@ python manage.py createsuperuser
 
 Then follow the instructions to create the superuser.
 
-12.  After you login to the admin panel, you can add data to be displayed in your app if required.
+12. After you login to the admin panel, you can add data to be displayed in your app if required.
 
 13. Remove the temporary database from settings.py and uncomment the original code, then push the code to origin.
-14.  Back to in **Heroku dashboad**, deploy the application.
-15.  To view the site, click on **View App**.
+14. Back to in **Heroku dashboad**, deploy the application.
+15. To view the site, click on **View App**.
+
+## Testing
+
+First Registered with admin and got email to confirm:
+
+
+Then was able to add and delete products:
+![](media/readme-images/testing/add-product.png)
+![](media/readme-images/testing/product-deleted.png)
+
+
+Then was able to register as user and didn't see admin functionality:
+![](media/readme-images/testing/username-used-password-too-common.png)
+![](media/readme-images/testing/chrome_XlDcsi7ntZ.png)
+![](media/readme-images/testing/chrome_D5q0TZvbPr.png)
+![](media/readme-images/testing/chrome_jDXXMZMfTS.png)
+![](media/readme-images/testing/chrome_NKjD5ogMX0.png)
+
+The was able to browse the store, add products, and update the cart with quantity. Was also able to delete from it.
+![](media/readme-images/testing/chrome_wwFWRSqGgy.png)
+![](media/readme-images/testing/chrome_CU5EgNRzGO.png)
+![](media/readme-images/testing/chrome_UWGCy9PUlr.png)
+![](media/readme-images/testing/chrome_zvHS7Ofnn2.png)
+
+Then I was able to go as far as secure checkout:
+![](media/readme-images/testing/chrome_FbV1zJEUFY.png)
+
+Then update my details in profile and go back to secure checkout and my details were already populated:
+![](media/readme-images/testing/chrome_xwq7y7jSlD.png)
+
+Then was not able to checkout unless all details were correct:
+![](media/readme-images/testing/chrome_iNwIlih7dr.png)
+![](media/readme-images/testing/chrome_GyremRPwYA.png)
+![](media/readme-images/testing/chrome_XVzVuObzV6.png)
+![](media/readme-images/testing/chrome_IoX8N9ED3c.png)
+![](media/readme-images/testing/chrome_WWXpnomLrd.png)
+![](media/readme-images/testing/chrome_0pGpHy89Jt.png)
+![](media/readme-images/testing/chrome_VLnM7Abu05.png)
+
+Was able to book an afternoon tea through form:
+![](media/readme-images/testing/chrome_JquP7I2x0G.png)
+![](media/readme-images/testing/chrome_u32OwI2Gy8.png)
+
+Was able to order a cake through form:
+![](media/readme-images/testing/chrome_PmQAEdi2xl.png)
+![](media/readme-images/testing/chrome_xa9hyZWpH7.png)
+
+And was able to log out
+
+![](media/readme-images/testing/logout.png)
+
+![](media/readme-images/testing/sign-confirm.png)
 
 ## Technology Used
 
