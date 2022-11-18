@@ -444,6 +444,121 @@ it worked.
 
 Validation testing was done with PyCharms built in formatters for Python, HTML, CSS, and JavaScript.
 
+## Deployment
+
+**Josie Anes Patisserie** was developed using the **PyCharm IDE**, and using **Git** and **GitHub** for version control. 
+It is hosted on **Heroku** and all media files are hosted in **Cloudinary**.
+
+Before deploying the application, install the following:
+
+- Python 3
+- PIP
+- Git
+- Heroku CLI
+
+### Local Deployment
+
+To deploy josie-annes-patisserie locally, take the following steps:
+
+1. From the applications' [repository](https://github.com/sean-meade/josie-annes-patisserie), click the *code* button and download the zip file.
+
+    Alternatively, you can clone the repository using the following line in your command prompt:
+
+```terminal
+git clone https://github.com/sean-meade/josie-annes-patisserie
+```
+
+2. Access the folder in your terminal window and install the application's required modules with the following command:
+
+```terminal
+pip3 install -r requirements.txt
+```
+
+3. Create the following environmental variables on your machine:
+
+```
+DATABASE_URL = YOUR_DATABASE_URL
+SECRET_KEY = YOUR_DJANGO_SECRET_KEY
+CLOUDINARY_URL = YOUR_CLOUDINARY_KEY
+DEBUG = True (False for production)
+STRIPE_PUBLIC_KEY = YOUR_STRIPE_PUBLIC_KEY
+STRIPE_SECRET_KEY = YOUR_STRIPE_SECRET_KEY
+STRIPE_WH_SECRET = YOUR_STRIPE_WH_SECRET
+
+```
+
+4. In your IDE terminal, migrate the models to create the database using the following commands:
+
+```terminal
+python manage.py makemigrations
+python manage.py migrate
+```
+
+5. Create a superuser to access the admin panel using the following command:
+
+```terminal
+python manage.py createsuperuser
+```
+
+Then follow the instructions to create the superuser.
+
+6. After you login to the admin panel, you can add data to be displayed in your app. Refer to [database modeling](#database-modelling).
+
+
+7. To initiate the application, type the command `python manage.py runserver` in your terminal. The application is now available in your browser at the address: `http://127.0.0.1:8000/`
+
+[Back to content](#contents)
+
+### Deployment to Heroku
+
+To deploy the app to Heroku, use the following steps:
+
+3. Clone the repository like above.
+4. Push these newly created files to your repository master.
+5. Login to Heroku and create a new app.
+6. In Heroku dashboard of the new app, click **deploy**, then **deployment** method and select **GitHub** to connect your app to your github repository for automatic deployment.
+7. In Heroku Resources tab, navigate to **Add-Ons** section and search for **Heroku Postgres**. I recommend you choose hobby level for this application. You should also search for **Cloudinary - Image and Video Management** to ensure your media files load to Cloudinary.
+8. In settings tab, navigate to **Reveal Config Vars** and add the following variables:
+
+| **KEY**           | **VALUE**               |
+|-------------------|-------------------------|
+| CLOUDINARY_URL    | YOUR_CLOUDINARY_URL     |
+| DATABASE_URL      | YOUR_DATABASE_URL       |
+| DEBUG_BOOL        | YOUR_DEBUG_BOOL         |
+| SECRET_KEY        | YOUR_DJANGO_SECRET_KEY  |
+| STRIPE_PUBLIC_KEY | YOUR_STRIPE_PUBLIC_KEY  |
+| STRIPE_SECRET_KEY | YOUR_STRIPE_SECRET_KEY  |
+| STRIPE_WH_SECRET  | YOUR_STRIPE_WH_SECRET  |
+
+9. In settings.py in your IDE, temporarily comment out the database and use below code instead (make sure you do not commit!):
+
+```python
+DATABASES = {
+        'default': dj_database_url.parse('POSTGRESS URL')
+    }
+```
+
+10. In terminal, migrate the models to create the Postgress database using the following commands:
+
+```terminal
+python manage.py makemigrations
+python manage.py migrate
+```
+
+11. Create a superuser to access the admin panel using the following command:
+
+```terminal
+python manage.py createsuperuser
+```
+
+Then follow the instructions to create the superuser.
+
+12.  After you login to the admin panel, you can add data to be displayed in your app if required.
+
+13. Remove the temporary database from settings.py and uncomment the original code, then push the code to origin.
+14.  Back to in **Heroku dashboad**, deploy the application.
+15.  To view the site, click on **View App**.
+
 ## Technology Used
 
 - [ShareX](https://getsharex.com/): Screenshots
