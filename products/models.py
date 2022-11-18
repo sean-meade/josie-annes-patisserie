@@ -16,6 +16,23 @@ class Category(models.Model):
         return self.friendly_name
 
 
+ALLERGIES_CHOICES = (("gluten", "gluten"),
+                     ("egg", "egg"),
+                     ("nut", "nut"),
+                     ("soy", "soy"),
+                     ("milk", "milk"),
+                     ("celery", "celery"),
+                     ("mustard", "mustard"),
+                     ("sesame_seed", "sesame seed"))
+
+
+class Allergens(models.Model):
+    allergy = models.CharField(max_length=11, choices=ALLERGIES_CHOICES)
+
+    def __str__(self):
+        return self.get_allergy_display()
+
+
 class Product(models.Model):
 
     category = models.ForeignKey('Category', null=True, on_delete=models.SET_NULL)
@@ -28,14 +45,7 @@ class Product(models.Model):
     image = models.ImageField(null=True, blank=True)
     hidden = models.BooleanField(default=False)
     ingredients = models.TextField()
-    gluten = models.BooleanField(default=False)
-    egg = models.BooleanField(default=False)
-    nut = models.BooleanField(default=False)
-    soy = models.BooleanField(default=False)
-    milk = models.BooleanField(default=False)
-    celery = models.BooleanField(default=False)
-    mustard = models.BooleanField(default=False)
-    sesame_seed = models.BooleanField(default=False)
+    allergens = models.ManyToManyField(Allergens)
 
     def __str__(self):
         return self.name

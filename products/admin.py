@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, Category
+from .models import Product, Category, Allergens
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -7,6 +7,12 @@ from django_summernote.admin import SummernoteModelAdmin
 class CategoryAdmin(SummernoteModelAdmin):
 
     list_display = ("name", "friendly_name")
+
+
+@admin.register(Allergens)
+class AllergensAdmin(SummernoteModelAdmin):
+
+    list_display = ("allergy", )
 
 
 @admin.register(Product)
