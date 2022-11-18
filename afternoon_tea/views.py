@@ -20,11 +20,14 @@ def afternoon_tea(request):
             'no_of_people': request.POST['no_of_people'],
         }
         afternoon_tea_form = AfternoonTeaForm(form_data)
-        if afternoon_tea_form.is_valid():
-            booking = afternoon_tea_form.save(commit=False)
-            booking.save()
+        try:
+            if afternoon_tea_form.is_valid():
+                booking = afternoon_tea_form.save(commit=False)
+                booking.save()
 
-        return redirect(reverse('afternoon_tea_success', args=[booking.booking_number]))
+            return redirect(reverse('afternoon_tea_success', args=[booking.booking_number]))
+        except Exception as e:
+            messages.error(request, f"Please make sure number of people doesn't exceed 6")
 
     else:
         afternoon_tea_form = AfternoonTeaForm()
