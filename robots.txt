@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://josie-annes-patisserie.herokuapp.com/sitemap.xml
