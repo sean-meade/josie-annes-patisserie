@@ -294,7 +294,6 @@ All the features wanted for the site and a sub list stating what is involved if 
 
 ![Order Cake](media/readme-images/wireframes/)
 
-
 ## Features
 
 ### Navbar
@@ -392,7 +391,13 @@ All the features wanted for the site and a sub list stating what is involved if 
 ![Navbar](media/readme-images/features/)
 ![Navbar](media/readme-images/features/)
 
+## Web Marketing
 
+![Navbar](media/readme-images/fb_marketing/fb1.png)
+![Navbar](media/readme-images/fb_marketing/fb2.png)
+![Navbar](media/readme-images/fb_marketing/fb3.png)
+
+### Facebook Business Page
 
 ## Things I used to help
 
