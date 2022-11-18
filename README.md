@@ -254,6 +254,105 @@ All the features wanted for the site and a sub list stating what is involved if 
 
 ## Design choices
 
+## Features
+
+### Navbar
+
+#### Navbar desktop
+
+![Navbar](media/readme-images/features/navbar.png)
+![Navbar](media/readme-images/features/navbar2.png)
+
+#### Navbar mobile
+
+![Navbar Mobile](media/readme-images/features/navbar-mobile.png)
+
+## Homepage
+
+#### Links to stores
+
+![Links to stores](media/readme-images/features/links-to-shop.png)
+
+#### Product Card Homepage
+
+![Product Card Homepage](media/readme-images/features/product-card-homepage.png)
+
+#### Newsletter Sign Up
+
+![Newsletter Sign Up](media/readme-images/features/newsletter-signup.png)
+
+#### Afternoon Tea Link on Homepage
+
+![Afternoon Tea Link on Homepage](media/readme-images/features/link-to-afternoon-tea.png)
+
+## Footer
+
+### Footer Nav
+
+![Footer Nav](media/readme-images/features/footer-nav.png)
+
+### Footer Social Media Links
+
+![Footer Social Media Links](media/readme-images/features/footer-social-media.png)
+
+## Store
+
+### Product Search Bar
+
+![Product Search Bar](media/readme-images/features/product-search-bar.png)
+
+### Product Filters
+
+![Product Filters](media/readme-images/features/product-filters.png)
+
+### Product Card in Products page
+
+![Product Card in Products page](media/readme-images/features/product-card-shop.png)
+
+## Booking Afternoon Tea Form
+
+![Booking Afternoon Tea Form](media/readme-images/features/booking-afternoon-tea.png)
+
+## Order Cake Form
+
+![Order Cake Form](media/readme-images/features/order-cake.png)
+
+## Product Detail Page Quantity, Keep Shopping, and Add to Cart
+
+![Product Detail Page Quantity, Keep Shopping, and Add to Cart](media/readme-images/features/product-detail.png)
+
+## Messages
+
+### Success Pop Up
+
+![Success Pop Up](media/readme-images/features/success-pop-up.png)
+
+### Successful Checkout
+
+![Successful Checkout](media/readme-images/features/successful-checkout.png)
+
+## Cart Functionality
+
+![Cart Functionality](media/readme-images/features/cart-functionality.png)
+
+## Secure Checkout
+
+### Checkout Form
+
+![Secure Checkout](media/readme-images/features/checkout1.png)
+![Secure Checkout 2](media/readme-images/features/checkout2.png)
+
+### Loading Screen
+
+![Loading Screen](media/readme-images/features/loading-screen.png)
+
+###
+
+![Navbar](media/readme-images/features/)
+![Navbar](media/readme-images/features/)
+
+
+
 ## Things I used to help
 
 - [ShareX](https://getsharex.com/): Screenshots
