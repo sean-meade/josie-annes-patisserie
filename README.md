@@ -182,13 +182,6 @@ All the features wanted for the site and a sub list stating what is involved if 
 |             | shop_type    | IntegerField | Collection by default (default=0)         |
 |             | slug         | SlugField    | Max length 200                            |
 
-### User Model
-
-| Key | Name | Type | Extra Info |
-|-----|------|------|------------|
-|     |      |      |            |
-|     |      |      |            |
-
 ### Order Item Model
 
 | Key | Name | Type | Extra Info |
@@ -203,28 +196,7 @@ All the features wanted for the site and a sub list stating what is involved if 
 |     |      |      |            |
 |     |      |      |            |
 
-### Order History Model
-
-| Key | Name | Type | Extra Info |
-|-----|------|------|------------|
-|     |      |      |            |
-|     |      |      |            |
-
-### Notice Model
-
-| Key | Name | Type | Extra Info |
-|-----|------|------|------------|
-|     |      |      |            |
-|     |      |      |            |
-
-### Table booking Model
-
-| Key | Name | Type | Extra Info |
-|-----|------|------|------------|
-|     |      |      |            |
-|     |      |      |            |
-
-### Disable booking days Models
+### Afternoon Tea booking Model
 
 | Key | Name | Type | Extra Info |
 |-----|------|------|------------|
@@ -238,21 +210,35 @@ All the features wanted for the site and a sub list stating what is involved if 
 |     |      |      |            |
 |     |      |      |            |
 
-### Review Model
-
-| Key | Name | Type | Extra Info |
-|-----|------|------|------------|
-|     |      |      |            |
-|     |      |      |            |
-
-### Newsletter Signup Model
-
-| Key | Name | Type | Extra Info |
-|-----|------|------|------------|
-|     |      |      |            |
-|     |      |      |            |
-
 ## Design choices
+
+### Sitemap
+
+![Sitemap](media/readme-images/wireframes/site-map-first-draft.jpg)
+
+### Wireframes
+
+#### Header
+
+![Header](media/readme-images/wireframes/navbar.jpg)
+
+#### Homepage
+
+![Homepage](media/readme-images/wireframes/homepage.jpg)
+![Homepage 2](media/readme-images/wireframes/homepage-2.jpg)
+
+#### Footer
+
+![Footer](media/readme-images/wireframes/footer.jpg)
+
+#### Booking Afternoon Tea
+
+![Booking Afternoon Tea](media/readme-images/wireframes/)
+
+#### Order Cake
+
+![Order Cake](media/readme-images/wireframes/)
+
 
 ## Features
 
@@ -362,6 +348,13 @@ All the features wanted for the site and a sub list stating what is involved if 
 - [CUFON Fonts](https://www.cufonfonts.com/font/glacial-indifference): Glacial Indifference Font
 - [flaticon](https://www.flaticon.com/): Icons
 - [LUNAPIC](https://www12.lunapic.com/editor/): Image editing
-- []()
-- []()
-- []()
+- [Django](https://www.djangoproject.com/): Python web framework
+- [SQlite3](https://www.sqlite.org/index.html): Database used in production
+- [PostgreSQL](https://www.postgresql.org/): Database used in development
+- [FontAwesome](https://www.bootstrapcdn.com/fontawesome/): Icons
+- [jQuery](https://jquery.com/): Common JS library for web development
+- [Heroku](https://dashboard.heroku.com/apps): Free hosting
+- [PyCharm](https://www.jetbrains.com/pycharm/): IDE for Python development
+- []():
+- []():
+- []():
