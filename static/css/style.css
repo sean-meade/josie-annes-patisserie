@@ -74,7 +74,11 @@ nav {
 }
 
 .card-body-height {
-    height: 290px;
+    height: 310px;
+}
+
+.card-title-height {
+    height: 48px;
 }
 
 #afternoon-tea-cta-image {

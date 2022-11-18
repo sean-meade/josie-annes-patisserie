@@ -46,13 +46,14 @@
                 <img class="card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                 {% endif %}
                 <div class="card-body card-body-height">
-                    <h5 class="card-title">{{ product.name }}</h5>
+                    <h5 class="card-title card-title-height">{{ product.name }}</h5>
                     <div class="product-card-descript">
                         <p class="card-text ">{{ product.description | slice:'0:150' | safe }} ...</p>
                     </div>
-                    {% if product.rating %}
+
                     <div class="row">
                         <div class="col">
+                            {% if product.rating %}
                             <small class="text-muted d-inline"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
                             {% else %}
                             <small class="text-muted d-inline">No Rating</small>
