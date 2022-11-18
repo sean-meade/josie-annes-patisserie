@@ -92,7 +92,10 @@ nav {
     border-radius: 1rem;
     background-color: #fff;
     opacity: .7;
+}
 
+.bag-controls {
+    cursor: pointer;
 }
 
 @media (max-width: 650px) {

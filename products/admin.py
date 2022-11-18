@@ -16,7 +16,7 @@ class AllergensAdmin(SummernoteModelAdmin):
 @admin.register(Product)
 class ProductAdmin(SummernoteModelAdmin):
     prepopulated_fields = {"sku": ("name",)}
-    list_display = ("sku", "name", "price", "hidden")
+    list_display = ("sku", "name", "price", "category", "hidden")
     search_fields = ["name", "body"]
 
     ordering = ("sku",)
