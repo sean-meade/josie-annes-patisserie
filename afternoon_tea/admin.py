@@ -5,7 +5,6 @@ from django_summernote.admin import SummernoteModelAdmin
 
 @admin.register(AfternoonTea)
 class AfternoonTeaAdmin(SummernoteModelAdmin):
-
     readonly_fields = ('booking_number', 'full_name', 'email',
                        'phone_number', 'date', 'time', 'notes',
                        'no_of_people')

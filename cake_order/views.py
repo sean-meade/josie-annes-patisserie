@@ -10,7 +10,6 @@ from datetime import datetime
 
 
 def cake(request):
-
     if request.method == 'POST':
 
         form_data = {
@@ -33,7 +32,6 @@ def cake(request):
             messages.error(request, f'Error creating order: {e}')
             return HttpResponse(status=500)
 
-
     else:
         cake_form = CakeForm()
 
@@ -46,7 +44,6 @@ def cake(request):
 
 
 def cake_success(request, cake_order_number):
-
     cake_order = get_object_or_404(Cake, cake_order_number=cake_order_number)
 
     messages.success(request, f'Booking successfully processed! \

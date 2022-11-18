@@ -4,14 +4,12 @@ from django.db import models
 from profiles.models import UserProfile
 import datetime
 
-
 three_weeks_from_now = datetime.date.today() + datetime.timedelta(days=21)
 
 DATE_CHOICES = []
 
 
 class Cake(models.Model):
-
     cake_order_number = models.CharField(max_length=32, null=False, editable=False)
     full_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
@@ -19,7 +17,6 @@ class Cake(models.Model):
     date = models.DateField(auto_now_add=False)
     notes = models.TextField()
     under_review = models.BooleanField(default=True)
-
 
     def _generate_cake_order_number(self):
         """

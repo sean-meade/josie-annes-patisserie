@@ -7,7 +7,6 @@ from afternoon_tea.models import AfternoonTea
 
 
 def afternoon_tea(request):
-
     if request.method == 'POST':
 
         form_data = {
@@ -39,7 +38,6 @@ def afternoon_tea(request):
 
 
 def afternoon_tea_success(request, booking_number):
-
     booking = get_object_or_404(AfternoonTea, booking_number=booking_number)
 
     messages.success(request, f'Booking successfully processed! \

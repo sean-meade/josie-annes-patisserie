@@ -10,9 +10,9 @@ from products.models import Product
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
 
-
 import stripe
 import json
+
 
 @require_POST
 def cache_checkout_data(request):
@@ -32,7 +32,6 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
-
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -71,7 +70,7 @@ def checkout(request):
                     messages.error(request, (
                         "One of the products in your bag wasn't found in our database. "
                         "Please call us for assistance!")
-                    )
+                                   )
                     order.delete()
                     return redirect(reverse('view_bag'))
 

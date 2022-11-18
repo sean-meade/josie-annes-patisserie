@@ -2,7 +2,6 @@ from django.db import models
 
 
 class Category(models.Model):
-
     class Meta:
         verbose_name_plural = "Categories"
 
@@ -34,7 +33,6 @@ class Allergens(models.Model):
 
 
 class Product(models.Model):
-
     category = models.ForeignKey('Category', null=True, on_delete=models.SET_NULL)
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)

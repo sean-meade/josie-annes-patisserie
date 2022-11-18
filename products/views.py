@@ -33,7 +33,7 @@ def all_products(request):
 
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
-            products = products.filter(category__friendly_name__in= categories)
+            products = products.filter(category__friendly_name__in=categories)
             categories = Category.objects.filter(friendly_name__in=categories)
 
         if 'q' in request.GET:
@@ -58,7 +58,6 @@ def all_products(request):
 
 
 def find_product(request, sku):
-
     product = get_object_or_404(Product, sku=sku)
 
     context = {

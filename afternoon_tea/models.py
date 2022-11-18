@@ -1,7 +1,6 @@
 import uuid
 
 from django.db import models
-from profiles.models import UserProfile
 import datetime
 
 # Three weeks from today's date
@@ -16,7 +15,6 @@ current_day = next_saturday
 
 # Can only book on Sat or Sun so add the next 3 weekends
 for i in range(1, 4):
-
     DATE_CHOICES.append((current_day, current_day.strftime('%a: %b %d')))
     current_day = current_day + datetime.timedelta(days=1)
     DATE_CHOICES.append((current_day, current_day.strftime('%a: %b %d')))
@@ -24,11 +22,11 @@ for i in range(1, 4):
 
 # Times that you can book for
 TIME_CHOICES = (
-        ('12:00', '12:00'),
-        ('13:00', '13:00'),
-        ('14:00', '14:00'),
-        ('15:00', '15:00'),
-    )
+    ('12:00', '12:00'),
+    ('13:00', '13:00'),
+    ('14:00', '14:00'),
+    ('15:00', '15:00'),
+)
 
 
 class AfternoonTea(models.Model):

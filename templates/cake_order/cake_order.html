@@ -2,56 +2,59 @@
 {% load static %}
 
 {% block extra_js %}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js" integrity="sha256-VBLiveTKyUZMEzJd6z2mhfxIqz3ZATCuVMawPZGzIfA=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js"
+        integrity="sha256-VBLiveTKyUZMEzJd6z2mhfxIqz3ZATCuVMawPZGzIfA=" crossorigin="anonymous"></script>
 
-    <!-- Tempus Dominus Bootstrap 4 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/css/tempusdominus-bootstrap-4.min.css" integrity="sha256-XPTBwC3SBoWHSmKasAk01c08M6sIA5gF5+sRxqak2Qs=" crossorigin="anonymous" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/js/tempusdominus-bootstrap-4.min.js" integrity="sha256-z0oKYg6xiLq3yJGsp/LsY9XykbweQlHl42jHv2XTBz4=" crossorigin="anonymous"></script>
+<!-- Tempus Dominus Bootstrap 4 -->
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/css/tempusdominus-bootstrap-4.min.css"
+      integrity="sha256-XPTBwC3SBoWHSmKasAk01c08M6sIA5gF5+sRxqak2Qs=" crossorigin="anonymous"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/js/tempusdominus-bootstrap-4.min.js"
+        integrity="sha256-z0oKYg6xiLq3yJGsp/LsY9XykbweQlHl42jHv2XTBz4=" crossorigin="anonymous"></script>
 {% endblock %}
 
 {% block content %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
-    <div class="container">
-        <div class="row my-4">
-                <form class="mx-auto text-center" action="{% url 'cake' %}" method="POST" id="afternoon-tea-form">
-                    <h1><u>Order A Cake</u></h1>
-                    <p class="text-muted">Please fill out the form below to order a cake</p>
-                    {% csrf_token %}
-                    <fieldset class="rounded px-3 mb-2">
-                        {{ cake_form.full_name | as_crispy_field }}
-                        {{ cake_form.email | as_crispy_field }}
-                        {{ cake_form.phone_number | as_crispy_field }}
-                        <!--  https://simpleisbetterthancomplex.com/tutorial/2019/01/03/how-to-use-date-picker-with-django.html#introduction -->
-                        <div class="input-group date pb-3" id="datetimepicker1" data-target-input="nearest">
-                          {{ cake_form.date }}
-                          <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
-                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                          </div>
-                        </div>
-                        {{ cake_form.notes | as_crispy_field }}
-                    </fieldset>
-                    <button id="submit-button" class="btn btn-black rounded-1 border border-dark mr-3 float-right">
-                        <span class="font-weight-bold">Request Booking</span>
-                    </button>
-                </form>
-            </div>
-        </div>
+</div>
+<div class="container">
+    <div class="row my-4">
+        <form class="mx-auto text-center" action="{% url 'cake' %}" method="POST" id="afternoon-tea-form">
+            <h1><u>Order A Cake</u></h1>
+            <p class="text-muted">Please fill out the form below to order a cake</p>
+            {% csrf_token %}
+            <fieldset class="rounded px-3 mb-2">
+                {{ cake_form.full_name | as_crispy_field }}
+                {{ cake_form.email | as_crispy_field }}
+                {{ cake_form.phone_number | as_crispy_field }}
+                <!--  https://simpleisbetterthancomplex.com/tutorial/2019/01/03/how-to-use-date-picker-with-django.html#introduction -->
+                <div class="input-group date pb-3" id="datetimepicker1" data-target-input="nearest">
+                    {{ cake_form.date }}
+                    <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                    </div>
+                </div>
+                {{ cake_form.notes | as_crispy_field }}
+            </fieldset>
+            <button id="submit-button" class="btn btn-black rounded-1 border border-dark mr-3 float-right">
+                <span class="font-weight-bold">Request Booking</span>
+            </button>
+        </form>
     </div>
+</div>
+</div>
 {% endblock %}
-
 
 
 {% block postloadjs %}
 {{ block.super }}
 <script>
-  $(function () {
-    $("#datetimepicker1").datetimepicker({
-      format: 'DD/MM/YYYY',
+    $(function () {
+        $("#datetimepicker1").datetimepicker({
+            format: 'DD/MM/YYYY',
+        });
     });
-  });
 </script>
 {% endblock %}
