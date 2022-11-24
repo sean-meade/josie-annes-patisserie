@@ -1,60 +1,36 @@
-<nav class="navbar p-0" id="header-non-mobile">
+<nav class="navbar p-0 primary-bg" id="header-non-mobile">
     <div class="container-fluid p-0">
         <div class="row w-100 mx-auto">
             <div class="col-sm-0 col-md-3">
 
             </div>
-            <div class="col-sm-6 col-md-6 text-center py-4">
-                <a class="navbar-brand" href="{% url 'home' %}">
+            <div class="col-sm-6 col-md-6 text-center py-1">
+                <a class="navbar-brand m-0" href="{% url 'home' %}">
                     <img src="https://res.cloudinary.com/drgmt7bbz/image/upload/v1664667952/logo_xvejgo.png"
                          alt="Logo for Josie Annes Patisserie">
                 </a>
             </div>
-            <div class="col-sm-6 col-md-3 my-auto p-0">
-                <ul class="list-inline list-unstyled m-0 float-right pr-4">
-                    <li class="list-inline-item dropdown">
-                        <a class="nav-link" href="#" id="user-options" data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false">
-                            <div class="text-center">
-                                <img src="https://res.cloudinary.com/drgmt7bbz/image/upload/v1664718875/user_qyee1c.png"
-                                     alt="Account Image">
-                                <p class="my-0 text-dark">Account</p>
-                            </div>
-                        </a>
-                        <div class="dropdown-menu border-0" aria-labelledby="user-options">
-                            {% if request.user.is_authenticated %}
-                            {% if request.user.is_superuser %}
-                            <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
-                            {% endif %}
-                            <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                            {% else %}
-                            <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                            <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                            {% endif %}
+            <div class="col-sm-6 col-md-3 mt-5">
+                <div class="m-auto" style="width: max-content;">
+                    <a class="primary-text{% if grand_total %} font-weight-bold{% endif %}"
+                       href="{% url 'bag' %}">
+                        <div class="mx-auto px-auto">
+                            <img src="https://res.cloudinary.com/drgmt7bbz/image/upload/v1669300872/shopping-basket-52x52_wckbyi.png"
+                                 alt="">
+                            <p class="m-0">
+                                {% if grand_total %}
+                                €{{ grand_total|floatformat:2 }}
+                                {% else %}
+                                €0.00
+                                {% endif %}
+                            </p>
                         </div>
-                    </li>
-                    <li class="list-inline-item">
-                        <a class="{% if grand_total %}text-dark font-weight-bold{% else %}text-dark{% endif %} nav-link"
-                           href="{% url 'bag' %}">
-                            <div class="text-center">
-                                <img src="https://res.cloudinary.com/drgmt7bbz/image/upload/v1664668068/shopping-cart_nvv1zc.png"
-                                     alt="">
-                                <p class="my-0">
-                                    {% if grand_total %}
-                                    €{{ grand_total|floatformat:2 }}
-                                    {% else %}
-                                    €0.00
-                                    {% endif %}
-                                </p>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
+                    </a>
+                </div>
             </div>
         </div>
-        <div class="row w-100 primary-bg mx-auto">
-            <ul class="nav mx-auto">
+        <div class="row w-100 mx-auto">
+            <ul class="nav mx-auto d-flex justify-content-around nav-ul-list pb-1">
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'home' %}"
                        aria-haspopup="true" aria-expanded="false">
@@ -73,17 +49,12 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'afternoon_tea' %}">Afternoon Tea</a>
+                    <a class="nav-link" href="{% url 'afternoon_tea' %}">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'cake' %}">Cake</a>
+                    <a class="nav-link" href="{% url 'cake' %}">Contact Us</a>
                 </li>
             </ul>
-        </div>
-        <div class="row w-100 mx-auto delivery-banner">
-            <div class="col text-center">
-                <h4 class="my-1">Free delivery on orders over €{{ free_delivery_threshold }}!</h4>
-            </div>
         </div>
     </div>
 </nav>

@@ -23,10 +23,6 @@ body {
     display: none !important;
 }
 
-nav {
-    background-color: #863b67;
-}
-
 .delivery-banner {
     color: #ffffff;
     background-color: #863b67;
@@ -56,11 +52,17 @@ nav {
 /* Color of logo #3cdbc0*/
 
 .primary-bg {
-    background-color: #2e525d;
+    background-color: #863b67;
 }
 
-.nav-item>a, footer, .footer-text>a {
-    color: #3cdbc0 !important;
+.nav-item > a, footer, .footer-text > a, .primary-text {
+    color: #41e2d2 !important;
+    font-size: 1.1rem;
+    font-weight: 550;
+}
+
+.nav-ul-list {
+    width: 55%;
 }
 
 .card-img-top {
@@ -98,7 +100,7 @@ nav {
     cursor: pointer;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 768px) {
     #header-non-mobile {
         display: none !important;
     }
@@ -106,10 +108,6 @@ nav {
     #header-mobile {
         display: block !important;
     }
-}
-
-@media (max-width: 320px) {
-
 }
 
 /* Product Form */
@@ -134,7 +132,7 @@ nav {
     border-color: #dc3545;
 }
 
-.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
     background-color: #dc3545;
     border-color: #dc3545;
     border-radius: 0;
@@ -162,8 +160,8 @@ nav {
 
 .allauth-form-inner-content button,
 .allauth-form-inner-content input[type='submit'] {
-	/* btn */
-	display: inline-block;
+    /* btn */
+    display: inline-block;
     font-weight: 400;
     color: #fff;
     text-align: center;
@@ -180,18 +178,18 @@ nav {
     border-radius: 0;
 
     /* standard bootstrap btn transitions */
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 .allauth-form-inner-content button:hover,
 .allauth-form-inner-content input[type='submit']:hover {
-	color: #fff;
+    color: #fff;
     background-color: #222;
     border-color: #222;
 }
 
 .allauth-form-inner-content a {
-	color: #17a2b8; /* text-info */
+    color: #17a2b8; /* text-info */
 }
 
 /* ------------------------------- bootstrap toasts */
@@ -295,7 +293,6 @@ nav {
     /*#delivery-banner h4 {*/
     /*    font-size: .9rem;*/
     /*}*/
-
     .btn.btn-outline-black.rounded-0,
     .btn.btn-black.rounded-0 {
         padding: .375rem .375rem;

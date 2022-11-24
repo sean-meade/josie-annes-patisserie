@@ -1,22 +1,22 @@
-<nav id="header-mobile" class="navbar p-0">
+<nav id="header-mobile" class="navbar p-0 primary-bg">
     <div class="container-fluid w-100 p-0">
         <div class="row w-100">
-            <div class="col-2 m-0 pt-1">
+            <div class="col-4 my-3 pt-1">
                 <nav class="navbar navbar-expand-md navbar-light">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
                             aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="main-nav">
-                        <ul class="navbar-nav w-auto mx-auto">
-                            <li>
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
                                 <a class="logo-font font-weight-bold nav-link mr-5" href="{% url 'home' %}"
                                    aria-haspopup="true" aria-expanded="false">
                                     Home
                                 </a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#"
+                                <a class="logo-font font-weight-bold nav-link mr-5" href="#"
                                    id="all-products-link" data-toggle="dropdown" aria-haspopup="true"
                                    aria-expanded="false">
                                     Shop
@@ -31,39 +31,20 @@
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'afternoon_tea' %}"
-                                   id="homeware-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Afternoon Tea
+                                <a class="logo-font font-weight-bold nav-link mr-5" href="{% url 'afternoon_tea' %}"
+                                   aria-haspopup="true" aria-expanded="false">
+                                    About Us
                                 </a>
                             </li>
 
                             <li class="nav-item dropdown">
                                 <a class="logo-font font-weight-bold nav-link text-black" href="{% url 'cake' %}"
-                                   id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Cake
+                                   aria-haspopup="true" aria-expanded="false">
+                                    Contact Us
                                 </a>
                             </li>
 
                             <hr>
-
-                            <li class="nav-item dropdown">
-                                <a class="logo-font font-weight-bold nav-link text-black" href="#"
-                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Account
-                                </a>
-                                <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                                    {% if request.user.is_authenticated %}
-                                    {% if request.user.is_superuser %}
-                                    <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
-                                    {% endif %}
-                                    <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                                    {% else %}
-                                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                                    {% endif %}
-                                </div>
-                            </li>
 
                             <li class="nav-item dropdown">
                                 <a class="logo-font font-weight-bold nav-link text-black" href="{% url 'bag' %}"
@@ -84,16 +65,11 @@
                     </div>
                 </nav>
             </div>
-            <div class="col-10 m-0 px-0">
-                <a class="navbar-brand text-justify mx-auto float-right" href="{% url 'home' %}">
+            <div class="col-8 my-3 text-center">
+                <a class="navbar-brand mr-0" href="{% url 'home' %}">
                     <img src="https://res.cloudinary.com/drgmt7bbz/image/upload/v1668677570/logo-mobile_sxbusu.png"
                          alt="">
                 </a>
-            </div>
-        </div>
-        <div class="row w-100 m-0 delivery-banner">
-            <div class="col text-center">
-                <h4 class="my-2">Free delivery on orders over €{{ free_delivery_threshold }}!</h4>
             </div>
         </div>
     </div>
