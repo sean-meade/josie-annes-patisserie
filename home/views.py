@@ -5,7 +5,7 @@ from products.models import Product
 # Create your views here.
 def index(request):
     """ A view to return index page """
-    products = Product.objects.all()[:3]
+    products = Product.objects.all()[:4]
 
     context = {
         'products': products,

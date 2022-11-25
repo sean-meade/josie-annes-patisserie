@@ -19,8 +19,17 @@ body {
     padding: 0;
 }
 
+#header-non-mobile {
+    opacity: 0.7;
+    background: url("https://res.cloudinary.com/drgmt7bbz/image/upload/v1669390484/rolling_pin_celbjn.png") no-repeat center center;
+}
+
 #header-mobile {
     display: none !important;
+}
+
+.nav-link:hover {
+    color: #c06f9f !important;
 }
 
 .delivery-banner {
@@ -33,29 +42,76 @@ body {
 #hero-image {
     min-height: 26rem;
     max-width: 100%;
-    background: url("https://res.cloudinary.com/drgmt7bbz/image/upload/v1664661745/hero-image_d5uxmf.jpg") no-repeat center 25%;
+    background: url("https://res.cloudinary.com/drgmt7bbz/image/upload/v1669378937/hero-image_bcnwcq.jpg") no-repeat center 25%;
     background-size: cover;
+    display: inline-block;
 }
 
 .main-title-font {
     font-family: 'Sacramento', cursive;
-    color: #863b67;
+    color: #41e2d2;
     font-weight: bolder;
 }
 
-#cta-text {
-    border-radius: 1rem;
-    background-color: #fff;
-    opacity: .7;
+#cta-container {
+    border-radius: 0.8rem;
+    margin-left: 10vw !important;
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 33vw;
+}
+
+.dropdown-toggle {
+    background-color: #ffffff;
+    opacity: 1 !important;
+}
+
+.shop-now-button {
+    background: #41e2d2 !important;
+    /*border-color: #c06f9f !important;*/
+    color: #ffffff !important;
+    min-width: 132px;
+    padding: 0.6rem 1.2rem !important;
+}
+
+.shop-now-button:hover {
+    background: #863b67 !important;
+    /*border-color: #c06f9f !important;*/
+    color: #ffffff !important;
+}
+
+.view-product-btn {
+    background: #863b67 !important;
+    /*border-color: #c06f9f !important;*/
+    color: #ffffff !important;
+    padding: 0.4rem 0.8rem !important;
+}
+
+.view-product-btn:hover {
+    background: #41e2d2 !important;
+    /*border-color: #c06f9f !important;*/
+    color: #ffffff !important;
+}
+
+.heading-font {
+    font-size: 4rem;
+    font-family: 'Sacramento', cursive;
+    color: #c06f9f;
+    font-weight: bolder;
 }
 
 /* Color of logo #3cdbc0*/
 
 .primary-bg {
-    background-color: #863b67;
+    /*background-color: #c06f9f;*/
+    /*background-color: #faf9f7;*/
 }
 
-.nav-item > a, footer, .footer-text > a, .primary-text {
+.nav-item > a,
+footer,
+.footer-text > a,
+.primary-text,
+.nav-ul-list > li,
+.dropdown-menu > a {
     color: #41e2d2 !important;
     font-size: 1.1rem;
     font-weight: 550;
@@ -67,20 +123,14 @@ body {
 
 .card-img-top {
     width: 100%;
-    height: 50vh;
+    height: 20vh;
     object-fit: cover;
 }
 
-.product-card-descript {
-    height: 160px;
-}
-
-.card-body-height {
-    height: 310px;
-}
-
-.card-title-height {
-    height: 48px;
+.card-price {
+    color: #c06f9f;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 #afternoon-tea-cta-image {
@@ -107,6 +157,10 @@ body {
 
     #header-mobile {
         display: block !important;
+    }
+
+    #footer-fb-padding {
+        padding-top: 16px;
     }
 }
 
@@ -263,7 +317,7 @@ body {
 /* Footer */
 
 .footer-nav {
-    font-size: 0.9rem;
+    font-size: 0.2rem;
 }
 
 /* pad the top a bit when navbar is collapsed on mobile */
@@ -306,5 +360,41 @@ body {
 
     .increment-qty, .decrement-qty {
         padding: .25rem .5rem !important;
+    }
+}
+
+@media (min-width: 1450px) {
+    .nav-ul-list {
+        width: 40%;
+    }
+
+    #hero-image {
+        min-height: 44rem;
+    }
+}
+
+@media (min-width: 1470px) {
+    #cta-container {
+        width: 29vw;
+    }
+}
+
+@media (max-width: 1110px) {
+    .shop-now-button {
+        margin-top: 0.5rem !important;
+    }
+
+}
+
+@media (max-width: 722px) {
+    #cta-container {
+        width: 80vw;
+        padding: 1.2rem !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .card-img-top {
+        height: 40vh;
     }
 }

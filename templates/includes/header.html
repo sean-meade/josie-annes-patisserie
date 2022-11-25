@@ -4,13 +4,13 @@
             <div class="col-sm-0 col-md-3">
 
             </div>
-            <div class="col-sm-6 col-md-6 text-center py-1">
+            <div class="col-sm-6 col-md-6 text-center mb-2 mt-5">
                 <a class="navbar-brand m-0" href="{% url 'home' %}">
                     <img src="https://res.cloudinary.com/drgmt7bbz/image/upload/v1664667952/logo_xvejgo.png"
                          alt="Logo for Josie Annes Patisserie">
                 </a>
             </div>
-            <div class="col-sm-6 col-md-3 mt-5">
+            <div class="col-sm-6 col-md-3 my-auto">
                 <div class="m-auto" style="width: max-content;">
                     <a class="primary-text{% if grand_total %} font-weight-bold{% endif %}"
                        href="{% url 'bag' %}">
@@ -29,14 +29,15 @@
                 </div>
             </div>
         </div>
-        <div class="row w-100 mx-auto">
-            <ul class="nav mx-auto d-flex justify-content-around nav-ul-list pb-1">
+        <div class="row w-100 mx-auto mb-5">
+            <ul class="nav mx-auto d-flex justify-content-around nav-ul-list">
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'home' %}"
                        aria-haspopup="true" aria-expanded="false">
                         Home
                     </a>
                 </li>
+                <li class="my-auto" style="color: #c06f9f !important;">|</li>
                 <li class="nav-item dropdown">
                     <a class="nav-link" href="#"
                        id="all-products-link" data-toggle="dropdown" aria-haspopup="true"
@@ -48,9 +49,11 @@
                         <a href="{% url 'products' %}?category=delivery" class="dropdown-item">Delivery</a>
                     </div>
                 </li>
+                <li class="my-auto" style="color: #c06f9f !important;">|</li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'afternoon_tea' %}">About Us</a>
                 </li>
+                <li class="my-auto" style="color: #c06f9f !important;">|</li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'cake' %}">Contact Us</a>
                 </li>
