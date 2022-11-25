@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col">
+
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row my-4">
+        <form class="mx-auto text-center" action="{% url 'contact' %}" method="POST">
+            <p class="heading-font m-0"><u>Contact Us</u></p>
+            <p class="text-muted">Please fill out the form below to send us an email</p>
+            {% csrf_token %}
+            <fieldset class="rounded px-3 mb-2">
+                {{ form.as_p }}
+            </fieldset>
+            <button id="submit-button" class="btn view-product-btn">
+                <span class="font-weight-bold">Send</span>
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}
