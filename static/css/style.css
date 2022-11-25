@@ -101,9 +101,14 @@ body {
 
 /* Color of logo #3cdbc0*/
 
-.primary-bg {
-    /*background-color: #c06f9f;*/
-    /*background-color: #faf9f7;*/
+.more {
+    font-size: 1.2rem;
+    color: #c06f9f;
+}
+
+.more:hover {
+    font-size: 1.2rem;
+    color: #c06f9f;
 }
 
 .nav-item > a,
