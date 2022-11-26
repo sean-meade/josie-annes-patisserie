@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'afternoon_tea',
     'cake_order',
     'contact',
+    'about',
 
     # Other
     'crispy_forms',

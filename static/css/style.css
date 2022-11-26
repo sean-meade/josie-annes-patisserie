@@ -169,6 +169,42 @@ dropdown-item:hover,
     }
 }
 
+/* Our Story */
+
+#story-image {
+    min-height: 26rem;
+    max-width: 100%;
+    background: url("https://res.cloudinary.com/drgmt7bbz/image/upload/v1669489298/about_us_crop_rzju45.jpg") no-repeat center 25%;
+    background-size: cover;
+    display: inline-block;
+}
+
+.about-font {
+    font-family: 'Sacramento', cursive;
+    color: #41e2d2;
+    font-weight: bolder;
+    font-size: 4rem;
+}
+
+.about-sub-heading {
+    font-family: 'Sacramento', cursive;
+    color: #41e2d2;
+    font-weight: bolder;
+}
+
+.about-background {
+}
+
+.about-image-left {
+    display: flex;
+    float: left !important;
+}
+
+.about-image-right {
+    display: flex;
+    float: right !important;
+}
+
 /* Product Form */
 
 
@@ -452,3 +488,60 @@ footer,
         display: none !important;
     }
 }
+
+@media (min-width: 750px) {
+    .about-image-right {
+        padding-left: 16px;
+    }
+
+    .about-image-left {
+        padding-right: 16px;
+    }
+
+    .about-background {
+        width: 75% !important;
+    }
+
+}
+
+@media (max-width: 750px) {
+    .about-image-right,
+    .about-image-left {
+        display: flex !important;
+        float: unset !important;
+        margin: 0 auto !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 16px 0 !important;
+    }
+
+    .about-image-right > img,
+    .about-image-left > img {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .about-background {
+        width: 100% !important;
+        padding: 0 10vw;
+    }
+
+}
+
+@media (min-width: 450px) {
+    .about-mobile-padding {
+        padding: 1rem !important;
+    }
+}
+
+@media (max-width: 450px) {
+    .about-background {
+        width: 280px !important;
+        padding: 0 !important;
+    }
+
+    .about-mobile-padding {
+        padding: 0 !important;
+    }
+}
+
