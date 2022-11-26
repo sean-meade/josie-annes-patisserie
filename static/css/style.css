@@ -27,6 +27,16 @@ body {
     display: none !important;
 }
 
+#navbarText {
+    position: absolute;
+    z-index: 1;
+    top: 78px;
+    left: 0;
+    background-color: #fff;
+    width: 70% !important;
+    padding-left: 30px;
+}
+
 .nav-link:hover,
 dropdown-item:hover,
 .external-links:hover {
@@ -545,3 +555,13 @@ footer,
     }
 }
 
+@media (max-width: 550px) {
+    .contact-form {
+        width: 80% !important;
+        margin: auto !important;
+    }
+
+    .heading-font {
+        font-size: 3rem;
+    }
+}

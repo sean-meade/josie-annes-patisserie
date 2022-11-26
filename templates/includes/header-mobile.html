@@ -1,78 +1,73 @@
-<nav id="header-mobile" class="navbar p-0">
-    <div class="container-fluid w-100 p-0">
-        <div class="row w-100">
-            <div class="m-3 pt-1">
-                <nav class="navbar navbar-expand-md navbar-light">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
-                            aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="main-nav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="logo-font font-weight-bold nav-link mr-5" href="{% url 'home' %}"
-                                   aria-haspopup="true" aria-expanded="false">
-                                    Home
-                                </a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="logo-font font-weight-bold nav-link mr-5" href="#"
-                                   id="all-products-link" data-toggle="dropdown" aria-haspopup="true"
-                                   aria-expanded="false">
-                                    Shop
-                                </a>
-                                <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                                    <a href="{% url 'products' %}?category=collection" class="dropdown-item">
-                                        Collection
-                                    </a>
-                                    <a href="{% url 'products' %}?category=delivery" class="dropdown-item">
-                                        Delivery
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="logo-font font-weight-bold nav-link mr-5" href="{% url 'about' %}"
-                                   aria-haspopup="true" aria-expanded="false">
-                                    About Us
-                                </a>
-                            </li>
-
-                            <li class="nav-item dropdown">
-                                <a class="logo-font font-weight-bold nav-link text-black" href="{% url 'contact' %}"
-                                   aria-haspopup="true" aria-expanded="false">
-                                    Contact Us
-                                </a>
-                            </li>
-
-                            <hr>
-
-                            <li class="nav-item dropdown">
-                                <a class="logo-font font-weight-bold nav-link text-black" href="{% url 'bag' %}"
-                                   aria-haspopup="true" aria-expanded="false">
-                                    <p class="my-0"> Cart
-                                        {% if grand_total %}
-                                        €{{ grand_total|floatformat:2 }}
-                                        {% else %}
-                                        €0.00
-                                        {% endif %}
-                                    </p>
-                                </a>
-                                <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                                    <a href="" class="dropdown-item">Item</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-            <div class="col-8 my-3 text-center">
-                <a class="navbar-brand mr-0" href="{% url 'home' %}">
-                    <img src="https://res.cloudinary.com/drgmt7bbz/image/upload/v1668677570/logo-mobile_sxbusu.png"
-                         alt="">
+<nav class="navbar navbar-expand-md navbar-light" id="header-mobile">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="logo-font font-weight-bold nav-link mr-5 header-links" href="{% url 'home' %}"
+                   aria-haspopup="true" aria-expanded="false">
+                    Home
                 </a>
-            </div>
-        </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="logo-font font-weight-bold nav-link mr-5 header-links" href="#"
+                   id="all-products-link" data-toggle="dropdown" aria-haspopup="true"
+                   aria-expanded="false">
+                    Shop
+                </a>
+                <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+                    <a href="{% url 'products' %}?category=collection header-links"
+                       class="dropdown-item">
+                        Collection
+                    </a>
+                    <a href="{% url 'products' %}?category=delivery header-links" class="dropdown-item">
+                        Delivery
+                    </a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="logo-font font-weight-bold nav-link mr-5 header-links"
+                   href="{% url 'about' %}"
+                   aria-haspopup="true" aria-expanded="false">
+                    About Us
+                </a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="logo-font font-weight-bold nav-link text-black header-links"
+                   href="{% url 'contact' %}"
+                   aria-haspopup="true" aria-expanded="false">
+                    Contact Us
+                </a>
+            </li>
+
+            <hr>
+
+            <li class="nav-item dropdown">
+                <a class="logo-font font-weight-bold nav-link text-black header-links"
+                   href="{% url 'bag' %}"
+                   aria-haspopup="true" aria-expanded="false">
+                    <p class="my-0"> Cart
+                        {% if grand_total %}
+                        €{{ grand_total|floatformat:2 }}
+                        {% else %}
+                        €0.00
+                        {% endif %}
+                    </p>
+                </a>
+                <div class="dropdown-menu border-0" aria-labelledby="specials-link">
+                    <a href="" class="dropdown-item">Item</a>
+                </div>
+            </li>
+        </ul>
     </div>
+    <a class="navbar-brand mx-auto" href="{% url 'home' %}">
+        <img src="https://res.cloudinary.com/drgmt7bbz/image/upload/v1668677570/logo-mobile_sxbusu.png"
+             alt="">
+    </a>
 </nav>
+
 
 
