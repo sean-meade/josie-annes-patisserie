@@ -84,33 +84,41 @@
 
 <footer class="mt-5">
     <div class="container-fluid px-0">
-        <div class="row w-100 mx-auto py-2">
-            <ul class="nav mx-auto d-flex justify-content-around nav-ul-list footer-nav">
+        <div class="row w-100 mx-auto py-3">
+            <ul class="nav mx-auto d-flex justify-content-around nav-ul-list">
                 <li class="nav-item">
-                    <a class="nav-link py-0" href="{% url 'home' %}">Home</a>
+                    <a class="nav-link footer-links py-0" href="{% url 'home' %}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link py-0" href="{% url 'products' %}?category=delivery">Shop</a>
+                    <a class="nav-link footer-links py-0" href="{% url 'products' %}?category=delivery">Shop</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link py-0" href="{% url 'afternoon_tea' %}">About Us</a>
+                    <a class="nav-link footer-links py-0" href="{% url 'afternoon_tea' %}">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link py-0" href="{% url 'contact' %}">Contact Us</a>
+                    <a class="nav-link footer-links py-0" href="{% url 'contact' %}">Contact Us</a>
                 </li>
             </ul>
         </div>
-        <div class="row w-100 mx-auto justify-content-center py-2">
-            <div class="col-md-4 col-sm-12 d-flex justify-content-center footer-text">
-                <a href="https://www.instagram.com/josieannespatisserie/" rel="external" target="_blank">
+        <div class="row w-100 mx-auto justify-content-center">
+            <div class="col-sm-12 col-md-3 col-lg-4 d-flex justify-content-center footer-text social-links">
+                <a class="external-links" href="https://www.instagram.com/josieannespatisserie/" rel="external" target="_blank">
                 <p class="m-0">
                     <i class="fa-brands fa-instagram fa-lg"></i>
                     josieannespatisserie
                 </p>
                 </a>
             </div>
-            <div class="col-md-4 col-sm-12 d-flex justify-content-center footer-text" id="footer-fb-padding">
-                <a href="https://www.facebook.com/profile.php?id=100087897433792" rel="external" target="_blank">
+            <div class="col-sm-12 col-lg-4 d-flex justify-content-center footer-text footer-fb-padding social-links-middle">
+                <a class="external-links" href="https://www.facebook.com/profile.php?id=100087897433792" rel="external" target="_blank">
+                    <p class="m-0">
+                        <i class="fa-light fa-envelope fa-lg hide-icon"></i>
+                        elaine@josieannespatisserie.com
+                    </p>
+                </a>
+            </div>
+            <div class="col-sm-12 col-md-3 col-lg-4 d-flex justify-content-center footer-text footer-fb-padding social-links">
+                <a class="external-links" href="https://www.facebook.com/profile.php?id=100087897433792" rel="external" target="_blank">
                     <p class="m-0">
                         <i class="fa-brands fa-facebook-f fa-lg"></i>
                         josieannespatisserie
@@ -118,15 +126,9 @@
                 </a>
             </div>
         </div>
-        <div class="row w-100 mx-auto justify-content-center footer-text py-2">
-            <p class="m-0">
-                <i class="fa-light fa-envelope fa-lg"></i>
-                elaine@josieannespatisserie.com
-            </p>
-        </div>
     </div>
 
-    <div class="footer-copyright text-center py-2">© 2020 Copyright:
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
         <a href="/"> JosieAnnesPatisserie.com</a>
     </div>
 

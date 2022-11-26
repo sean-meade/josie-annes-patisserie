@@ -27,8 +27,11 @@ body {
     display: none !important;
 }
 
-.nav-link:hover, dropdown-item:hover {
+.nav-link:hover,
+dropdown-item:hover,
+.external-links:hover {
     color: #c06f9f !important;
+    text-decoration: none !important;
 }
 
 .delivery-banner {
@@ -110,11 +113,9 @@ body {
     color: #c06f9f;
 }
 
-.nav-item > a,
-footer,
-.footer-text > a,
+.header-links,
 .primary-text,
-.nav-ul-list > li,
+.header-links,
 .dropdown-menu > a {
     color: #41e2d2 !important;
     font-size: 1.1rem;
@@ -163,12 +164,13 @@ footer,
         display: block !important;
     }
 
-    #footer-fb-padding {
+    .footer-fb-padding {
         padding-top: 16px;
     }
 }
 
 /* Product Form */
+
 
 .btn-file {
     position: relative;
@@ -320,8 +322,15 @@ footer,
 
 /* Footer */
 
-.footer-nav {
-    font-size: 0.2rem;
+footer {
+    background-color: #41e2d2;
+}
+
+footer,
+.footer-text > a,
+.footer-links {
+    color: #fff !important;
+    font-size: 1.2rem !important;
 }
 
 /* pad the top a bit when navbar is collapsed on mobile */
@@ -400,5 +409,46 @@ footer,
 @media (max-width: 992px) {
     .card-img-top {
         height: 40vh;
+    }
+}
+
+@media (max-width: 1030px) {
+    .social-links-middle {
+        order: 13;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1030px) {
+    .social-links-middle {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        padding-top: 16px;
+    }
+
+    .social-links {
+        flex: 0 0 40% !important;
+        max-width: 100% !important;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 750px) {
+    .nav-ul-list {
+        width: 82%;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 445px) {
+    .nav-ul-list {
+        width: 35%;
+    }
+}
+
+@media (max-width: 375px) {
+    .nav-ul-list {
+        width: 44%;
+    }
+
+    .hide-icon {
+        display: none !important;
     }
 }
