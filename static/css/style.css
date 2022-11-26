@@ -20,15 +20,14 @@ body {
 }
 
 #header-non-mobile {
-    opacity: 0.7;
-    background: url("https://res.cloudinary.com/drgmt7bbz/image/upload/v1669390484/rolling_pin_celbjn.png") no-repeat center center;
+    background: url("https://res.cloudinary.com/drgmt7bbz/image/upload/v1669466799/rolling_pin_142_o_lzckel.png") no-repeat center center;
 }
 
 #header-mobile {
     display: none !important;
 }
 
-.nav-link:hover {
+.nav-link:hover, dropdown-item:hover {
     color: #c06f9f !important;
 }
 
