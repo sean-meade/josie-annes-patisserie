@@ -1,29 +1,31 @@
+from django.template.loader import render_to_string
+from josie_annes_patisserie import settings
 from django.contrib import messages
-from django.core.mail import send_mail, BadHeaderError
-from django.http import HttpResponse, HttpResponseRedirect
+from django.core.mail import send_mail
 from django.shortcuts import render, redirect
 from .forms import ContactForm
 
 
-def contact_view(request):
-    if request.method == "GET":
-        form = ContactForm()
-    else:
+def contact(request):
+    if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            subject = form.cleaned_data["subject"]
-            from_email = form.cleaned_data["from_email"]
-            message = form.cleaned_data['message']
+            from_email = form.cleaned_data["email"]
+            name = form.cleaned_data["name"]
+            subject = f"New message from {name}"
+            content = form.cleaned_data['content']
+
+            html = render_to_string('contact/email/contactform.html', {
+                'name': name,
+                'from_email': from_email,
+                'content': content
+            })
             try:
-                send_mail(subject, message, from_email, ["seanmeade.dev@gmail.com"])
-            except BadHeaderError:
-                messages.error(request, "Your message wasn't sent please try again.")
-                return HttpResponse("Invalid header found.")
-            return redirect("success")
-    return render(request, "contact/contact.html", {"form": form})
-
-
-def success_view(request):
+                send_mail(subject, content, from_email, ['seanpatmeade@gmail.com'], html_message=html)
+                messages.success(request, "Your message has been sent")
+            except Exception as e:
+                messages.error(request, f"Could not send email - {e}")
+            return redirect('contact')
     form = ContactForm()
-    messages.success(request, 'Thank you, your message has been sent.')
-    return render(request, "contact/contact.html", {"form": form})
+    context = {'form': form}
+    return render(request, 'contact/contact.html', context)
