@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col">
+
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container products-choice my-5">
+    <div class="row w-90 mx-auto py-5" id="store-choice-cta-image">
+        <div class="m-auto p-5" id="cta-container-choice">
+            <h1 class="text-center main-title-font p-3 m-0" id="store-choice-heading">
+                Collection or Delivery?
+            </h1>
+            <p class="text-center">Are you looking to order for collection or delivery?</p>
+            <div class="text-center">
+                <h4 class="m-0">
+                    <a href="{% url 'products' %}?category=collection"
+                       class="btn btn-md text-uppercase shop-now-button">
+                        Collection
+                    </a>
+                    <a href="{% url 'products' %}?category=delivery"
+                       class="btn btn-md text-uppercase shop-now-button">
+                        Delivery
+                    </a>
+                </h4>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

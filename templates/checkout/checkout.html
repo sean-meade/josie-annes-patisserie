@@ -20,8 +20,8 @@
     <div class="row">
         <div class="col">
             <h2 class="logo-font">Checkout</h2>
-            <h4>* Please Note that if you have items in your bag that are for collection you will
-                have to come into the cafe to collect these.</h4>
+            <p class="text-muted">* If you have items in your bag that are for collection you will
+                have to come into the café to collect them.</p>
             <hr>
         </div>
     </div>
@@ -50,7 +50,7 @@
                 </div>
                 <div class="col-7">
                     <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                    <p class="my-0 small">Size: {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
+                    <p class="my-0 small">Category: {{ item.product.category }}</p>
                     <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
                 </div>
                 <div class="col-3 text-right">
@@ -82,7 +82,15 @@
                     {{ order_form.email | as_crispy_field }}
                 </fieldset>
                 <fieldset class="rounded px-3 mb-5">
+
+                    {% if collection_item %}
+                    <legend class="fieldset-label small text-black px-2 w-auto">Collection Date</legend>
+                    {{ order_form.collection_date | as_crispy_field }}
+                    {% endif %}
+
+                    {% if delivery_item %}
                     <legend class="fieldset-label small text-black px-2 w-auto">Delivery</legend>
+                    {% endif %}
                     {{ order_form.phone_number | as_crispy_field }}
                     {{ order_form.street_address1 | as_crispy_field }}
                     {{ order_form.street_address2 | as_crispy_field }}

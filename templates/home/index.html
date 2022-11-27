@@ -36,8 +36,7 @@
         <p class="heading-font m-0"><u>Our Favourites</u></p>
     </div>
 </div>
-<div class="container">
-
+<div class="container product-container">
     <div class="row w-100 mx-0 g-5">
         {% for product in products %}
         {% if product.hidden == False %}
@@ -49,8 +48,9 @@
                 <img class="card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                 {% endif %}
                 <div class="card-body d-flex flex-column">
-                    <h5 class="card-title">{{ product.name }}</h5>
-                    <div class="product-card-descript">
+                    <h5 class="card-title m-0 pt-1">{{ product.name }}</h5>
+                    <p class="text-muted mb-1 product-category">Available on: {{ product.category }}</p>
+                    <div class="mb-3">
                         <p class="card-text">{{ product.description | slice:'0:60' | safe }} ...</p>
                     </div>
 
@@ -65,8 +65,7 @@
         {% endif %}
         {% endfor %}
         <div class="row w-100 justify-content-end">
-            <!-- TODO: Set it so it brings to a page asking if they want collection or delivery     -->
-            <u class="mr-5 mt-4"><a class="more" href="">more ...</a></u>
+            <u class="mr-5 mt-4"><a class="more" href="{% url 'choice' %}">more ...</a></u>
         </div>
     </div>
 </div>

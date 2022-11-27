@@ -1,3 +1,4 @@
+import datetime
 import uuid
 
 from django.db import models
@@ -6,6 +7,17 @@ from josie_annes_patisserie import settings
 from products.models import Product
 from profiles.models import UserProfile
 from django_countries.fields import CountryField
+
+tomorrow = datetime.date.today() + datetime.timedelta(days=1)
+
+DATE_CHOICES = []
+
+current_day = tomorrow
+
+# Can only book on Sat or Sun so add the next 3 weekends
+for i in range(8):
+    DATE_CHOICES.append((current_day, current_day.strftime('%a: %b %d')))
+    current_day = current_day + datetime.timedelta(days=1)
 
 
 class Order(models.Model):
@@ -22,6 +34,7 @@ class Order(models.Model):
     street_address2 = models.CharField(max_length=80, null=True, blank=True)
     county = models.CharField(max_length=80, null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True)
+    collection_date = models.DateField(auto_now_add=False, null=True, choices=DATE_CHOICES)
     delivery_cost = models.DecimalField(max_digits=6, decimal_places=2, null=False, default=0)
     order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     grand_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)

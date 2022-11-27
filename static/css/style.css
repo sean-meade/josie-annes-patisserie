@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&family=Source+Serif+Pro&display=swap');
 /* logo header font-family: 'Sacramento', cursive;*/
 /* logo sub header font-family: 'GlacialIndifference';*/
 
@@ -60,7 +59,7 @@ dropdown-item:hover,
 }
 
 .main-title-font {
-    font-family: 'Sacramento', cursive;
+    font-family: 'Source Serif Pro', serif;
     color: #41e2d2;
     font-weight: bolder;
 }
@@ -144,7 +143,7 @@ dropdown-item:hover,
 
 .card-img-top {
     width: 100%;
-    height: 20vh;
+    height: 20vw;
     object-fit: cover;
 }
 
@@ -152,6 +151,20 @@ dropdown-item:hover,
     color: #c06f9f;
     font-size: 1.5rem;
     font-weight: bold;
+}
+
+.card-title {
+    height: 2em;
+    line-height: 1em;
+    overflow: hidden;
+    font-family: 'Sacramento', cursive;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #863b67;
+}
+
+.product-category {
+    font-size: 0.8rem !important;
 }
 
 #afternoon-tea-cta-image {
@@ -602,5 +615,15 @@ footer,
 
     .heading-font {
         font-size: 3rem;
+    }
+}
+
+@media (min-width: 1320px) {
+    .product-container {
+        width: 80% !important;
+    }
+
+    .card-img-top {
+        height: 15vw;
     }
 }

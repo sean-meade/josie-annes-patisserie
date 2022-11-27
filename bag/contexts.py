@@ -11,6 +11,8 @@ def bag_contents(request):
     bag = request.session.get('bag', {})
 
     fdt = settings.FREE_DELIVERY_THRESHOLD
+    delivery_item = False
+    collection_item = False
 
     for item_id, quantity in bag.items():
         product = get_object_or_404(Product, pk=item_id)
@@ -21,6 +23,10 @@ def bag_contents(request):
             'quantity': quantity,
             'product': product,
         })
+        if str(product.category).lower() == 'delivery':
+            delivery_item = True
+        if str(product.category).lower() == 'collection':
+            collection_item = True
 
     if total < fdt:
         delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
@@ -39,6 +45,8 @@ def bag_contents(request):
         'free_delivery_delta': free_delivery_delta,
         'free_delivery_threshold': fdt,
         'grand_total': grand_total,
+        'collection_item': collection_item,
+        'delivery_item': delivery_item,
     }
 
     return context
