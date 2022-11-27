@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 from django.db.models import Q
 
 from products.forms import ProductForm
-from products.models import Product, Category
+from products.models import Product, Category, Allergens
 
 
 def all_products(request):
@@ -16,6 +16,7 @@ def all_products(request):
     categories = None
     sort = None
     direction = None
+    allergens_checked = None
 
     if request.GET:
         if 'sort' in request.GET:
@@ -36,22 +37,29 @@ def all_products(request):
             products = products.filter(category__friendly_name__in=categories)
             categories = Category.objects.filter(friendly_name__in=categories)
 
-        if 'q' in request.GET:
-            query = request.GET['q']
-            if not query:
+        if 'q' and 'allergens' in request.GET:
+            query = request.GET.get('q', '')
+            allergens_checked = request.GET.getlist('allergens')
+            print(request.GET)
+            if not query and not allergens_checked:
                 messages.error(request, "You didn't enter anything to search")
                 return redirect(reverse('products'))
+            products = products.exclude(allergens__allergy__in=allergens_checked)
 
             queries = Q(name__icontains=query) | Q(description__icontains=query) | Q(ingredients__icontains=query)
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
 
+    all_allergens = ["gluten", "egg", "celery", "nut", "mustard", "soy", "milk", "sesame seed"]
+
     context = {
         'products': products,
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,
+        'exclude_allergens': allergens_checked,
+        'all_allergens': all_allergens,
     }
 
     return render(request, 'products/products.html', context)

@@ -20,10 +20,18 @@ body {
 
 #header-non-mobile {
     background: url("https://res.cloudinary.com/drgmt7bbz/image/upload/v1669466799/rolling_pin_142_o_lzckel.png") no-repeat center center;
+    -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+    -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+    box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+}
+
+header {
+
 }
 
 #header-mobile {
     display: none !important;
+    background: url("https://res.cloudinary.com/drgmt7bbz/image/upload/v1668677570/logo-mobile_sxbusu.png") no-repeat center center;
 }
 
 #navbarText {
@@ -484,13 +492,19 @@ footer,
     }
 }
 
+@media (min-width: 992px) {
+    .card-img-top {
+        height: 40vh;
+    }
+}
+
 @media (max-width: 1030px) {
     .social-links-middle {
         order: 13;
     }
 }
 
-@media (min-width: 768px) and (max-width: 1030px) {
+@media (min-width: 770px) and (max-width: 1030px) {
     .social-links-middle {
         flex: 0 0 100% !important;
         max-width: 100% !important;
@@ -607,6 +621,18 @@ footer,
     }
 }
 
+@media (max-width: 450px) {
+    #header-mobile {
+        background: url("https://res.cloudinary.com/drgmt7bbz/image/upload/v1668677570/logo-mobile_sxbusu.png") no-repeat center right 3.5em;
+    }
+}
+
+@media (max-width: 360px) {
+    #header-mobile {
+        background: url("https://res.cloudinary.com/drgmt7bbz/image/upload/v1668677570/logo-mobile_sxbusu.png") no-repeat center right 1em;
+    }
+}
+
 @media (max-width: 550px) {
     .contact-form {
         width: 80% !important;
@@ -626,4 +652,81 @@ footer,
     .card-img-top {
         height: 15vw;
     }
+}
+
+@media (max-width: 930px) {
+    .search-products {
+        width: 70% !important;
+        margin: auto !important;
+    }
+}
+
+.css-checkbox {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    border: 0;
+}
+
+#inputPreview {
+    display: flex;
+    gap: 20px;
+    justify-content: space-evenly;
+}
+
+.css-checkbox + label {
+    position: relative;
+    font-size: 14px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    height: 16px;
+    color: rgb(0, 0, 0);
+    width: 80px;
+}
+
+.css-checkbox + label::before {
+    content: " ";
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 3px;
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(204, 204, 204);
+    border-radius: 2px;
+    box-shadow: rgba(42, 42, 42, 0.3) 0px 0px 5px 0px;
+}
+
+.css-checkbox:checked + label::after {
+    content: " ";
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNTIgNTEyIj48cGF0aCBmaWxsPSIjZTYwOTMyIiBkPSJNMjQyLjcyIDI1NmwxMDAuMDctMTAwLjA3YzEyLjI4LTEyLjI4IDEyLjI4LTMyLjE5IDAtNDQuNDhsLTIyLjI0LTIyLjI0Yy0xMi4yOC0xMi4yOC0zMi4xOS0xMi4yOC00NC40OCAwTDE3NiAxODkuMjggNzUuOTMgODkuMjFjLTEyLjI4LTEyLjI4LTMyLjE5LTEyLjI4LTQ0LjQ4IDBMOS4yMSAxMTEuNDVjLTEyLjI4IDEyLjI4LTEyLjI4IDMyLjE5IDAgNDQuNDhMMTA5LjI4IDI1NiA5LjIxIDM1Ni4wN2MtMTIuMjggMTIuMjgtMTIuMjggMzIuMTkgMCA0NC40OGwyMi4yNCAyMi4yNGMxMi4yOCAxMi4yOCAzMi4yIDEyLjI4IDQ0LjQ4IDBMMTc2IDMyMi43MmwxMDAuMDcgMTAwLjA3YzEyLjI4IDEyLjI4IDMyLjIgMTIuMjggNDQuNDggMGwyMi4yNC0yMi4yNGMxMi4yOC0xMi4yOCAxMi4yOC0zMi4xOSAwLTQ0LjQ4TDI0Mi43MiAyNTZ6Ii8+PC9zdmc+");
+    background-repeat: no-repeat;
+    background-size: 10px 10px;
+    background-position: center center;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0px;
+    left: 0px;
+    top: 0px;
+    text-align: center;
+    background-color: transparent;
+    font-size: 10px;
+    height: 16px;
+    width: 16px;
+}
+
+label[for=sesame_seed] {
+    width: 110px !important;
+}
+
+.products-container {
+    width: 90% !important;
 }

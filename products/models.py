@@ -33,6 +33,9 @@ class Allergens(models.Model):
     def __str__(self):
         return self.get_allergy_display()
 
+    def get_friendly_name(self):
+        return self.allergy[0]
+
 
 class Product(models.Model):
     category = models.ForeignKey('Category', null=True, on_delete=models.SET_NULL)
