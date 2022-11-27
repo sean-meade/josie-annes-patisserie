@@ -137,3 +137,7 @@ def delete_product(request, sku):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
+
+
+def choice(request):
+    return render(request, 'products/store_choice.html')
