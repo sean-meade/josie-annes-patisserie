@@ -18,11 +18,11 @@
                     Shop
                 </a>
                 <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                    <a href="{% url 'products' %}?category=collection header-links"
-                       class="dropdown-item">
+                    <a href="{% url 'products' "collection" %}"
+                       class="dropdown-item header-links">
                         Collection
                     </a>
-                    <a href="{% url 'products' %}?category=delivery header-links" class="dropdown-item">
+                    <a href="{% url 'products' "delivery" %}" class="dropdown-item header-links">
                         Delivery
                     </a>
                 </div>

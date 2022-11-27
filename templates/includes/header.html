@@ -45,8 +45,8 @@
                         Shop
                     </a>
                     <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                        <a href="{% url 'products' %}?category=collection" class="dropdown-item">Collection</a>
-                        <a href="{% url 'products' %}?category=delivery" class="dropdown-item">Delivery</a>
+                        <a href="{% url 'products' "collection" %}" class="dropdown-item header-links">Collection</a>
+                        <a href="{% url 'products' "delivery" %}" class="dropdown-item header-links">Delivery</a>
                     </div>
                 </li>
                 <li class="my-auto" style="color: #c06f9f !important;">|</li>

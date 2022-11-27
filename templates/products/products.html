@@ -26,13 +26,13 @@
         </div>
     </div>
     <div class="row">
-
-        <form method="GET" action="{% url 'products' %}" class="mx-auto search-products">
+        <form method="GET" action="{% url 'products' current_category %}"
+              class="mx-auto search-products">
             <div class="input-group allergen-checkboxes">
                 <div id="inputPreview d-flex align-items-center">
                     {% for allergen in all_allergens %}
                     {% if allergen == "sesame seed" %}
-                    <input type="checkbox" {% if allergen in exclude_allergens %}checked{% endif %}
+                    <input type="checkbox" {% if "sesame_seed" in exclude_allergens %}checked{% endif %}
                            id="sesame_seed" name="allergens" value="sesame_seed" class="css-checkbox">
                     <label for="sesame_seed">{{ allergen|title }}</label>
                     {% else %}
@@ -43,7 +43,7 @@
                     {% endfor %}
                 </div>
             </div>
-            <div class="input-group pt-3 w-50 mx-auto">
+            <div class="input-group pt-3 mx-auto search-bar-products">
                 <input class="form-control border border-black rounded-0" type="text" name="q"
                        placeholder="Search our site">
                 <div class="input-group-append">

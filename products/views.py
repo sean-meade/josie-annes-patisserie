@@ -8,12 +8,11 @@ from products.forms import ProductForm
 from products.models import Product, Category, Allergens
 
 
-def all_products(request):
+def all_products(request, category):
     """ A view to show all products, including sorting search filtering """
 
-    products = Product.objects.all()
+    products = Product.objects.filter(category__friendly_name=category)
     query = None
-    categories = None
     sort = None
     direction = None
     allergens_checked = None
@@ -32,15 +31,9 @@ def all_products(request):
                     sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
 
-        if 'category' in request.GET:
-            categories = request.GET['category'].split(',')
-            products = products.filter(category__friendly_name__in=categories)
-            categories = Category.objects.filter(friendly_name__in=categories)
-
         if 'q' and 'allergens' in request.GET:
             query = request.GET.get('q', '')
             allergens_checked = request.GET.getlist('allergens')
-            print(request.GET)
             if not query and not allergens_checked:
                 messages.error(request, "You didn't enter anything to search")
                 return redirect(reverse('products'))
@@ -49,17 +42,20 @@ def all_products(request):
             queries = Q(name__icontains=query) | Q(description__icontains=query) | Q(ingredients__icontains=query)
             products = products.filter(queries)
 
-    current_sorting = f'{sort}_{direction}'
-
     all_allergens = ["gluten", "egg", "celery", "nut", "mustard", "soy", "milk", "sesame seed"]
+
+    if query is None and allergens_checked is None:
+        if category == 'collection':
+            messages.info(request, f"These items need to be collected in store.")
+        if category == 'delivery':
+            messages.info(request, f"These items can be delivered within Ireland.")
 
     context = {
         'products': products,
         'search_term': query,
-        'current_categories': categories,
-        'current_sorting': current_sorting,
         'exclude_allergens': allergens_checked,
         'all_allergens': all_allergens,
+        'current_category': category,
     }
 
     return render(request, 'products/products.html', context)
