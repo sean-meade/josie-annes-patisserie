@@ -13,9 +13,9 @@
 
 {% block content %}
 <div class="overlay"></div>
-<div class="container">
+<div class="container-fluid product-container">
     <div class="row">
-        <div class="col text-center my-5">
+        <div class="col text-center mt-5">
             <h2 class="heading-font m-0">
                 {% if products.0 %}
                 <u>For {{ products.0.category }}</u>
@@ -26,63 +26,64 @@
         </div>
     </div>
     <div class="row">
-        <form method="GET" action="{% url 'products' current_category %}"
-              class="mx-auto search-products">
-            <div class="input-group allergen-checkboxes">
-                <div id="inputPreview d-flex align-items-center">
-                    {% for allergen in all_allergens %}
-                    {% if allergen == "sesame seed" %}
-                    <input type="checkbox" {% if "sesame_seed" in exclude_allergens %}checked{% endif %}
-                           id="sesame_seed" name="allergens" value="sesame_seed" class="css-checkbox">
-                    <label for="sesame_seed">{{ allergen|title }}</label>
-                    {% else %}
-                    <input type="checkbox" {% if allergen in exclude_allergens %}checked{% endif %}
-                           id="{{allergen}}" name="allergens" value="{{allergen}}" class="css-checkbox">
-                    <label for="{{allergen}}">{{ allergen|title }}</label>
-                    {% endif %}
-                    {% endfor %}
+        <div class="col-sm-12 col-md-2 p-0">
+            <form method="GET" action="{% url 'products' current_category %}"
+                  class="m-0 search-products">
+                <div class="input-group allergen-checkboxes mt-5">
+                    <h4>Allergens:</h4>
+                    <div id="inputPreview d-flex align-items-center">
+                        {% for allergen in all_allergens %}
+                        {% if allergen == "sesame seed" %}
+                        <input type="checkbox" {% if "sesame_seed" in exclude_allergens %}checked{% endif %}
+                        id="sesame_seed" name="allergens" value="sesame_seed" class="css-checkbox">
+                        <label for="sesame_seed">{{ allergen|title }}</label>
+                        {% else %}
+                        <input type="checkbox" {% if allergen in exclude_allergens %}checked{% endif %}
+                               id="{{allergen}}" name="allergens" value="{{allergen}}" class="css-checkbox">
+                        <label for="{{allergen}}">{{ allergen|title }}</label>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
                 </div>
-            </div>
-            <div class="input-group pt-3 mx-auto search-bar-products">
-                <input class="form-control border border-black rounded-0" type="text" name="q"
-                       placeholder="Search our site">
-                <div class="input-group-append">
-                    <button class="form-control btn btn-black border border-black rounded-0" type="submit">
-                                <span class="icon">
-                                    <i class="fas fa-search"></i>
-                                </span>
-                    </button>
+                <div class="input-group py-3 mx-auto search-bar-products">
+                    <input class="form-control border border-black rounded-0" type="text" name="q"
+                           placeholder="Search">
                 </div>
-            </div>
-        </form>
+                <button class="form-control btn border search-btn rounded mx-auto" type="submit">
+                    Search
+                </button>
+            </form>
+        </div>
+        <div class="col-sm-12 col-md-10">
+            <div class="row products-container mx-auto mb-5">
+                {% for product in products %}
+                {% if product.hidden == False %}
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 mt-5 d-flex align-items-stretch">
+                    <div class="card shadow-sm w-100">
+                        {% if product.image %}
+                        <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        {% else %}
+                        <img class="card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                        {% endif %}
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title pt-1">{{ product.name }}</h5>
+                            <div class="mb-3">
+                                <p class="card-text">{{ product.description | slice:'0:60' | safe }} ...</p>
+                            </div>
 
-    </div>
-    <div class="row products-container mx-auto mb-5">
-        {% for product in products %}
-        {% if product.hidden == False %}
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mt-5 d-flex align-items-stretch">
-            <div class="card shadow-sm">
-                {% if product.image %}
-                <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}">
-                {% else %}
-                <img class="card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                            <div class="row mt-auto justify-content-around">
+                                <p class="card-text card-price m-0">€{{ product.price }}</p>
+                                <a href="{% url 'product_detail' product.sku %}"
+                                   class="btn view-product-btn">View</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 {% endif %}
-                <div class="card-body d-flex flex-column">
-                    <h5 class="card-title pt-1">{{ product.name }}</h5>
-                    <div class="mb-3">
-                        <p class="card-text">{{ product.description | slice:'0:60' | safe }} ...</p>
-                    </div>
-
-                    <div class="row mt-auto justify-content-around">
-                        <p class="card-text card-price m-0">€{{ product.price }}</p>
-                        <a href="{% url 'product_detail' product.sku %}"
-                           class="btn view-product-btn">View</a>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
-        {% endif %}
-        {% endfor %}
     </div>
+
 </div>
 {% endblock %}

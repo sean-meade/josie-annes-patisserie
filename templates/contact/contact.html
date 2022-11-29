@@ -14,25 +14,54 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
-    <div class="row mt-4 contact-form">
-        <form class="mx-auto" action="{% url 'contact' %}" method="POST">
-            <p class="heading-font m-0 text-center"><u>Contact Us</u></p>
-            <p class="text-muted text-center">Please fill out the form below to send us an email</p>
-            {% csrf_token %}
-            <div class="row">
-                <div class="col-sm-12 col-md-6">
-                    {{ form.name|as_crispy_field }}
+<div class="container-fluid">
+    <p class="heading-font m-0 text-center"><u>Contact Us</u></p>
+    <div class="border w-50 mx-auto">
+        <div class="row mt-4">
+            <form class="mx-auto" action="{% url 'contact' %}" method="POST">
+
+                <p class="text-muted text-center">Please fill out the form below to send us an email</p>
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        {{ form.name|as_crispy_field }}
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        {{ form.email|as_crispy_field }}
+                    </div>
                 </div>
-                <div class="col-sm-12 col-md-6">
-                    {{ form.email|as_crispy_field }}
+                {{ form.content|as_crispy_field }}
+                <button id="submit-button" class="btn view-product-btn float-right mr-3">
+                    <span class="font-weight-bold">Send</span>
+                </button>
+            </form>
+        </div>
+        <hr>
+        <div class="row">
+
+            <div class="row mx-auto">
+                <div class="row w-100 pb-3 pl-3">
+                    <h4>Address</h4>
+                </div>
+                <div class="row">
+                    <address class="col">
+                        Josie Annes'<br>
+                        Ballybran<br>
+                        Scarriff<br>
+                        Ogonnelloe<br>
+                        Co. Clare<br>
+                        V94 A5F6
+                    </address>
+                    <div class="col">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9630.579801766833!2d-8.464947732784138!3d52.882809217031394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485c9d414820c12b%3A0x6e188a51ee5c3bb1!2sJosie%20Anne&#39;s%20Patisserie!5e0!3m2!1sen!2sie!4v1669645458770!5m2!1sen!2sie"
+                                width="200" height="150" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
                 </div>
             </div>
-            {{ form.content|as_crispy_field }}
-            <button id="submit-button" class="btn view-product-btn float-right mr-3">
-                <span class="font-weight-bold">Send</span>
-            </button>
-        </form>
+        </div>
     </div>
+
+
 </div>
 {% endblock %}

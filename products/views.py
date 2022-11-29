@@ -13,7 +13,7 @@ def all_products(request, category):
 
     products = Product.objects.filter(category__friendly_name=category)
     query = None
-    sort = None
+    # sort = None
     direction = None
     allergens_checked = None
 
@@ -31,16 +31,19 @@ def all_products(request, category):
                     sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
 
-        if 'q' and 'allergens' in request.GET:
+        if 'q' in request.GET:
             query = request.GET.get('q', '')
-            allergens_checked = request.GET.getlist('allergens')
-            if not query and not allergens_checked:
-                messages.error(request, "You didn't enter anything to search")
-                return redirect(reverse('products'))
-            products = products.exclude(allergens__allergy__in=allergens_checked)
 
             queries = Q(name__icontains=query) | Q(description__icontains=query) | Q(ingredients__icontains=query)
             products = products.filter(queries)
+
+        if 'allergens' in request.GET:
+            allergens_checked = request.GET.getlist('allergens')
+
+            products = products.exclude(allergens__allergy__in=allergens_checked)
+
+        if not query and not allergens_checked and 'q' not in request.GET:
+            messages.error(request, "You didn't enter anything to search")
 
     all_allergens = ["gluten", "egg", "celery", "nut", "mustard", "soy", "milk", "sesame seed"]
 

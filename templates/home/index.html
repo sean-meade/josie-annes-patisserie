@@ -36,12 +36,12 @@
         <p class="heading-font m-0"><u>Our Favourites</u></p>
     </div>
 </div>
-<div class="container product-container">
+<div class="container">
     <div class="row w-100 mx-0 g-5">
         {% for product in products %}
         {% if product.hidden == False %}
         <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 mt-5 d-flex align-items-stretch">
-            <div class="card shadow-sm">
+            <div class="card shadow-sm w-100">
                 {% if product.image %}
                 <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}">
                 {% else %}
@@ -67,6 +67,96 @@
         <div class="row w-100 justify-content-end">
             <u class="mr-5 mt-4"><a class="more" href="{% url 'choice' %}">more ...</a></u>
         </div>
+    </div>
+        <div class="row g-2">
+            <div class="row mx-auto justify-content-center px-0 mt-5">
+                <p class="heading-font m-0"><u>Testimonials</u></p>
+            </div>
+
+<div class="row w-100 mx-auto">
+    <div class="col-md-4 d-flex align-items-stretch">
+
+            <div class="card p-3 text-center px-auto border-0">
+
+                <div class="user-content">
+
+                    <h5 class="mb-0">Sue McMahon</h5>
+                    <p>
+                        A lovely surprise to discover this Patisserie at Ogonelloe.
+                        Tasty choice of savouries and yummy sweet treats.
+                        Soda bread to take away : delicious!
+                    </p>
+                    <p>
+                        Parking available outside
+                    </p>
+                    <p>
+                        Recommended!
+                    </p>
+
+                </div>
+
+                <div class="ratings mt-auto">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4 d-flex align-items-stretch">
+
+            <div class="card p-3 text-center px-auto border-0">
+
+                <div class="user-content">
+
+                    <h5 class="mb-0">Claire McManus</h5>
+                    <p>
+                        My favourite local cafe, always a gorgeous selection of treats available and so reasonably priced. Love the new lunch options - can highly recommend the caesar salad. Fab cosy atmosphere, beautiful food, great coffee and lovely staff, definitely a hidden gem.
+                    </p>
+                </div>
+
+                <div class="ratings mt-auto">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+
+                </div>
+
+            </div>
+
+        </div>
+            <div class="col-md-4 d-flex align-items-stretch">
+            <div class="card p-3 text-center px-auto border-0">
+
+                <div class="user-content">
+
+                    <h5 class="mb-0">Leo Soo</h5>
+                    <p>
+                        Just had the most crispy crosiants and the best coffee to start the day off. We were waiting for bus 345 and the stop is besides the patisserie. Beautiful cute place great food options and amazing staff ! Must stop by for anyone enroute . Love it
+                    </p>
+
+                </div>
+
+                <div class="ratings mt-auto">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+
+                </div>
+
+            </div>
+        </div>
+</div>
+
+
+
     </div>
 </div>
 {% endblock %}

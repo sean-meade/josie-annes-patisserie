@@ -76,15 +76,22 @@
                         </div>
                     </div>
 
-                    <div class="col-12">
-                        <a href="{% url 'products' %}" class="btn rounded-0 mt-5">
-                                    <span class="icon">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </span>
+                        {% if product.category|cut:" " == "Delivery" %}
+                        <a href="{% url 'products' "delivery" %}" class="btn rounded-0 mt-5">
+                            <span class="icon">
+                                <i class="fas fa-chevron-left"></i>
+                            </span>
                             <span class="text-uppercase">Keep Shopping</span>
                         </a>
+                        {% elif product.category|cut:" " == "Collection" %}
+                        <a href="{% url 'products' "collection" %}" class="btn rounded-0 mt-5">
+                        <span class="icon">
+                                <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="text-uppercase">Keep Shopping</span>
+                        </a>
+                        {% endif %}
                         <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
-                    </div>
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
             </div>
             </form>

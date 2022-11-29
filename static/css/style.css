@@ -97,6 +97,17 @@ dropdown-item:hover,
     padding: 0.6rem 1.2rem !important;
 }
 
+.search-btn {
+    background: #41e2d2 !important;
+    /*border-color: #c06f9f !important;*/
+    color: #ffffff !important;
+    min-width: 132px;
+}
+
+.search-bar-products {
+    min-width: 132px;
+}
+
 .shop-now-button:hover {
     background: #863b67 !important;
     /*border-color: #c06f9f !important;*/
@@ -646,38 +657,19 @@ footer,
     }
 }
 
-@media (min-width: 1320px) {
-    .product-container {
-        width: 80% !important;
-    }
+.product-container {
+    width: 85% !important;
+}
 
+@media (max-width: 860px) {
+    .product-container {
+        width: 95% !important;
+    }
+}
+
+@media (min-width: 1320px) {
     .card-img-top {
         height: 15vw;
-    }
-}
-
-@media (max-width: 930px) {
-    .search-products {
-        width: 70% !important;
-        margin: auto !important;
-    }
-}
-
-@media (min-width: 760px) {
-    .search-bar-products {
-        width: 70% !important;
-    }
-}
-
-@media (min-width: 930px) {
-    .search-bar-products {
-        width: 50% !important;
-    }
-}
-
-@media (max-width: 760px) {
-    .search-bar-products {
-        width: 100% !important;
     }
 }
 
@@ -749,4 +741,13 @@ label[for=sesame_seed] {
 
 .products-container {
     width: 90% !important;
+}
+
+.user-content p {
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.ratings i {
+    color: blue;
 }
