@@ -37,7 +37,7 @@ def checkout(request):
 
     if request.method == 'POST':
         bag = request.session.get('bag', {})
-
+        print(request.POST)
         form_data = {
             'full_name': request.POST['full_name'],
             'email': request.POST['email'],
@@ -48,9 +48,12 @@ def checkout(request):
             'street_address1': request.POST['street_address1'],
             'street_address2': request.POST['street_address2'],
             'county': request.POST['county'],
-            'collection_date': request.POST['collection_date'],
+            'collection_date': request.POST.get('collection_date'),
         }
-        order_form = OrderForm(form_data)
+
+        order_form = OrderForm(data=form_data)
+        print(order_form.errors)
+        print("Is this valid", order_form.is_valid())
         if order_form.is_valid():
             order = order_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
@@ -80,6 +83,7 @@ def checkout(request):
         else:
             messages.error(request, 'There was an error with your form. \
                         Please double check your information.')
+
     else:
         bag = request.session.get('bag', {})
         if not bag:
@@ -113,10 +117,6 @@ def checkout(request):
                 order_form = OrderForm()
         else:
             order_form = OrderForm()
-
-    if not stripe_public_key:
-        messages.warning(request, 'Stripe public key is missing. \
-            Did you forget to set it in your environment?')
 
     template = 'checkout/checkout.html'
     context = {
