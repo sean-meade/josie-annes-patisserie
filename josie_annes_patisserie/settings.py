@@ -12,10 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-if 'DJANGO_ALLOWED_HOSTS' in os.environ:
-    ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
-else:
-    ALLOWED_HOSTS = ["josie-annes-patisserie.herokuapp.com", "127.0.0.1"]
+ALLOWED_HOSTS = ["josie-annes-patisserie.herokuapp.com", "127.0.0.1", "jellyfish-app-3tdmi.ondigitalocean.app"]
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
