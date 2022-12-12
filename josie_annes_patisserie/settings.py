@@ -171,3 +171,6 @@ EMAIL_HOST = 'smtp.mailtrap.io'
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = '2525'
+
+# Contact form
+DEFAULT_FROM_EMAIL = 'elaine@josieannespatisserie.com'
