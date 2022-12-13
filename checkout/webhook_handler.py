@@ -50,7 +50,7 @@ class StripeWH_Handler:
         """
         intent = event.data.object
         pid = intent.id
-        basket = intent.metadata.basket
+        bag = intent.metadata.basket
         # Users save preference
         save_info = intent.metadata.save_info
 
