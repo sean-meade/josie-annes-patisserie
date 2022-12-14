@@ -1,3 +1,4 @@
+from django.core.paginator import Paginator
 from django.db.models.functions import Lower
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
@@ -8,7 +9,7 @@ from products.forms import ProductForm
 from products.models import Product, Category, Allergens
 
 
-def all_products(request, category):
+def all_products(request, category, page):
     """ A view to show all products, including sorting search filtering """
 
     products = Product.objects.filter(category__friendly_name=category)
@@ -53,12 +54,16 @@ def all_products(request, category):
         if category == 'delivery':
             messages.info(request, f"These items can be delivered within Ireland.")
 
+    paginator = Paginator(products, per_page=3)
+    page_object = paginator.get_page(page)
+
     context = {
         'products': products,
         'search_term': query,
         'exclude_allergens': allergens_checked,
         'all_allergens': all_allergens,
         'current_category': category,
+        "page_obj": page_object,
     }
 
     return render(request, 'products/products.html', context)

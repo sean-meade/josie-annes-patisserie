@@ -77,14 +77,14 @@
                     </div>
 
                         {% if product.category|cut:" " == "Delivery" %}
-                        <a href="{% url 'products' "delivery" %}" class="btn rounded-0 mt-5">
+                        <a href="{% url 'products' category='delivery' page=1 %}" class="btn rounded-0 mt-5">
                             <span class="icon">
                                 <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="text-uppercase">Keep Shopping</span>
                         </a>
                         {% elif product.category|cut:" " == "Collection" %}
-                        <a href="{% url 'products' "collection" %}" class="btn rounded-0 mt-5">
+                        <a href="{% url 'products' category='collection' page=1 %}" class="btn rounded-0 mt-5">
                         <span class="icon">
                                 <i class="fas fa-chevron-left"></i>
                             </span>

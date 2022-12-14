@@ -13,21 +13,21 @@
 
 {% block content %}
 <div class="overlay"></div>
-<div class="container-fluid product-container">
-    <div class="row">
-        <div class="col text-center mt-5">
-            <h2 class="heading-font m-0">
+<div class="container-fluid p-0">
+    <div class="row m-0 d-flex" id="store-image">
+        <div class="m-auto">
+            <h1 class="text-center shop-font mb-4">
                 {% if products.0 %}
                 <u>For {{ products.0.category }}</u>
                 {% else %}
                 <u>No Results</u>
                 {% endif %}
-            </h2>
+            </h1>
         </div>
     </div>
-    <div class="row">
+    <div class="row product-container mx-auto">
         <div class="col-sm-12 col-md-2 p-0">
-            <form method="GET" action="{% url 'products' current_category %}"
+            <form method="GET" action="{% url 'products' category=current_category page=1 %}"
                   class="m-0 search-products">
                 <div class="input-group allergen-checkboxes mt-5">
                     <h4>Allergens:</h4>
@@ -55,8 +55,8 @@
             </form>
         </div>
         <div class="col-sm-12 col-md-10">
-            <div class="row products-container mx-auto mb-5">
-                {% for product in products %}
+            <div class="row products-container mb-5 mx-auto w-100">
+                {% for product in page_obj %}
                 {% if product.hidden == False %}
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 mt-5 d-flex align-items-stretch">
                     <div class="card shadow-sm w-100">
@@ -81,6 +81,19 @@
                 </div>
                 {% endif %}
                 {% endfor %}
+            </div>
+            <div class="row mb-4 w-100 d-flex justify-content-center">
+                {% for page_number in page_obj.paginator.page_range %}
+                <a
+                    href="{% url 'products' category=current_category page=page_number %}"
+                    class="mr-1 page-number {% if page_number == page_obj.number %}current{% endif %}"
+                >
+                    <div class="text-center">
+                        {{page_number}}
+                    </div>
+
+                </a>
+            {% endfor %}
             </div>
         </div>
     </div>

@@ -21,11 +21,11 @@
             <p class="text-center">Are you looking to order for collection or delivery?</p>
             <div class="text-center">
                 <h4 class="m-0">
-                    <a href="{% url 'products' "collection" %}"
+                    <a href="{% url 'products' category='collection' page=1  %}"
                        class="btn btn-md text-uppercase shop-now-button">
                         Collection
                     </a>
-                    <a href="{% url 'products' "delivery" %}"
+                    <a href="{% url 'products' category='delivery' page=1 %}"
                        class="btn btn-md text-uppercase shop-now-button">
                         Delivery
                     </a>

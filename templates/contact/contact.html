@@ -14,9 +14,9 @@
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid">
-    <p class="heading-font m-0 text-center"><u>Contact Us</u></p>
-    <div class="border w-50 mx-auto">
+<div class="container-fluid mb-5">
+    <p class="heading-font m-0 text-center pt-3"><u>Contact Us</u></p>
+    <div class="mx-auto" style="width: 80vw">
         <div class="row mt-4">
             <form class="mx-auto" action="{% url 'contact' %}" method="POST">
 
@@ -36,15 +36,11 @@
                 </button>
             </form>
         </div>
-        <hr>
-        <div class="row">
-
-            <div class="row mx-auto">
-                <div class="row w-100 pb-3 pl-3">
-                    <h4>Address</h4>
-                </div>
-                <div class="row">
-                    <address class="col">
+        <div class="row d-flex justify-content-center my-5">
+            <div class="row">
+                <div class="col-md-4">
+                    <h1 class="about-sub-heading">Address</h1>
+                    <address>
                         Josie Annes'<br>
                         Ballybran<br>
                         Scarriff<br>
@@ -52,14 +48,17 @@
                         Co. Clare<br>
                         V94 A5F6
                     </address>
-                    <div class="col">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9630.579801766833!2d-8.464947732784138!3d52.882809217031394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485c9d414820c12b%3A0x6e188a51ee5c3bb1!2sJosie%20Anne&#39;s%20Patisserie!5e0!3m2!1sen!2sie!4v1669645458770!5m2!1sen!2sie"
-                                width="200" height="150" style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
+                </div>
+
+                <div class="col-md-8">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9630.580516301961!2d-8.456193!3d52.882806!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6e188a51ee5c3bb1!2sJosie%20Anne&#39;s%20Patisserie!5e0!3m2!1sen!2sie!4v1670999212509!5m2!1sen!2sie"
+                            width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                            class="map-iframe" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
+
+
     </div>
 
 

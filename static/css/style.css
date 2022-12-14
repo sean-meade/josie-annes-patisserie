@@ -219,7 +219,7 @@ dropdown-item:hover,
     }
 
     .footer-fb-padding {
-        padding-top: 16px;
+        padding-top: 16px !important;
     }
 }
 
@@ -238,6 +238,22 @@ dropdown-item:hover,
     color: #41e2d2;
     font-weight: bolder;
     font-size: 4rem;
+}
+
+.shop-font {
+    font-family: 'Sacramento', cursive;
+    color: #41e2d2;
+    font-weight: bolder;
+    font-size: 4rem;
+}
+
+
+.page-number {
+    height: 30px;
+    width: 30px;
+    border-radius: 3px;
+    background-color: #e0e0e0;
+    color: black;
 }
 
 .about-sub-heading {
@@ -260,7 +276,6 @@ dropdown-item:hover,
 }
 
 /* Product Form */
-
 
 .btn-file {
     position: relative;
@@ -521,12 +536,13 @@ footer,
     .social-links-middle {
         flex: 0 0 100% !important;
         max-width: 100% !important;
-        padding-top: 16px;
+        padding-top: 8px !important;
     }
 
     .social-links {
         flex: 0 0 40% !important;
         max-width: 100% !important;
+        padding-bottom: 8px !important;
     }
 }
 
@@ -549,6 +565,10 @@ footer,
 
     .hide-icon {
         display: none !important;
+    }
+
+    .order-number {
+        font-size: 0.8rem;
     }
 }
 
@@ -673,6 +693,13 @@ footer,
     }
 }
 
+@media (max-width: 778px) {
+    .map-iframe {
+        width: 300px !important;
+        height: 200px !important;
+    }
+}
+
 .css-checkbox {
     position: absolute;
     overflow: hidden;
@@ -748,6 +775,10 @@ label[for=sesame_seed] {
     font-size: 12px;
 }
 
+.fa-star {
+    color: orange !important;
+}
+
 .ratings i {
     color: blue;
 }
@@ -756,4 +787,12 @@ label[for=sesame_seed] {
     width: 10px !important;
     height: 10px !important;
     border-radius: 100% !important;
+}
+
+#store-image {
+    min-height: 20rem;
+    max-width: 100%;
+    background: url("https://res.cloudinary.com/drgmt7bbz/image/upload/v1668699644/josie-annes-6_51912115574_o_pqnjve.jpg") no-repeat center 25%;
+    background-size: cover;
+    display: inline-block;
 }
