@@ -38,16 +38,12 @@
                     </a>
                 </li>
                 <li class="my-auto" style="color: #c06f9f !important;">|</li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link header-links" href="#"
-                       id="all-products-link" data-toggle="dropdown" aria-haspopup="true"
+                <li class="nav-item">
+                    <a class="nav-link header-links" href="{% url 'products' category='collection' page=1 %}"
+                       id="all-products-link" aria-haspopup="true"
                        aria-expanded="false">
                         Shop
                     </a>
-                    <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                        <a href="{% url 'products' category='collection' page=1 %}" class="dropdown-item header-links">Collection</a>
-                        <a href="{% url 'products' category='delivery' page=1 %}" class="dropdown-item header-links">Delivery</a>
-                    </div>
                 </li>
                 <li class="my-auto" style="color: #c06f9f !important;">|</li>
                 <li class="nav-item">

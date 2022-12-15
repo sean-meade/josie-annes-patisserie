@@ -31,7 +31,7 @@
         <div class="col-12 col-md-6 col-lg-4">
             <div class="product-details-container mb-5 mt-md-5">
                 <h1 class="mb-0">{{ product.name }}</h1>
-                <p>Ingredients: {{ product.ingredients }}</p>
+                <p>Ingredients: {{ product.ingredients|safe }}</p>
                 {% if product.rating %}
                 <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
                 {% else %}
@@ -77,21 +77,21 @@
                     </div>
 
                         {% if product.category|cut:" " == "Delivery" %}
-                        <a href="{% url 'products' category='delivery' page=1 %}" class="btn rounded-0 mt-5">
+                        <a href="{% url 'products' category='delivery' page=1 %}" class="btn keep-shopping-btn rounded-0 mt-5">
                             <span class="icon">
                                 <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="text-uppercase">Keep Shopping</span>
                         </a>
                         {% elif product.category|cut:" " == "Collection" %}
-                        <a href="{% url 'products' category='collection' page=1 %}" class="btn rounded-0 mt-5">
+                        <a href="{% url 'products' category='collection' page=1 %}" class="btn keep-shopping-btn rounded-0 mt-5">
                         <span class="icon">
                                 <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="text-uppercase">Keep Shopping</span>
                         </a>
                         {% endif %}
-                        <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
+                        <input type="submit" class="btn view-product-btn rounded-0 text-uppercase mt-5" value="Add to Bag">
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
             </div>
             </form>

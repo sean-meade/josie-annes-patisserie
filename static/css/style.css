@@ -127,6 +127,19 @@ dropdown-item:hover,
     color: #ffffff !important;
 }
 
+
+.keep-shopping-btn {
+    background: #ffffff !important;
+    /*border-color: #c06f9f !important;*/
+    color: #863b67 !important;
+    border-color: #863b67;
+    padding: 0.4rem 0.8rem !important;
+}
+
+.keep-shopping-btn:hover {
+    border-color: #ffffff;
+}
+
 .heading-font {
     font-size: 4rem;
     font-family: 'Sacramento', cursive;
@@ -693,10 +706,20 @@ footer,
     }
 }
 
+.map-iframe {
+    box-shadow: 5px 5px 2px #888888;
+}
+
 @media (max-width: 778px) {
     .map-iframe {
         width: 300px !important;
         height: 200px !important;
+    }
+}
+
+@media (max-width: 770px) {
+    .map-iframe {
+        width: 250px !important;
     }
 }
 
@@ -790,7 +813,7 @@ label[for=sesame_seed] {
 }
 
 #store-image {
-    min-height: 20rem;
+    min-height: 12rem;
     max-width: 100%;
     background: url("https://res.cloudinary.com/drgmt7bbz/image/upload/v1668699644/josie-annes-6_51912115574_o_pqnjve.jpg") no-repeat center 25%;
     background-size: cover;

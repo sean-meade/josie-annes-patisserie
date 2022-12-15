@@ -48,12 +48,6 @@ def all_products(request, category, page):
 
     all_allergens = ["gluten", "egg", "celery", "nut", "mustard", "soy", "milk", "sesame seed"]
 
-    if query is None and allergens_checked is None:
-        if category == 'collection':
-            messages.info(request, f"These items need to be collected in store.")
-        if category == 'delivery':
-            messages.info(request, f"These items can be delivered within Ireland.")
-
     paginator = Paginator(products, per_page=3)
     page_object = paginator.get_page(page)
 
