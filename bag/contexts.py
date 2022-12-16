@@ -1,3 +1,5 @@
+from decimal import Decimal
+from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import Product
 
@@ -8,22 +10,40 @@ def bag_contents(request):
     product_count = 0
     bag = request.session.get('bag', {})
 
-    delivery_item = False
-    collection_item = False
+    for item_id, item_data in bag.items():
+        if isinstance(item_data, int):
 
-    for item_id, quantity in bag.items():
-        product = get_object_or_404(Product, pk=item_id)
-        total += quantity * product.price
-        product_count += quantity
-        bag_items.append({
-            'item_id': item_id,
-            'quantity': quantity,
-            'product': product,
-        })
-        if str(product.category).lower() == 'delivery':
-            delivery_item = True
-        if str(product.category).lower() == 'collection':
-            collection_item = True
+            product = get_object_or_404(Product, pk=item_id)
+            total += item_data * product.price
+            product_count += item_data
+            bag_items.append({
+                'item_id': item_id,
+                'quantity': item_data,
+                'product': product,
+                'price': product.price,
+            })
+        else:
+            product = get_object_or_404(Product, pk=item_id)
+            for size, quantity in item_data['items_by_size'].items():
+                print(f"size: {size}")
+                if size == 'm':
+                    total += quantity * product.medium_price
+                    price = product.medium_price
+                elif size == 'l':
+                    total += quantity * product.large_price
+                    price = product.large_price
+                else:
+                    print("Activated!")
+                    total += quantity * product.price
+                    price = product.price
+                product_count += quantity
+                bag_items.append({
+                    'item_id': item_id,
+                    'quantity': quantity,
+                    'product': product,
+                    'size': size,
+                    'price': price,
+                })
 
     grand_total = total
 
@@ -31,9 +51,8 @@ def bag_contents(request):
         'bag_items': bag_items,
         'total': total,
         'product_count': product_count,
+        'free_delivery_threshold': settings.FREE_DELIVERY_THRESHOLD,
         'grand_total': grand_total,
-        'collection_item': collection_item,
-        'delivery_item': delivery_item,
     }
 
     return context

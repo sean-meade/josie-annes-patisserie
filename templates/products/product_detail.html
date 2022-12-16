@@ -43,12 +43,52 @@
                     <a class="text-danger" href="{% url 'delete_product' product.sku %}">Delete</a>
                 </small>
                 {% endif %}
+                {% with product.has_size as s %}
+                {% if s %}
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <td class="border-top-0">Small</td>
+                      <td class="border-top-0">€{{ product.price }}</td>
+                    </tr>
+                    {% if product.medium_price %}
+                    <tr>
+                      <td>Medium</td>
+                      <td>€{{ product.medium_price }}</td>
+                    </tr>
+                    {% endif %}
+                    {% if product.large_price %}
+                    <tr>
+                      <td>Large</td>
+                      <td>€{{ product.large_price }}</td>
+                    </tr>
+                    {% endif %}
+                  </tbody>
+                </table>
+                {% else %}
                 <p class="lead mb-0 text-left">€{{ product.price }}</p>
+                {% endif %}
                 <p class="mt-3">{{ product.description | safe }}</p>
                 <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                     {% csrf_token %}
                     <div class="form-row">
                         <div class="col-12">
+
+                            {% if s %}
+                                <div class="col-12">
+                                    <p><strong>Size:</strong></p>
+                                    <select class="form-control rounded-0 w-50" name="product_size" id='id_product_size'>
+                                        <option value="s" selected>S</option>
+                                        {% if product.medium_price %}
+                                        <option value="m">M</option>
+                                        {% endif %}
+                                        {% if product.large_price %}
+                                        <option value="l">L</option>
+                                        {% endif %}
+                                    </select>
+                                </div>
+                            {% endif %}
+                            {% endwith %}
                             <p class="mt-3"><strong>Quantity:</strong></p>
                             <div class="form-group w-50">
                                 <div class="input-group input-group-{{ product.id }}">

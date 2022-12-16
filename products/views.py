@@ -48,7 +48,7 @@ def all_products(request, category, page):
 
     all_allergens = ["gluten", "egg", "celery", "nut", "mustard", "soy", "milk", "sesame seed"]
 
-    paginator = Paginator(products, per_page=3)
+    paginator = Paginator(products, per_page=6)
     page_object = paginator.get_page(page)
 
     context = {
