@@ -25,7 +25,6 @@ def bag_contents(request):
         else:
             product = get_object_or_404(Product, pk=item_id)
             for size, quantity in item_data['items_by_size'].items():
-                print(f"size: {size}")
                 if size == 'm':
                     total += quantity * product.medium_price
                     price = product.medium_price
@@ -33,7 +32,6 @@ def bag_contents(request):
                     total += quantity * product.large_price
                     price = product.large_price
                 else:
-                    print("Activated!")
                     total += quantity * product.price
                     price = product.price
                 product_count += quantity
@@ -51,7 +49,6 @@ def bag_contents(request):
         'bag_items': bag_items,
         'total': total,
         'product_count': product_count,
-        'free_delivery_threshold': settings.FREE_DELIVERY_THRESHOLD,
         'grand_total': grand_total,
     }
 

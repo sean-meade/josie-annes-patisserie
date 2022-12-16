@@ -27,10 +27,13 @@
                   enctype="multipart/form-data">
                 {% csrf_token %}
                 {% for field in form %}
-                {% if field.name != 'image' %}
-                {{ field | as_crispy_field | safe }}
-                {% else %}
+                {% if field.name == 'image' %}
                 {{ field }}
+                {% elif field.name == 'description' %}
+                {{ form.media }}
+                <p>{{ field }}</p>
+                {% else %}
+                {{ field | as_crispy_field }}
                 {% endif %}
                 {% endfor %}
                 <div class="text-right">

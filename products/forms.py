@@ -6,7 +6,10 @@ from .widgets import CustomClearableFileInput
 class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
-        fields = '__all__'
+        fields = ('category', 'name', 'description', 'price',
+                  'has_size', 'medium_price', 'large_price',
+                  'image_url', 'image', 'hidden', 'ingredients',
+                  'allergens')
 
     image = forms.ImageField(label='Image', required=False,
                              widget=CustomClearableFileInput)
