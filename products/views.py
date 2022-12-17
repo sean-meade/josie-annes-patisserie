@@ -46,7 +46,8 @@ def all_products(request, category, page):
         if not query and not allergens_checked and 'q' not in request.GET:
             messages.error(request, "You didn't enter anything to search")
 
-    all_allergens = ["gluten", "egg", "celery", "nut", "mustard", "soy", "milk", "sesame seed"]
+    all_allergens = ["gluten", "egg", "celery", "nut", "mustard", "soy",
+                     "milk", "wheat", "sulphites", "gelatine", "sesame seed"]
 
     paginator = Paginator(products, per_page=6)
     page_object = paginator.get_page(page)
