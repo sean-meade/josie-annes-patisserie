@@ -18,13 +18,9 @@
         <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
             <div class="image-container my-5">
                 {% if product.image %}
-                <a href="{{ product.image.url }}" target="_blank">
                     <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
-                </a>
                 {% else %}
-                <a href="">
                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                </a>
                 {% endif %}
             </div>
         </div>
@@ -101,7 +97,8 @@
                                         </button>
                                     </div>
                                     <input class="form-control qty_input id_qty_{{ product.id }}" type="number"
-                                           name="quantity" value="1" min="1" max="20"
+                                           name="quantity" value={% if product.individual_dessert %}"2"{% else %}"1"{% endif %}
+                                            min={% if product.individual_dessert %}"2"{% else %}"1"{% endif %} max="20"
                                            data-item_id="{{ product.id }}">
                                     <div class="input-group-append">
                                         <button class="increment-qty btn btn-black rounded-0 increment-qty_{{ product.id }}"

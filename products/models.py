@@ -52,6 +52,7 @@ class Product(models.Model):
     hidden = models.BooleanField(default=False)
     ingredients = models.TextField()
     allergens = models.ManyToManyField(Allergens)
+    individual_dessert = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name

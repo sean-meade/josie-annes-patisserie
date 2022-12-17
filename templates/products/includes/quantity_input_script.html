@@ -6,14 +6,14 @@
     * If no size is passed to the function, the parameter will have a value of undefined by default,
     * which prevents any errors
     */
-    function handleEnableDisable(itemId, size) {
+    function handleEnableDisable(itemId, size, min) {
         if (size) {
             var currentValue = parseInt($(`.size_${itemId}_${size}`).val());
         } else {
             var currentValue = parseInt($(`.id_qty_${itemId}`).val());
         }
 
-        var minusDisabled = currentValue < 2;
+        var minusDisabled = currentValue < min + 1;
         var plusDisabled = currentValue > 19;
 
         if (size) {
@@ -27,17 +27,18 @@
 
     // Ensure proper enabling/disabling of all inputs on page load
     var allQtyInputs = $('.qty_input');
+    var minimum = allQtyInputs[0].min;
     for (var i = 0; i < allQtyInputs.length; i++) {
         var itemId = $(allQtyInputs[i]).data('item_id');
         var size = $(allQtyInputs[i]).data('size');
-        handleEnableDisable(itemId, size);
+        handleEnableDisable(itemId, size, minimum);
     }
 
     // Check enable/disable every time the input is changed
     $('.qty_input').change(function () {
         var itemId = $(this).data('item_id');
         var size = $(this).data('size');
-        handleEnableDisable(itemId, size);
+        handleEnableDisable(itemId, size, minimum);
     });
 
     // Increment quantity
@@ -53,7 +54,7 @@
         }
         var currentValue = parseInt($(closestInput).val());
         $(allQuantityInputs).val(currentValue + 1);
-        handleEnableDisable(itemId, size);
+        handleEnableDisable(itemId, size, minimum);
     });
 
     // Decrement quantity
@@ -69,6 +70,6 @@
         }
         var currentValue = parseInt($(closestInput).val());
         $(allQuantityInputs).val(currentValue - 1);
-        handleEnableDisable(itemId, size);
+        handleEnableDisable(itemId, size, minimum);
     });
 </script>

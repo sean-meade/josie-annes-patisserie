@@ -1,5 +1,5 @@
+import math
 from decimal import Decimal
-from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import Product
 
@@ -9,11 +9,15 @@ def bag_contents(request):
     total = 0
     product_count = 0
     bag = request.session.get('bag', {})
+    individual_dessert_count = 0
 
     for item_id, item_data in bag.items():
+
         if isinstance(item_data, int):
 
             product = get_object_or_404(Product, pk=item_id)
+            if product.individual_dessert:
+                individual_dessert_count += item_data
             total += item_data * product.price
             product_count += item_data
             bag_items.append({
@@ -24,6 +28,8 @@ def bag_contents(request):
             })
         else:
             product = get_object_or_404(Product, pk=item_id)
+            if product.individual_dessert:
+                individual_dessert_count += item_data
             for size, quantity in item_data['items_by_size'].items():
                 if size == 'm':
                     total += quantity * product.medium_price
@@ -43,13 +49,22 @@ def bag_contents(request):
                     'price': price,
                 })
 
-    grand_total = total
+    desert_discount = 0
+    if individual_dessert_count / 6 > 0:
+        desert_discount = 2.00 * math.floor(individual_dessert_count / 6)
+        if individual_dessert_count % 6 > 3:
+            desert_discount += 1.50 * (individual_dessert_count % 6) / 4
+    elif individual_dessert_count / 4 > 0:
+        desert_discount = 1.50 * math.floor(individual_dessert_count / 4)
+
+    grand_total = total - Decimal(desert_discount)
 
     context = {
         'bag_items': bag_items,
         'total': total,
         'product_count': product_count,
         'grand_total': grand_total,
+        'desert_discount': desert_discount,
     }
 
     return context
