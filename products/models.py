@@ -45,7 +45,7 @@ class Product(models.Model):
     category = models.ForeignKey('Category', null=True, on_delete=models.SET_NULL)
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
-    description = RichTextField()
+    description = RichTextField(null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     has_size = models.BooleanField(default=False)
     mince_pies = models.BooleanField(default=False)
@@ -54,8 +54,8 @@ class Product(models.Model):
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     hidden = models.BooleanField(default=False)
-    ingredients = models.TextField()
-    allergens = models.ManyToManyField(Allergens)
+    ingredients = models.TextField(null=True, blank=True)
+    allergens = models.ManyToManyField(Allergens, null=True, blank=True)
     individual_dessert = models.BooleanField(default=False)
 
     def __str__(self):
