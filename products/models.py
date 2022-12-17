@@ -25,7 +25,10 @@ ALLERGIES_CHOICES = (("gluten", "gluten"),
                      ("milk", "milk"),
                      ("celery", "celery"),
                      ("mustard", "mustard"),
-                     ("sesame_seed", "sesame seed"))
+                     ("sesame_seed", "sesame seed"),
+                     ("wheat", "wheat"),
+                     ("sulphites", "sulphites"),
+                     ("gelatine", "gelatine"))
 
 
 class Allergens(models.Model):
