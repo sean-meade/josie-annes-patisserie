@@ -520,6 +520,12 @@ footer,
 
 }
 
+@media (min-width: 530px) and (max-width: 825px) {
+    #cta-container {
+        width: 50vw !important;
+    }
+}
+
 @media (max-width: 722px) {
     #cta-container {
         width: 80vw;
