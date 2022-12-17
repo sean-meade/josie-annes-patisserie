@@ -53,6 +53,7 @@ class StripeWH_Handler:
         bag = intent.metadata.bag
         # Users save preference
         save_info = intent.metadata.save_info
+        print("bag:", bag)
 
         billing_details = intent.charges.data[0].billing_details
         shipping_details = intent.shipping
