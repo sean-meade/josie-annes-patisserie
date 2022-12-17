@@ -57,10 +57,10 @@
 <header>
     {% include 'includes/header.html' %}
     {% include 'includes/header-mobile.html' %}
-    <div id="delivery-banner" class="row text-center w-100 m-0">
-        <div class="col w-100 p-0">
-            <p class="m-0" style="background-color: #863b67 ;color: #ffffff; font-family: 'GlacialIndifference';"><a
-                    href="{% url 'products' category='collection' page=1 %}?q=Individual+Deserts">Individual Desserts</a>: 4 for €16.50, or 6 for €25.00</p>
+    <div id="delivery-banner" class="row text-center w-100 m-0" style="background-color: #863b67 ;">
+        <div class="col w-100 px-0 py-2">
+            <h5 class="m-0" style="color: #ffffff; font-family: 'GlacialIndifference';"><a
+                    href="{% url 'products' category='collection' page=1 %}?q=Individual+Deserts">Individual Desserts</a>: 4 for €16.50, or 6 for €25.00</h5>
         </div>
     </div>
 </header>

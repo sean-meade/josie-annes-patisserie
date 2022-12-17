@@ -19,6 +19,7 @@
         <div class="col">
             <h2 class="logo-font my-4">Shopping Bag</h2>
             <hr>
+            <p class="text-muted mb-5">A summary of your bag contents is below</p>
         </div>
     </div>
 
@@ -29,12 +30,6 @@
                 <div class="row">
                     <div class="col">
                         {% include "bag/bag_total.html" %}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        {% include "bag/checkout_buttons.html" %}
-                        <p class="text-muted mb-5">A summary of your bag contents is below</p>
                     </div>
                 </div>
                 {% for item in bag_items %}
@@ -101,13 +96,9 @@
                             {% include "bag/bag_total.html" %}
                         </td>
                     </tr>
-                    <tr>
-                        <td colspan="5" class="text-right">
-                            {% include "bag/checkout_buttons.html" %}
-                        </td>
-                    </tr>
                 </table>
             </div>
+            <div class="py-3" style="float: right;">{% include "bag/checkout_buttons.html" %}</div>
             {% else %}
             <p class="lead mb-5" style="height: 40vh;">Your bag is empty.</p>
             <a href="{% url 'choice' %}" class="btn btn-outline-black rounded-0 btn-lg">

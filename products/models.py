@@ -48,6 +48,7 @@ class Product(models.Model):
     description = RichTextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
     has_size = models.BooleanField(default=False)
+    mince_pies = models.BooleanField(default=False)
     medium_price = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     large_price = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)

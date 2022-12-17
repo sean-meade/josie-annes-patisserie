@@ -44,18 +44,18 @@
                 <table class="table">
                   <tbody>
                     <tr>
-                      <td class="border-top-0">Small</td>
+                      <td class="border-top-0">{% if product.mince_pies == True %}Singles{% else %}Small{% endif %}</td>
                       <td class="border-top-0">€{{ product.price }}</td>
                     </tr>
                     {% if product.medium_price %}
                     <tr>
-                      <td>Medium</td>
+                      <td>{% if product.mince_pies == True %}Pack of 6{% else %}Medium{% endif %}</td>
                       <td>€{{ product.medium_price }}</td>
                     </tr>
                     {% endif %}
                     {% if product.large_price %}
                     <tr>
-                      <td>Large</td>
+                      <td>{% if product.mince_pies == True %}Pack of 12{% else %}Large{% endif %}</td>
                       <td>€{{ product.large_price }}</td>
                     </tr>
                     {% endif %}
@@ -74,12 +74,12 @@
                                 <div class="col-12">
                                     <p><strong>Size:</strong></p>
                                     <select class="form-control rounded-0 w-50" name="product_size" id='id_product_size'>
-                                        <option value="s" selected>S</option>
+                                        <option value="s" selected>{% if product.mince_pies == True %}Single{% else %}S{% endif %}</option>
                                         {% if product.medium_price %}
-                                        <option value="m">M</option>
+                                        <option value="m">{% if product.mince_pies == True %}Pack of 6{% else %}M{% endif %}</option>
                                         {% endif %}
                                         {% if product.large_price %}
-                                        <option value="l">L</option>
+                                        <option value="l">{% if product.mince_pies == True %}Pack of 12{% else %}L{% endif %}</option>
                                         {% endif %}
                                     </select>
                                 </div>
