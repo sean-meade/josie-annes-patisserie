@@ -7,7 +7,7 @@ Order Date: {{ order.date }}
 
 {% for item in bag %}
 {{ bag.name }}
-{% end for %}
+{% endfor %}
 
 Order Total: €{{ order.order_total }}
 Grand Total: €{{ order.grand_total }}
