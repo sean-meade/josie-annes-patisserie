@@ -18,7 +18,7 @@ class StripeWH_Handler:
     def __init__(self, request):
         self.request = request
 
-    def _send_confirmation_email(self, order):
+    def _send_confirmation_email(self, order, items):
         """Send the user a confirmation email"""
         cust_email = order.email
         subject = render_to_string(
@@ -53,7 +53,14 @@ class StripeWH_Handler:
         bag = intent.metadata.bag
         # Users save preference
         save_info = intent.metadata.save_info
-        print("bag:", bag)
+        items = {}
+        item_no = 1
+        for item_id, qty in bag.items():
+            product = Product.objects.get(id=item_id)
+            name = product.name
+            price = product.price
+            items[item_no] = {'name': name, 'price': price, 'qty': qty}
+            item_no += 1
 
         billing_details = intent.charges.data[0].billing_details
         shipping_details = intent.shipping
@@ -102,7 +109,7 @@ class StripeWH_Handler:
                 attempt += 1
                 time.sleep(1)
         if order_exists:
-            self._send_confirmation_email(order)
+            self._send_confirmation_email(order, items)
             return HttpResponse(
                 content=f'Webhook received: {event["type"]} | SUCCESS: '
                         f'Verified order already in database',
@@ -148,7 +155,7 @@ class StripeWH_Handler:
                 return HttpResponse(
                     content=f'Webhook received: {event["type"]} | ERROR: {e}',
                     status=500)
-        self._send_confirmation_email(order)
+        self._send_confirmation_email(order, items)
         return HttpResponse(
             content=f'Webhook received: {event["type"]} | SUCCESS: '
                     f'Created order in webhook',
