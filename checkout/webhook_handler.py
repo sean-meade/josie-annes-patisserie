@@ -59,7 +59,7 @@ class StripeWH_Handler:
             product = Product.objects.get(id=item_id)
             name = product.name
             price = product.price
-            items[item_no] = {'name': name, 'price': price, 'qty': qty, 'tot_cost': qty.s * price}
+            items[item_no] = {'name': name, 'price': price, 'qty': qty, 'tot_cost': str(qty)}
             item_no += 1
 
         billing_details = intent.charges.data[0].billing_details
