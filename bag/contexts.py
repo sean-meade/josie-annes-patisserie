@@ -57,7 +57,7 @@ def bag_contents(request):
     elif individual_dessert_count / 4 > 0:
         desert_discount = 1.50 * math.floor(individual_dessert_count / 4)
 
-    grand_total = round(float(total), 2) - desert_discount
+    grand_total = total - Decimal(desert_discount)
 
     context = {
         'bag_items': bag_items,
