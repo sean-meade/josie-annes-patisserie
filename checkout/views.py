@@ -106,7 +106,7 @@ def checkout(request):
         total = current_bag['grand_total']
         desert_discount = current_bag['desert_discount']
 
-        stripe_total = round((total - Decimal(desert_discount)) * 100)
+        stripe_total = round((total - desert_discount) * 100)
         stripe.api_key = stripe_secret_key
         intent = stripe.PaymentIntent.create(
             amount=stripe_total,
