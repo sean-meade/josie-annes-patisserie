@@ -53,14 +53,12 @@ class StripeWH_Handler:
         bag = intent.metadata.bag
         # Users save preference
         save_info = intent.metadata.save_info
-        items = {}
-        item_no = 1
+        items = []
         for item_id, qty in json.loads(bag).items():
             product = Product.objects.get(id=item_id)
             name = product.name
             price = product.price
-            items[item_no] = {'name': name, 'price': price, 'qty': qty, 'tot_cost': str(qty)}
-            item_no += 1
+            items.append([name, price, qty, price * qty])
 
         billing_details = intent.charges.data[0].billing_details
         shipping_details = intent.shipping
