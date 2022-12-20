@@ -5,6 +5,10 @@ This is a confirmation of your order at Josie Annes Patisserie. Your order infor
 Order Number: {{ order.order_number }}
 Order Date: {{ order.date }}
 
+{% for item in items %}
+{{ item.name }} X {{ item.qty }} = {{ item.tot_cost }}
+{% endfor %}
+
 {{ items.1.name }} X {{ items.qty }} = {{ tot_cost }}
 
 Order Total: €{{ order.order_total }}
