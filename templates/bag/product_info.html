@@ -1,3 +1,17 @@
 <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-<p class="my-0"><strong>Size: </strong>{% if item.product.has_size %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
+<p class="my-0"><strong>Size: </strong>
+    {% if item.product.has_size and item.product.mince_pies%}
+    {% if item.size == 'm' %}
+    6 Pack
+    {% if item.size == 'l' %}
+    12 Pack
+    {% else %}
+    Single
+    {% endif %}
+    {% elif item.product.has_size %}
+    {{ item.size|upper }}
+    {% else %}
+    N/A
+    {% endif %}
+</p>
 <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
