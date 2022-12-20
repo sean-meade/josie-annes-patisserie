@@ -9,8 +9,6 @@ Order Date: {{ order.date }}
 {{ item.2 }} {{ item.0 }} X €{{ item.1 }} = €{{ item.3 }}
 {% endfor %}
 
-{{ items.1.name }} X {{ items.qty }} = {{ tot_cost }}
-
 Order Total: €{{ order.order_total }}
 Grand Total: €{{ order.grand_total }}
 

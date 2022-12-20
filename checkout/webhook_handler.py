@@ -57,7 +57,7 @@ class StripeWH_Handler:
         for item_id, qty in json.loads(bag).items():
             product = Product.objects.get(id=item_id)
             if 'items_by_size' in qty:
-                for size, size_qty in qty.items_by_size:
+                for size, size_qty in item_id.items_by_size:
                     name = product.name + '(' + size.upper() + ')'
                     if size == 's':
                         price = product.price
