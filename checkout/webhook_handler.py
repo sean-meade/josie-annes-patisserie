@@ -56,9 +56,20 @@ class StripeWH_Handler:
         items = []
         for item_id, qty in json.loads(bag).items():
             product = Product.objects.get(id=item_id)
-            name = product.name
-            price = product.price
-            items.append([name, price, qty, price * qty])
+            if 'items_by_size' in qty:
+                for size, size_qty in qty.items_by_size:
+                    name = product.name + '(' + size.upper() + ')'
+                    if size == 's':
+                        price = product.price
+                    elif size == 'm':
+                        price = product.medium_price
+                    elif size == 'l':
+                        price = product.large_price
+                    items.append([name, price, size_qty, price * size_qty])
+            else:
+                price = product.price
+                name = product.name
+                items.append([name, price, qty, price * qty])
 
         billing_details = intent.charges.data[0].billing_details
         shipping_details = intent.shipping

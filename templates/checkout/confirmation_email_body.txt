@@ -6,7 +6,7 @@ Order Number: {{ order.order_number }}
 Order Date: {{ order.date }}
 
 {% for item in items %}
-{{ item.0 }} X {{ item.1 }} = {{ item.2 }}
+{{ item.2 }} {{ item.0 }} X €{{ item.1 }} = €{{ item.3 }}
 {% endfor %}
 
 {{ items.1.name }} X {{ items.qty }} = {{ tot_cost }}
