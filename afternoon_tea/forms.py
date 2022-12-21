@@ -24,9 +24,12 @@ class AfternoonTeaForm(forms.ModelForm):
             'no_of_people': 'No. of People',
         }
         for field in self.fields:
-            if self.fields[field].required:
-                placeholder = f'{placeholders[field]} *'
+            if field == 'date' or field == 'time':
+                pass
             else:
-                placeholder = placeholders[field]
-            self.fields[field].widget.attrs['placeholder'] = placeholder
+                if self.fields[field].required:
+                    placeholder = f'{placeholders[field]} *'
+                else:
+                    placeholder = placeholders[field]
+                self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].label = False
