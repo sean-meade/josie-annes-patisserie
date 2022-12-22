@@ -16,7 +16,9 @@ def cake(request):
             'full_name': request.POST['full_name'],
             'email': request.POST['email'],
             'phone_number': request.POST['phone_number'],
-            'date': datetime.strptime(request.POST.get('date'), "%d/%m/%Y").date(),
+            'date': datetime.strptime(
+                request.POST.get('date'),
+                "%d/%m/%Y").date(),
             'notes': request.POST['notes'],
             'under_review': True,
         }
@@ -27,7 +29,10 @@ def cake(request):
                 cake_order = cake_form.save(commit=False)
                 cake_order.save()
 
-                return redirect(reverse('cake_order_success', args=[cake_order.cake_order_number]))
+                return redirect(
+                    reverse(
+                        'cake_order_success', args=[
+                            cake_order.cake_order_number]))
         except Exception as e:
             messages.error(request, f'Error creating order: {e}')
             return HttpResponse(status=500)

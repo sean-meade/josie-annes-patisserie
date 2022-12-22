@@ -7,7 +7,9 @@ import datetime
 three_weeks_from_now = datetime.date.today() + datetime.timedelta(days=21)
 
 # The next date that is a Saturday
-next_saturday = datetime.timedelta((12 - three_weeks_from_now.weekday()) % 7) + three_weeks_from_now
+next_saturday = datetime.timedelta(
+    (12 - three_weeks_from_now.weekday()) %
+    7) + three_weeks_from_now
 
 DATE_CHOICES = []
 
@@ -30,7 +32,8 @@ TIME_CHOICES = (
 
 
 class AfternoonTea(models.Model):
-    booking_number = models.CharField(max_length=32, null=False, editable=False)
+    booking_number = models.CharField(
+        max_length=32, null=False, editable=False)
     full_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
     phone_number = models.CharField(max_length=20, null=False, blank=False)

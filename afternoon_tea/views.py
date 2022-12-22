@@ -25,9 +25,14 @@ def afternoon_tea(request):
                 booking = afternoon_tea_form.save(commit=False)
                 booking.save()
 
-            return redirect(reverse('afternoon_tea_success', args=[booking.booking_number]))
+            return redirect(
+                reverse(
+                    'afternoon_tea_success',
+                    args=[
+                        booking.booking_number]))
         except Exception as e:
-            messages.error(request, f"Please make sure number of people doesn't exceed 6")
+            messages.error(
+                request, f"Please make sure number of people doesn't exceed 6")
 
     else:
         afternoon_tea_form = AfternoonTeaForm()
