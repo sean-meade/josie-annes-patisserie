@@ -1,4 +1,5 @@
 # Josie Annes Patisserie Ecommerce Website
+
 Ecommerce website for the business Josie Anne's Patisserie.
 
 [Link to live site](https://josie-annes-patisserie.herokuapp.com/)
@@ -13,51 +14,51 @@ All the features wanted for the site and a sub list stating what is involved if 
 
 1. Order cake
 
-    a. Admin – confirm order
+   a. Admin – confirm order
 
-    b. User – order
+   b. User – order
 
 2. Noticeboard
 
-    a. User – Add notice
+   a. User – Add notice
 
-    b. Admin – Approve notice
+   b. Admin – Approve notice
 
 3. Book table
 
-    a. Book table
+   a. Book table
 
-    b. Set days tables aren’t available
+   b. Set days tables aren’t available
 
 4. CRUD shop items
 
-    a. Create
+   a. Create
 
-    b. Read
+   b. Read
 
-    c. Update
+   c. Update
 
-    d. Delete
+   d. Delete
 
 5. Navigation
 
-    a. Navbar
+   a. Navbar
 
-    b. Footer
+   b. Footer
 
 6. View user details
 
-    a. Personal
+   a. Personal
 
-    b. Past orders
+   b. Past orders
 
-    c. Table booking status
+   c. Table booking status
 
-    d. Cake order Status
+   d. Cake order Status
 
 7. Edit user details
 
-    a. Personal
+   a. Personal
 
 8. Rate a product
 
@@ -108,10 +109,10 @@ All the features wanted for the site and a sub list stating what is involved if 
 | 13          | Sign up for newsletter      | 5          | 5           |
 | 14          | View items                  | 5          | 5           |
 
-
 ![Image highlighting feature rankings](media/readme-images/feature-rankings.png)
 
 #### Final ranking
+
 | Feature No. | Feature                      |
 |-------------|------------------------------|
 | 12          | Authentication               |
@@ -129,22 +130,24 @@ All the features wanted for the site and a sub list stating what is involved if 
 | 3           | Book table                   |
 | 9           | Leave a review               |
 
-
 ## User Stories
 
 ### Visitors User Stories
-- As a visitor I want to be able to view all the items for sale 
+
+- As a visitor I want to be able to view all the items for sale
 - As a visitor I want to be able to view the Homepage
 - As a visitor I want to be able to filter all the items by price, category, and ingredients
-- As a visitor I want to be able to view an item in detail so I can read a description, view the image larger, see the ingredients and all other relevant details of the item.
+- As a visitor I want to be able to view an item in detail so I can read a description, view the image larger, see the
+  ingredients and all other relevant details of the item.
 - As a visitor I want to be able to sign up for a newsletter
-- As a visitor I want to be able to register as a user 
+- As a visitor I want to be able to register as a user
 - As a visitor I want to be able to add items to my shopping cart
 - As a visitor I want to be able to check out and pay for items in my shopping cart
 - As a visitor I want to be able to navigate through the site
 
 ### User Stories
-- As a user I want to be able to sign in 
+
+- As a user I want to be able to sign in
 - As a user I want to be able to sign out
 - As a user I want to be able to select items and add them to my shopping cart
 - As a user I want to be able to select items and remove them to my shopping cart
@@ -158,6 +161,7 @@ All the features wanted for the site and a sub list stating what is involved if 
 - As a user I want to be able to edit my details
 
 ### Admin User Stories
+
 - As admin I want to be able to CRUD items for shop
 - As admin I want to be able to approve notices
 - As admin, I want to be able to approve booking of a table
@@ -395,7 +399,7 @@ All the features wanted for the site and a sub list stating what is involved if 
 
 ### Facebook Business Page
 
-Link to created page: https://www.facebook.com/profile.php?id=100087897433792 
+Link to created page: https://www.facebook.com/profile.php?id=100087897433792
 
 ![Navbar](media/readme-images/fb_marketing/fb1.png)
 ![Navbar](media/readme-images/fb_marketing/fb2.png)
@@ -409,22 +413,24 @@ I tried to revert all migrations near the beginning and ran into this error:
 
 ![Reverting all migrations](media/readme-images/errors/revert_migrations.png)
 
-I was able to solve it with [Instructions found on Stack Overlflow](https://stackoverflow.com/questions/50346326/programmingerror-relation-django-session-does-not-exist) and running migrations again when I had made changes.
+I was able to solve it
+with [Instructions found on Stack Overlflow](https://stackoverflow.com/questions/50346326/programmingerror-relation-django-session-does-not-exist)
+and running migrations again when I had made changes.
 
 ### Internal Server Error 500
 
 I wasn’t getting an error when running locally, and it built fine on Heroku. There were no errors in the console on the
-on Heroku. All I was getting as “Internal Server Error 500” (see image below). So I created a new branch from the last 
-commit and hosted that instead. That actually worked when built in Heroku so from that I knew it was something in the 
-last commit that was causing the error. After comparing the code to the tutorial I realized I wasn’t missing anything. 
-So after thinking further I thought it might be something that my local environment had that my Heroku one didn’t. 
-Turns out I hadn’t added stripe to requirements.txt
+on Heroku. All I was getting as “Internal Server Error 500” (see image below). So I created a new branch from the last
+commit and hosted that instead. That actually worked when built in Heroku so from that I knew it was something in the
+last commit that was causing the error. After comparing the code to the tutorial I realized I wasn’t missing anything.
+So after thinking further I thought it might be something that my local environment had that my Heroku one didn’t. Turns
+out I hadn’t added stripe to requirements.txt
 
 ![Internal Server Error 500](media/readme-images/errors/internal_server_error_500.png)
 
 ### Custom Widget Template does not exist
 
-After checking the paths were all correct I went searching online for a solution. I found 
+After checking the paths were all correct I went searching online for a solution. I found
 [this solution](https://stackoverflow.com/questions/45844032/django-templatedoesnotexist-in-case-of-a-custom-widget)
 on Stack Overflow by user3763125.
 
@@ -432,9 +438,8 @@ on Stack Overflow by user3763125.
 
 ### Page Not Found
 
-This was an interesting one. I realized the path I want the app to take wasn't in the list of urls
-in the below image. This led me to guess moving my url up in the list would help it be found first and 
-it worked.
+This was an interesting one. I realized the path I want the app to take wasn't in the list of urls in the below image.
+This led me to guess moving my url up in the list would help it be found first and it worked.
 
 ![Page Not Found](media/readme-images/errors/url-ranking.png)
 
@@ -444,9 +449,12 @@ it worked.
 
 Validation testing was done with PyCharms built in formatters for Python, HTML, CSS, and JavaScript.
 
+Case scenario
+- 
+
 ## Deployment
 
-**Josie Anes Patisserie** was developed using the **PyCharm IDE**, and using **Git** and **GitHub** for version control. 
+**Josie Anes Patisserie** was developed using the **PyCharm IDE**, and using **Git** and **GitHub** for version control.
 It is hosted on **Heroku** and all media files are hosted in **Cloudinary**.
 
 Before deploying the application, install the following:
@@ -460,9 +468,10 @@ Before deploying the application, install the following:
 
 To deploy josie-annes-patisserie locally, take the following steps:
 
-1. From the applications' [repository](https://github.com/sean-meade/josie-annes-patisserie), click the *code* button and download the zip file.
+1. From the applications' [repository](https://github.com/sean-meade/josie-annes-patisserie), click the *code* button
+   and download the zip file.
 
-    Alternatively, you can clone the repository using the following line in your command prompt:
+   Alternatively, you can clone the repository using the following line in your command prompt:
 
 ```terminal
 git clone https://github.com/sean-meade/josie-annes-patisserie
@@ -502,10 +511,12 @@ python manage.py createsuperuser
 
 Then follow the instructions to create the superuser.
 
-6. After you login to the admin panel, you can add data to be displayed in your app. Refer to [database modeling](#database-modelling).
+6. After you login to the admin panel, you can add data to be displayed in your app. Refer
+   to [database modeling](#database-modelling).
 
 
-7. To initiate the application, type the command `python manage.py runserver` in your terminal. The application is now available in your browser at the address: `http://127.0.0.1:8000/`
+7. To initiate the application, type the command `python manage.py runserver` in your terminal. The application is now
+   available in your browser at the address: `http://127.0.0.1:8000/`
 
 [Back to content](#contents)
 
@@ -516,8 +527,11 @@ To deploy the app to Heroku, use the following steps:
 3. Clone the repository like above.
 4. Push these newly created files to your repository master.
 5. Login to Heroku and create a new app.
-6. In Heroku dashboard of the new app, click **deploy**, then **deployment** method and select **GitHub** to connect your app to your github repository for automatic deployment.
-7. In Heroku Resources tab, navigate to **Add-Ons** section and search for **Heroku Postgres**. I recommend you choose hobby level for this application. You should also search for **Cloudinary - Image and Video Management** to ensure your media files load to Cloudinary.
+6. In Heroku dashboard of the new app, click **deploy**, then **deployment** method and select **GitHub** to connect
+   your app to your github repository for automatic deployment.
+7. In Heroku Resources tab, navigate to **Add-Ons** section and search for **Heroku Postgres**. I recommend you choose
+   hobby level for this application. You should also search for **Cloudinary - Image and Video Management** to ensure
+   your media files load to Cloudinary.
 8. In settings tab, navigate to **Reveal Config Vars** and add the following variables:
 
 | **KEY**           | **VALUE**               |
@@ -530,12 +544,13 @@ To deploy the app to Heroku, use the following steps:
 | STRIPE_SECRET_KEY | YOUR_STRIPE_SECRET_KEY  |
 | STRIPE_WH_SECRET  | YOUR_STRIPE_WH_SECRET  |
 
-9. In settings.py in your IDE, temporarily comment out the database and use below code instead (make sure you do not commit!):
+9. In settings.py in your IDE, temporarily comment out the database and use below code instead (make sure you do not
+   commit!):
 
 ```python
 DATABASES = {
-        'default': dj_database_url.parse('POSTGRESS URL')
-    }
+    'default': dj_database_url.parse('POSTGRESS URL')
+}
 ```
 
 10. In terminal, migrate the models to create the Postgress database using the following commands:
@@ -561,13 +576,104 @@ Then follow the instructions to create the superuser.
 
 ## Testing
 
-First Registered with admin and got email to confirm:
+### Manual Testing
 
+- Responsiveness was tested using Chrome Dev Tools. The site was tested for mobiles, tablets, laptops and desktop
+  responsivity.
+
+| Feature Tested                           | Testing Method                                                                                                                                          | Example                                                     | Result |  
+|------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------|--------| 
+| Registration - Blank Field               | - Each mandatory field was left blank intentionally to ensure alert appeared                                                                            | ![](media/readme-images/testing/empty-field.png)            | Pass   |
+| Registration - Invalid Email Field       | - An invalid email address was tested to ensure error message appeared                                                                                  | ![](media/readme-images/testing/invalid-email.png)          | Pass   |
+| Registration - Common Password           | - A common password was tested to check security                                                                                                        | ![](media/readme-images/testing/common-password.png)        | Pass   |
+| Registration - Short Password            | - A short password was tested to check that an error appears if less than 8 characters entered                                                          | ![](media/readme-images/testing/password-too-short.png)     | Pass   |
+| Registration - Short Username            | - A short username was tested to check that an error appears if less than 4 characters are entered                                                      | ![](media/readme-images/testing/short-username.png)         | Pass   |
+| Registration - Email Verification        | - When new account is set up user should be asked to verify the email address before logging in for the first time.                                     | ![](media/readme-images/testing/verify-email.png)           | Pass   |
+| Registration - Email Confirmation        | - When new account is set up user should be sent a verification email to the email address used during registration.                                    | ![](media/readme-images/testing/registration-email.png)     | Pass   |
+| Sign-In - - Blank Field                  | - Each mandatory field was left blank intentionally to ensure alert appeared                                                                            | ![](media/readme-images/testing/password-blank.png)         | Pass   |
+| Sign in - Incorrect Username Field       | - Tested with incorrect spelling and capitalisation of some letters to ensure account security                                                          | ![](media/readme-images/testing/incorrect-username.png)     | Pass   |
+| Sign in - Incorrect Password Field       | - Tested with incorrect spelling and capitalisation of some letters to ensure account security                                                          | ![](media/readme-images/testing/incorrect-password.png)     | Pass   |
+| Non-Signed in user - Profile menu        | - Only logged in users have access to full profile menu options                                                                                         | ![](media/readme-images/testing/profile-only-on-signin.png) | Pass   | 
+| Signed in user - review                  | - User can update their profile information when signed in.                                                                                             | ![](media/readme-images/testing/update-profile.png)         | Pass   | 
+| Signed in user - update profile          | - The product details page contains correct information about the product.                                                                              | ![](media/readme-images/testing/product-detail.png)                       | Pass   | 
+| *Signed in user - Profile menu Admin     | - Only admin can see the link to admin site                                                                                                             | ![](media/readme-images/testing/.png)                       | Pass   |
+| Signed in user - Checkout                | - Correct details are displayed on checkout screen and payment details not stored                                                                       | ![](media/readme-images/testing/correct-deatils-at-checkout.png)                       | Pass   |
+| Update User Profile - Pre-populated Data | - Delivery address and contact information is pre-populated from previous orders and available to be updated by user                                    | ![](media/readme-images/testing/)                           | Pass   | 
+| Site Alert - sign in                     | - Alert to confirm User successfully signed in.                                                                                                         | ![](media/readme-images/testing/)                           | Pass   |
+| Site Alert - sign out                    | - Alert requests user to confirm choice before logging out of site.                                                                                     | ![](media/readme-images/testing/)                           | Pass   | 
+| Site Alert - sign out                    | - Alert to confirm successful signing out.                                                                                                              | ![](media/readme-images/testing/)                           | Pass   |
+| About Page - Links                       | Testing if signup and home page link are activated. Both of these links are active and take the user to the correct location on the site when selected. | ![](media/readme-images/testing/)                           | Pass   | 
+| Newsletter                               | - Field must be completed with valid email address for submission to be accepted.                                                                       | ![](media/readme-images/testing/)                           | Pass   |
+| Cart - product added                     | - Alert displayed with correct details when product added to cart                                                                                       | ![](media/readme-images/testing/)                           | Pass   | 
+| Cart - quantity updated                  | - Alert displayed with correct details when cart is updated                                                                                             | ![](media/readme-images/testing/)                           | Pass   |
+| Cart - product removed                   | - Alert displayed with correct details when product is removed from cart                                                                                | ![](media/readme-images/testing/)                           | Pass   |
+| Checkout incomplete details              | - Checkout does not process if all mandatory details with * are filled in.                                                                              | ![](media/readme-images/testing/)                           | Pass   |
+| Checkout - save details                  | - Save details to profile option works correctly when selected                                                                                          | ![](media/readme-images/testing/)                           | Pass   |
+| Stripe - incorrect number                | - Only cards with completed and valid card numbers can be accepted for payments                                                                         | ![](media/readme-images/testing/)                           | Pass   |
+| Stripe - incomplete date                 | - Only cards with completed valid date can be accepted for payments                                                                                     | ![](media/readme-images/testing/)                           | Pass   |
+| Stripe - expired card                    | - Only cards with expiry date in the future can be accepted for payments                                                                                | ![](media/readme-images/testing/)                           | Pass   |
+| Stripe - incomplete security code        | - Only cards with complete security code can be accepted for payments                                                                                   | ![](media/readme-images/testing/)                           | Pass   |
+| Stripe - incomplete ZIP code             | - Only cards with completed and valid ZIP code can be accepted for payments                                                                             | ![](media/readme-images/testing/)                           | Pass   |
+| Update User Profile - Pre-populated Data | - Pre saved data available on profile page.                                                                                                             | ![](media/readme-images/testing/)                           | Pass   |
+| User Profile - Order History             | - Order history available on profile page.                                                                                                              | ![](media/readme-images/testing/)                           | Pass   |
+| Order Confirmation - notification        | - Alert is displayed correctly with users email and order number.                                                                                       | ![](media/readme-images/testing/)                           | Pass   |
+| Order Success Page                       | -This page provides the user with a summary of their order, the shipping details, and the overall cost.                                                 | ![](media/readme-images/testing/)                           | Pass   | 
+| Admin CRUD functionality                 | - The admin account has access to create, update and delete products, user information, newsletter subscribtions etc                                    | ![](media/readme-images/testing/)                           | Pass   | 
+| Admin - restricted access                | - Only the admin account can log into the admin view panel.                                                                                             | ![](media/readme-images/testing/)                           | Pass   |
+| Error404 - Display                       | - Page displayed when incorrect url is searched for and redirect to home page works.                                                                    | ![](media/readme-images/testing/)                           | Pass   |
+
+<br/>
+
+<!-- TOC --><a name="validation-testing"></a>
+
+#### Validation Testing:
+
+| Resource Used | Code Tested | Example | Result |  
+| --- | --- | --- | --- | 
+| <a href="https://jshint.com/">JSHint </a>  |JavaScipt files | | Pass - missing semicolons added and repeat testing passed. |
+| <a href="https://jigsaw.w3.org/css-validator/#validate_by_input"> W3C CSS Validator </a> | All CSS files | <img src="media/testing/validation_testing/checkoutcss.png" alt="A screenshot of checkout.css results with no errors."> | Pass | 
+| <a href="https://validator.w3.org/nu/#textarea"> Html Checker  </a>| All HTML source code was validated | <img src="media/testing/validation_testing/html.png" alt="A screenshot of html result summary.">| Pass - two stray / and a warning for unnecessary type attribute for JavaScript resources were identified and corrected during the validation process. | 
+| pycodestyle | all files containing Python code | <img src="media/testing/validation_testing/pep8.png" alt="A screenshot of pep8 results with no errors."> | Pass * | 
+
+* Pep8 Validation was completed using the following steps.
+    1. Run the command pip3 install pycodestyle
+    2. In the workspace, press Ctrl+Shift+P (or Cmd+Shift+P on Mac).
+    3. Type the word linter into the search bar that appears and click on Python: Select Linter from the filtered
+       results.
+    4. Select pycodestyle from the list.
+    5. PEP8 errors will now be underlined in red, as well as being listed in the PROBLEMS tab beside your terminal.
+
+- All errors were resolved, and no problems were detected in the workspace as per the above image with the following
+  exceptions:
+    - Webhook_handlers.py lines 103 and 147 were too long however, this error was unable to be resolved due to syntax
+      compliance. - Settings.py lines 148,151,154, and 157 all identified as being too long, this error was unable to be
+      resolved due to syntax compliance.
+
+<br/>
+
+#### Lighthouse Testing
+
+- Lighthouse was used to check perfomance and accessiblitiy. Colour of the product buttons was adjusted to improve
+  contrast ratio.
+  <img src="media/testing/validation_testing/lighthousescore.png" alt="A screenshot of lighthouse results.">
+
+<br/>
+
+#### Security
+
+- All SECRET access keys are stored safely in the env.py file to prevent unwanted connections to the database.
+- Django’s setting DEBUG was set to False after development for deployment to prevent access to error screens revealing
+  code or database entries.
+- Django allauth was used to set up user registration and Django’s LoginRequiredMixin and UserPassesTestMixin were used
+  to ensure only signed-in users and authors can edit and delete their product reviews.
+- Cross-Site Request Forgery (CSRF) tokens were used on all forms throughout this site to prevent valid requests to the
+  backend server from being created for malicious purposes.
+
+First Registered with admin and got email to confirm:
 
 Then was able to add and delete products:
 ![](media/readme-images/testing/add-product.png)
 ![](media/readme-images/testing/product-deleted.png)
-
 
 Then was able to register as user and didn't see admin functionality:
 ![](media/readme-images/testing/username-used-password-too-common.png)
