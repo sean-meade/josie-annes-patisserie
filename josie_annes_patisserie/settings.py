@@ -12,8 +12,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG")
 
-print(f"This is the Debug mode: {DEBUG}")
-
 ALLOWED_HOSTS = ["josie-annes-patisserie.herokuapp.com", "127.0.0.1"]
 
 # Application definition
