@@ -169,6 +169,7 @@ def checkout_success(request, order_number):
     template = 'checkout/checkout_success.html'
     context = {
         'order': order,
+        'from_profile': False,
     }
 
     print("Everything went fine to here with order: {order}")
