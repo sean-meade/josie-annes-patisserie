@@ -10,7 +10,7 @@ CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEBUG")
+DEBUG = False
 
 ALLOWED_HOSTS = ["josie-annes-patisserie.herokuapp.com", "127.0.0.1"]
 

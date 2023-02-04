@@ -17,4 +17,4 @@ urlpatterns = [
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # handling the 404 error
-handler404 = 'josie_annes_patisserie.views.error_404_view'
+handler404 = "josie_annes_patisserie.views.error_404_view"
