@@ -10,7 +10,7 @@ CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 LOGGING = {
     'version': 1,
