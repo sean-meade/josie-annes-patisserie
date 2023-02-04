@@ -106,7 +106,7 @@ def checkout(request):
                     'email': profile.user.email,
                     'phone_number': profile.default_phone_number,
                     'country': profile.default_country,
-                    'eircode': profile.default_eircode,
+                    'postal_code': profile.default_eircode,
                     'town_or_city': profile.default_town_or_city,
                     'street_address1': profile.default_street_address1,
                     'street_address2': profile.default_street_address2,

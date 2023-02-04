@@ -1,5 +1,6 @@
 # virtual env set up locally
 venv/
+venv39/
 # PyCharm file (from idea)
 .idea/
 # Locally created db
