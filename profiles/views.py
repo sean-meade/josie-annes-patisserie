@@ -37,7 +37,9 @@ def profile(request):
 
 
 def order_history(request, order_number):
+    print('before looking for product')
     order = get_object_or_404(Order, order_number=order_number)
+    print('after looking for product')
 
     messages.info(request, (
         f'This is a past confirmation for order number {order_number}. '
