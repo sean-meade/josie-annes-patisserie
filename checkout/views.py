@@ -166,11 +166,11 @@ def checkout_success(request, order_number):
     if 'bag' in request.session:
         del request.session['bag']
 
-    template = 'checkout/checkout_success.html'
+    template = 'templates/checkout/checkout_success.html'
     context = {
         'order': order,
     }
 
-    print("Everything went fine to here.")
+    print(f"Everything went fine to here with order: {order}")
 
     return render(request, template, context)
