@@ -171,4 +171,6 @@ def checkout_success(request, order_number):
         'order': order,
     }
 
+    print("Everything went fine to here.")
+
     return render(request, template, context)
