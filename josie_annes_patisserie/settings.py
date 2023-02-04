@@ -10,7 +10,9 @@ CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG')
+DEBUG = os.environ.get("DEBUG")
+
+print(f"This is the Debug mode: {DEBUG}")
 
 ALLOWED_HOSTS = ["josie-annes-patisserie.herokuapp.com", "127.0.0.1"]
 
@@ -22,8 +24,8 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'cloudinary_storage',
     'django.contrib.staticfiles',
+    'cloudinary_storage',
     'cloudinary',
     "django_summernote",
     'django.contrib.sites',
