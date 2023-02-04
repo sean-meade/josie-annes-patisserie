@@ -51,17 +51,6 @@
                             </a>
                         </td>
                         <td>{{ order.date }}</td>
-                        <td>
-                            <ul class="list-unstyled">
-                                {% for item in order.lineitems.all %}
-                                <li class="small">
-                                    {% if item.product.has_sizes %}
-                                    Size {{ item.product.size|upper }}
-                                    {% endif %}{{ item.product.name }} x{{ item.quantity }}
-                                </li>
-                                {% endfor %}
-                            </ul>
-                        </td>
                         <td>${{ order.grand_total }}</td>
                     </tr>
                     {% endfor %}

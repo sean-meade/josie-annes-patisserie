@@ -23,7 +23,7 @@ def bag_contents(request):
         })
 
     if total < fdt:
-        delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
+        delivery = round(total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100))
         free_delivery_delta = fdt - total
     else:
         delivery = 0
