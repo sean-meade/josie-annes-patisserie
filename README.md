@@ -2,7 +2,7 @@
 
 Ecommerce website for the business Josie Anne's Patisserie.
 
-[Link to live site](https://josie-annes-patisserie.herokuapp.com/)
+[Link to live site](https://josie-annes.onrender.com//)
 
 ## Feature Choice
 
@@ -12,33 +12,13 @@ There are lots of features I'd like to add, but I am under a time crunch so feat
 
 All the features wanted for the site and a sub list stating what is involved if more than one thing.
 
-1. Order cake
+1. Order cake a. Admin – confirm order b. User – order
 
-   a. Admin – confirm order
+2. Noticeboard a. User – Add notice b. Admin – Approve notice
 
-   b. User – order
+3. Book table a. Book table b. Set days tables aren’t available
 
-2. Noticeboard
-
-   a. User – Add notice
-
-   b. Admin – Approve notice
-
-3. Book table
-
-   a. Book table
-
-   b. Set days tables aren’t available
-
-4. CRUD shop items
-
-   a. Create
-
-   b. Read
-
-   c. Update
-
-   d. Delete
+4. CRUD shop items a. Create b. Read c. Update d. Delete
 
 5. Navigation
 
@@ -290,14 +270,6 @@ All the features wanted for the site and a sub list stating what is involved if 
 
 ![Footer](media/readme-images/wireframes/footer.jpg)
 
-#### Booking Afternoon Tea
-
-![Booking Afternoon Tea](media/readme-images/wireframes/)
-
-#### Order Cake
-
-![Order Cake](media/readme-images/wireframes/)
-
 ## Features
 
 ### Navbar
@@ -390,11 +362,6 @@ All the features wanted for the site and a sub list stating what is involved if 
 
 ![Loading Screen](media/readme-images/features/loading-screen.png)
 
-###
-
-![Navbar](media/readme-images/features/)
-![Navbar](media/readme-images/features/)
-
 ## Web Marketing
 
 ### Facebook Business Page
@@ -445,12 +412,77 @@ This led me to guess moving my url up in the list would help it be found first a
 
 ## Testing
 
-### Validation testing
+### Manual Testing
 
-Validation testing was done with PyCharms built in formatters for Python, HTML, CSS, and JavaScript.
+- Responsiveness was tested using Chrome Dev Tools. The site was tested for mobiles, tablets, laptops and desktop
+  responsivity.
 
-Case scenario
-- 
+| Feature Tested                       | Testing Method                                                                                                       | Example                                                            | Result |  
+|--------------------------------------|----------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------|--------| 
+| Registration - Blank Field           | - Each mandatory field was left blank intentionally to ensure alert appeared                                         | ![](media/readme-images/testing/empty-field.png)                   | Pass   |
+| Registration - Invalid Email Field   | - An invalid email address was tested to ensure error message appeared                                               | ![](media/readme-images/testing/invalid-email.png)                 | Pass   |
+| Registration - Common Password       | - A common password was tested to check security                                                                     | ![](media/readme-images/testing/common-password.png)               | Pass   |
+| Registration - Short Password        | - A short password was tested to check that an error appears if less than 8 characters entered                       | ![](media/readme-images/testing/password-too-short.png)            | Pass   |
+| Registration - Short Username        | - A short username was tested to check that an error appears if less than 4 characters are entered                   | ![](media/readme-images/testing/short-username.png)                | Pass   |
+| Registration - Email Verification    | - When new account is set up user should be asked to verify the email address before logging in for the first time.  | ![](media/readme-images/testing/verify-email.png)                  | Pass   |
+| Registration - Email Confirmation    | - When new account is set up user should be sent a verification email to the email address used during registration. | ![](media/readme-images/testing/registration-email.png)            | Pass   |
+| Sign-In - - Blank Field              | - Each mandatory field was left blank intentionally to ensure alert appeared                                         | ![](media/readme-images/testing/password-blank.png)                | Pass   |
+| Sign in - Incorrect Username Field   | - Tested with incorrect spelling and capitalisation of some letters to ensure account security                       | ![](media/readme-images/testing/incorrect-username.png)            | Pass   |
+| Sign in - Incorrect Password Field   | - Tested with incorrect spelling and capitalisation of some letters to ensure account security                       | ![](media/readme-images/testing/incorrect-password.png)            | Pass   |
+| Non-Signed in user - Profile menu    | - Only logged in users have access to full profile menu options                                                      | ![](media/readme-images/testing/profile-only-on-signin.png)        | Pass   | 
+| Signed in user - review              | - User can update their profile information when signed in.                                                          | ![](media/readme-images/testing/update-profile.png)                | Pass   | 
+| Signed in user - update profile      | - The product details page contains correct information about the product.                                           | ![](media/readme-images/testing/product-detail.png)                | Pass   | 
+| *Signed in user - Profile menu Admin | - Only admin can see the link to admin site                                                                          | ![](media/readme-images/testing/.png)                              | Pass   |
+| Signed in user - Checkout            | - Correct details are displayed on checkout screen and payment details not stored                                    | ![](media/readme-images/testing/correct-deatils-at-checkout.png)   | Pass   |
+| Site Alert - sign in                 | - Alert to confirm User successfully signed in.                                                                      | ![](media/readme-images/testing/sign-in-success.png)               | Pass   |
+| Site Alert - sign out                | - Alert requests user to confirm choice before logging out of site.                                                  | ![](media/readme-images/testing/sign-out-confirm.png)              | Pass   | 
+| Site Alert - sign out                | - Alert to confirm successful signing out.                                                                           | ![](media/readme-images/testing/sign-out.png)                      | Pass   |
+| Newsletter                           | - Signs up email to newsletter                                                                                       | ![](media/readme-images/testing/newsletter.png)                    | Pass   |
+| Cart - product added                 | - Alert displayed with correct details when product added to cart                                                    | ![](media/readme-images/testing/product-added-to-cart.png)         | Pass   | 
+| Cart - quantity updated              | - Alert displayed with correct details when cart is updated                                                          | ![](media/readme-images/testing/quantity-updated.png)              | Pass   |
+| Cart - product removed               | - Alert displayed with correct details when product is removed from cart                                             | ![](media/readme-images/testing/product-removed.png)               | Pass   |
+| Checkout incomplete details          | - Checkout does not process if all mandatory details with * are filled in.                                           | ![](media/readme-images/testing/checkout-incomplete-details.png)   | Pass   |
+| Checkout - save details              | - Save details to profile option works correctly when selected                                                       | ![](media/readme-images/testing/details-updated-from-checkout.png) | Pass   |
+| Stripe - incorrect number            | - Only cards with completed and valid card numbers can be accepted for payments                                      | ![](media/readme-images/testing/incorrect-card-number.png)         | Pass   |
+| Stripe - incomplete date             | - Only cards with completed valid date can be accepted for payments                                                  | ![](media/readme-images/testing/incomplete-stripe-date.png)        | Pass   |
+| Stripe - expired card                | - Only cards with expiry date in the future can be accepted for payments                                             | ![](media/readme-images/testing/expired-stripe-date.png)           | Pass   |
+| Stripe - incomplete security code    | - Only cards with complete security code can be accepted for payments                                                | ![](media/readme-images/testing/incomplete-stripe-sec-code.png)    | Pass   |
+| Stripe - incomplete ZIP code         | - Only cards with completed and valid ZIP code can be accepted for payments                                          | ![](media/readme-images/testing/incomplete-stripe-zip.png)         | Pass   |
+| User Profile - Order History         | - Order history available on profile page.                                                                           | ![](media/readme-images/testing/order-history.png)                 | Pass   |
+| Order Confirmation - notification    | - Alert is displayed correctly with users email and order number.                                                    | ![](media/readme-images/testing/order-confirm-notification.png)    | Pass   |
+| Order Success Page                   | - This page provides the user with a summary of their order, the shipping details, and the overall cost.             | ![](media/readme-images/testing/order-confirm-page.png)            | Pass   | 
+| Admin CRUD functionality             | - The admin account has access to create, update and delete products, user information, newsletter subscribtions etc | ![](media/readme-images/testing/admin-crud.png)                    | Pass   | 
+| Admin - restricted access            | - Only the admin account can log into the admin view panel.                                                          | ![](media/readme-images/testing/admin-no-access.png)               | Pass   |
+| Error404 - Display                   | - Page displayed when incorrect url is searched for and redirect to home page works.                                 | ![](media/readme-images/testing/page-not-found.png)                | Pass   |
+| Afternoon Tea Form - Blank field     | - All fields are needed to submit form for afternoon tea                                                             | ![](media/readme-images/testing/error-afternoon-tea.png)                | Pass   |
+| Afternoon Tea Form - Success         | - Successfully submitted form for afternoon tea                                                                      | ![](media/readme-images/testing/afternoon-tea.png)                | Pass   |
+| Cake Form - Blank field              | - All fields are needed to submit form for ordering cake                                                             | ![](media/readme-images/testing/order-cake-error.png)                | Pass   |
+| Cake Form - Success                  | - Successfully submitted form to order cake                                                                          | ![](media/readme-images/testing/cake-order.png)                | Pass   |
+
+#### Validation Testing:
+
+| Resource Used                                                                            | Code Tested                        | Example                                              | Result |  
+|------------------------------------------------------------------------------------------|------------------------------------|------------------------------------------------------|--------| 
+| <a href="https://jshint.com/">JSHint </a>                                                | JavaScipt files                    |                                                      | Pass   |
+| <a href="https://jigsaw.w3.org/css-validator/#validate_by_input"> W3C CSS Validator </a> | All CSS files                      | ![](media/readme-images/testing/css-validation.png)  | Pass   | 
+| <a href="https://validator.w3.org/nu/#textarea"> Html Checker  </a>                      | All HTML source code was validated | ![](media/readme-images/testing/html-validation.png) | Pass   | 
+| pycodestyle                                                                              | all files containing Python code   |                                                      | Pass   | 
+
+#### Lighthouse Testing
+
+- Lighthouse was used to check perfomance and accessiblitiy. Colour of the product buttons was adjusted to improve
+  contrast ratio.
+  <img src="media/testing/validation_testing/lighthousescore.png" alt="A screenshot of lighthouse results.">
+
+#### Security
+
+- All SECRET access keys are stored safely in the env.py file to prevent unwanted connections to the database.
+- Django’s setting DEBUG was set to False after development for deployment to prevent access to error screens revealing
+  code or database entries.
+- Django allauth was used to set up user registration and Django’s LoginRequiredMixin and UserPassesTestMixin were used
+  to ensure only signed-in users and authors can edit and delete their product reviews.
+- Cross-Site Request Forgery (CSRF) tokens were used on all forms throughout this site to prevent valid requests to the
+  backend server from being created for malicious purposes.
 
 ## Deployment
 
@@ -573,149 +605,6 @@ Then follow the instructions to create the superuser.
 13. Remove the temporary database from settings.py and uncomment the original code, then push the code to origin.
 14. Back to in **Heroku dashboad**, deploy the application.
 15. To view the site, click on **View App**.
-
-## Testing
-
-### Manual Testing
-
-- Responsiveness was tested using Chrome Dev Tools. The site was tested for mobiles, tablets, laptops and desktop
-  responsivity.
-
-| Feature Tested                           | Testing Method                                                                                                                                          | Example                                                     | Result |  
-|------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------|--------| 
-| Registration - Blank Field               | - Each mandatory field was left blank intentionally to ensure alert appeared                                                                            | ![](media/readme-images/testing/empty-field.png)            | Pass   |
-| Registration - Invalid Email Field       | - An invalid email address was tested to ensure error message appeared                                                                                  | ![](media/readme-images/testing/invalid-email.png)          | Pass   |
-| Registration - Common Password           | - A common password was tested to check security                                                                                                        | ![](media/readme-images/testing/common-password.png)        | Pass   |
-| Registration - Short Password            | - A short password was tested to check that an error appears if less than 8 characters entered                                                          | ![](media/readme-images/testing/password-too-short.png)     | Pass   |
-| Registration - Short Username            | - A short username was tested to check that an error appears if less than 4 characters are entered                                                      | ![](media/readme-images/testing/short-username.png)         | Pass   |
-| Registration - Email Verification        | - When new account is set up user should be asked to verify the email address before logging in for the first time.                                     | ![](media/readme-images/testing/verify-email.png)           | Pass   |
-| Registration - Email Confirmation        | - When new account is set up user should be sent a verification email to the email address used during registration.                                    | ![](media/readme-images/testing/registration-email.png)     | Pass   |
-| Sign-In - - Blank Field                  | - Each mandatory field was left blank intentionally to ensure alert appeared                                                                            | ![](media/readme-images/testing/password-blank.png)         | Pass   |
-| Sign in - Incorrect Username Field       | - Tested with incorrect spelling and capitalisation of some letters to ensure account security                                                          | ![](media/readme-images/testing/incorrect-username.png)     | Pass   |
-| Sign in - Incorrect Password Field       | - Tested with incorrect spelling and capitalisation of some letters to ensure account security                                                          | ![](media/readme-images/testing/incorrect-password.png)     | Pass   |
-| Non-Signed in user - Profile menu        | - Only logged in users have access to full profile menu options                                                                                         | ![](media/readme-images/testing/profile-only-on-signin.png) | Pass   | 
-| Signed in user - review                  | - User can update their profile information when signed in.                                                                                             | ![](media/readme-images/testing/update-profile.png)         | Pass   | 
-| Signed in user - update profile          | - The product details page contains correct information about the product.                                                                              | ![](media/readme-images/testing/product-detail.png)                       | Pass   | 
-| *Signed in user - Profile menu Admin     | - Only admin can see the link to admin site                                                                                                             | ![](media/readme-images/testing/.png)                       | Pass   |
-| Signed in user - Checkout                | - Correct details are displayed on checkout screen and payment details not stored                                                                       | ![](media/readme-images/testing/correct-deatils-at-checkout.png)                       | Pass   |
-| Update User Profile - Pre-populated Data | - Delivery address and contact information is pre-populated from previous orders and available to be updated by user                                    | ![](media/readme-images/testing/)                           | Pass   | 
-| Site Alert - sign in                     | - Alert to confirm User successfully signed in.                                                                                                         | ![](media/readme-images/testing/)                           | Pass   |
-| Site Alert - sign out                    | - Alert requests user to confirm choice before logging out of site.                                                                                     | ![](media/readme-images/testing/)                           | Pass   | 
-| Site Alert - sign out                    | - Alert to confirm successful signing out.                                                                                                              | ![](media/readme-images/testing/)                           | Pass   |
-| About Page - Links                       | Testing if signup and home page link are activated. Both of these links are active and take the user to the correct location on the site when selected. | ![](media/readme-images/testing/)                           | Pass   | 
-| Newsletter                               | - Field must be completed with valid email address for submission to be accepted.                                                                       | ![](media/readme-images/testing/)                           | Pass   |
-| Cart - product added                     | - Alert displayed with correct details when product added to cart                                                                                       | ![](media/readme-images/testing/)                           | Pass   | 
-| Cart - quantity updated                  | - Alert displayed with correct details when cart is updated                                                                                             | ![](media/readme-images/testing/)                           | Pass   |
-| Cart - product removed                   | - Alert displayed with correct details when product is removed from cart                                                                                | ![](media/readme-images/testing/)                           | Pass   |
-| Checkout incomplete details              | - Checkout does not process if all mandatory details with * are filled in.                                                                              | ![](media/readme-images/testing/)                           | Pass   |
-| Checkout - save details                  | - Save details to profile option works correctly when selected                                                                                          | ![](media/readme-images/testing/)                           | Pass   |
-| Stripe - incorrect number                | - Only cards with completed and valid card numbers can be accepted for payments                                                                         | ![](media/readme-images/testing/)                           | Pass   |
-| Stripe - incomplete date                 | - Only cards with completed valid date can be accepted for payments                                                                                     | ![](media/readme-images/testing/)                           | Pass   |
-| Stripe - expired card                    | - Only cards with expiry date in the future can be accepted for payments                                                                                | ![](media/readme-images/testing/)                           | Pass   |
-| Stripe - incomplete security code        | - Only cards with complete security code can be accepted for payments                                                                                   | ![](media/readme-images/testing/)                           | Pass   |
-| Stripe - incomplete ZIP code             | - Only cards with completed and valid ZIP code can be accepted for payments                                                                             | ![](media/readme-images/testing/)                           | Pass   |
-| Update User Profile - Pre-populated Data | - Pre saved data available on profile page.                                                                                                             | ![](media/readme-images/testing/)                           | Pass   |
-| User Profile - Order History             | - Order history available on profile page.                                                                                                              | ![](media/readme-images/testing/)                           | Pass   |
-| Order Confirmation - notification        | - Alert is displayed correctly with users email and order number.                                                                                       | ![](media/readme-images/testing/)                           | Pass   |
-| Order Success Page                       | -This page provides the user with a summary of their order, the shipping details, and the overall cost.                                                 | ![](media/readme-images/testing/)                           | Pass   | 
-| Admin CRUD functionality                 | - The admin account has access to create, update and delete products, user information, newsletter subscribtions etc                                    | ![](media/readme-images/testing/)                           | Pass   | 
-| Admin - restricted access                | - Only the admin account can log into the admin view panel.                                                                                             | ![](media/readme-images/testing/)                           | Pass   |
-| Error404 - Display                       | - Page displayed when incorrect url is searched for and redirect to home page works.                                                                    | ![](media/readme-images/testing/)                           | Pass   |
-
-<br/>
-
-<!-- TOC --><a name="validation-testing"></a>
-
-#### Validation Testing:
-
-| Resource Used | Code Tested | Example | Result |  
-| --- | --- | --- | --- | 
-| <a href="https://jshint.com/">JSHint </a>  |JavaScipt files | | Pass - missing semicolons added and repeat testing passed. |
-| <a href="https://jigsaw.w3.org/css-validator/#validate_by_input"> W3C CSS Validator </a> | All CSS files | <img src="media/testing/validation_testing/checkoutcss.png" alt="A screenshot of checkout.css results with no errors."> | Pass | 
-| <a href="https://validator.w3.org/nu/#textarea"> Html Checker  </a>| All HTML source code was validated | <img src="media/testing/validation_testing/html.png" alt="A screenshot of html result summary.">| Pass - two stray / and a warning for unnecessary type attribute for JavaScript resources were identified and corrected during the validation process. | 
-| pycodestyle | all files containing Python code | <img src="media/testing/validation_testing/pep8.png" alt="A screenshot of pep8 results with no errors."> | Pass * | 
-
-* Pep8 Validation was completed using the following steps.
-    1. Run the command pip3 install pycodestyle
-    2. In the workspace, press Ctrl+Shift+P (or Cmd+Shift+P on Mac).
-    3. Type the word linter into the search bar that appears and click on Python: Select Linter from the filtered
-       results.
-    4. Select pycodestyle from the list.
-    5. PEP8 errors will now be underlined in red, as well as being listed in the PROBLEMS tab beside your terminal.
-
-- All errors were resolved, and no problems were detected in the workspace as per the above image with the following
-  exceptions:
-    - Webhook_handlers.py lines 103 and 147 were too long however, this error was unable to be resolved due to syntax
-      compliance. - Settings.py lines 148,151,154, and 157 all identified as being too long, this error was unable to be
-      resolved due to syntax compliance.
-
-<br/>
-
-#### Lighthouse Testing
-
-- Lighthouse was used to check perfomance and accessiblitiy. Colour of the product buttons was adjusted to improve
-  contrast ratio.
-  <img src="media/testing/validation_testing/lighthousescore.png" alt="A screenshot of lighthouse results.">
-
-<br/>
-
-#### Security
-
-- All SECRET access keys are stored safely in the env.py file to prevent unwanted connections to the database.
-- Django’s setting DEBUG was set to False after development for deployment to prevent access to error screens revealing
-  code or database entries.
-- Django allauth was used to set up user registration and Django’s LoginRequiredMixin and UserPassesTestMixin were used
-  to ensure only signed-in users and authors can edit and delete their product reviews.
-- Cross-Site Request Forgery (CSRF) tokens were used on all forms throughout this site to prevent valid requests to the
-  backend server from being created for malicious purposes.
-
-First Registered with admin and got email to confirm:
-
-Then was able to add and delete products:
-![](media/readme-images/testing/add-product.png)
-![](media/readme-images/testing/product-deleted.png)
-
-Then was able to register as user and didn't see admin functionality:
-![](media/readme-images/testing/username-used-password-too-common.png)
-![](media/readme-images/testing/chrome_XlDcsi7ntZ.png)
-![](media/readme-images/testing/chrome_D5q0TZvbPr.png)
-![](media/readme-images/testing/chrome_jDXXMZMfTS.png)
-![](media/readme-images/testing/chrome_NKjD5ogMX0.png)
-
-The was able to browse the store, add products, and update the cart with quantity. Was also able to delete from it.
-![](media/readme-images/testing/chrome_wwFWRSqGgy.png)
-![](media/readme-images/testing/chrome_CU5EgNRzGO.png)
-![](media/readme-images/testing/chrome_UWGCy9PUlr.png)
-![](media/readme-images/testing/chrome_zvHS7Ofnn2.png)
-
-Then I was able to go as far as secure checkout:
-![](media/readme-images/testing/chrome_FbV1zJEUFY.png)
-
-Then update my details in profile and go back to secure checkout and my details were already populated:
-![](media/readme-images/testing/chrome_xwq7y7jSlD.png)
-
-Then was not able to checkout unless all details were correct:
-![](media/readme-images/testing/chrome_iNwIlih7dr.png)
-![](media/readme-images/testing/chrome_GyremRPwYA.png)
-![](media/readme-images/testing/chrome_XVzVuObzV6.png)
-![](media/readme-images/testing/chrome_IoX8N9ED3c.png)
-![](media/readme-images/testing/chrome_WWXpnomLrd.png)
-![](media/readme-images/testing/chrome_0pGpHy89Jt.png)
-![](media/readme-images/testing/chrome_VLnM7Abu05.png)
-
-Was able to book an afternoon tea through form:
-![](media/readme-images/testing/chrome_JquP7I2x0G.png)
-![](media/readme-images/testing/chrome_u32OwI2Gy8.png)
-
-Was able to order a cake through form:
-![](media/readme-images/testing/chrome_PmQAEdi2xl.png)
-![](media/readme-images/testing/chrome_xa9hyZWpH7.png)
-
-And was able to log out
-
-![](media/readme-images/testing/logout.png)
-
-![](media/readme-images/testing/sign-confirm.png)
 
 ## Technology Used
 
