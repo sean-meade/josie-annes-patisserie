@@ -470,9 +470,9 @@ This led me to guess moving my url up in the list would help it be found first a
 
 #### Lighthouse Testing
 
-- Lighthouse was used to check perfomance and accessiblitiy. Colour of the product buttons was adjusted to improve
-  contrast ratio.
-  <img src="media/testing/validation_testing/lighthousescore.png" alt="A screenshot of lighthouse results.">
+- Lighthouse was used to check perfomance and accessiblitiy. Performance surfers from initial server response time being
+  on render.
+  ![](media/readme-images/testing/lighthouse.png)
 
 #### Security
 
