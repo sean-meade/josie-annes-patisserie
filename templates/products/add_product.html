@@ -28,6 +28,7 @@
                 {% for field in form %}
                 {% if field.name == 'image' %}
                 {{ field }}
+                {% elif field.name == 'sku' %}
                 {% elif field.name == 'description' %}
                 {{ form.media }}
                 <p>{{ field }}</p>
