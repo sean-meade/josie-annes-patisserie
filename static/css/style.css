@@ -19,7 +19,7 @@ body {
 }
 
 #header-non-mobile {
-    background: url("https://res.cloudinary.com/drgmt7bbz/image/upload/v1669466799/rolling_pin_142_o_lzckel.png") no-repeat center center;
+    background: url("/static/images/rolling_pin.png") no-repeat center center;
     -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
     -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
     box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
@@ -59,7 +59,7 @@ dropdown-item:hover,
 #hero-image {
     min-height: 26rem;
     max-width: 100%;
-    background: url("https://res.cloudinary.com/drgmt7bbz/image/upload/v1675617940/hero-image_lwds9o.webp") no-repeat center 25%;
+    background: url("/static/images/hero-image.webp") no-repeat center 25%;
     background-size: cover;
     display: inline-block;
 }
@@ -200,14 +200,14 @@ dropdown-item:hover,
 #afternoon-tea-cta-image {
     min-height: 26rem;
     max-width: 90%;
-    background: url("https://res.cloudinary.com/drgmt7bbz/image/upload/v1668700155/josie-annes_52339170702_o-min_xoppsj.jpg") no-repeat center 25%;
+    background: url("/static/images/josie-annes.webp") no-repeat center 25%;
     background-size: cover;
 }
 
 #store-choice-cta-image {
     min-height: 26rem;
     max-width: 90%;
-    background: url("https://res.cloudinary.com/drgmt7bbz/image/upload/v1668700155/josie-annes_52339170702_o-min_xoppsj.jpg") no-repeat center 25%;
+    background: url("/static/images/josie-annes.webp") no-repeat center 25%;
     background-size: cover;
 }
 
