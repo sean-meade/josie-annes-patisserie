@@ -2,10 +2,14 @@ import uuid
 
 from django.db import models
 from django.db.models import Sum
+from django.shortcuts import get_object_or_404
+
 from josie_annes_patisserie import settings
 from products.models import Product
 from profiles.models import UserProfile
 from django_countries.fields import CountryField
+
+import json
 
 
 class Order(models.Model):
@@ -56,11 +60,18 @@ class Order(models.Model):
         Update grand total each time a line item is added,
         accounting for delivery costs.
         """
+        is_delivery = False
         self.order_total = self.lineitems.aggregate(
             Sum('lineitem_total'))['lineitem_total__sum'] or 0
-        if self.order_total < settings.FREE_DELIVERY_THRESHOLD:
+
+        for key, value in json.loads(self.original_bag).items():
+            product = get_object_or_404(Product, id=key)
+            if product.category == 'delivery':
+                is_delivery = True
+
+        if self.order_total < settings.FREE_DELIVERY_THRESHOLD and is_delivery:
             self.delivery_cost = self.order_total * \
-                settings.STANDARD_DELIVERY_PERCENTAGE / 100
+                                 settings.STANDARD_DELIVERY_PERCENTAGE / 100
         else:
             self.delivery_cost = 0
         self.grand_total = self.order_total + self.delivery_cost
