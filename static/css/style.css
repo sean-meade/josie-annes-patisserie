@@ -693,6 +693,15 @@ footer,
     }
 }
 
+@media (max-width: 650px) {
+    #cta-text,
+    .cta-buttons,
+    .main-title-font {
+        margin: auto !important;
+        width: 70vw !important;
+    }
+}
+
 .product-container {
     width: 85% !important;
 }
