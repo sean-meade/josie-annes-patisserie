@@ -2,7 +2,7 @@
 
 Ecommerce website for the business Josie Anne's Patisserie.
 
-[Link to live site](https://josie-annes.onrender.com//)
+[Link to live site](https://josie-annes.onrender.com/)
 
 ## Feature Choice
 
