@@ -1,7 +1,7 @@
 # Josie Annes Patisserie Ecommerce Website
 Ecommerce website for the business Josie Anne's Patisserie.
 
-[Link to live site](https://josie-annes-patisserie.herokuapp.com/)
+[Link to live site](https://josie-annes.onrender.com/)
 
 ## Feature Choice
 
